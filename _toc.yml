@@ -8,21 +8,21 @@ parts:
     sections:
     - file: content/notebooks/Chapter1/Network
     - file: content/notebooks/Chapter1/BasicStats
-    - file: content/notebooks/Part1/Chapter1/SpectralProperties
-    - file: content/notebooks/Part1/Chapter1/FurtherReading
-  - file: content/notebooks/Part1/Chapter2/Chapter2Intro
+    - file: content/notebooks/Chapter1/SpectralProperties
+    - file: content/notebooks/Chapter1/FurtherReading
+  - file: content/notebooks/Chapter2/Chapter2Intro
     sections:
-    - file: content/notebooks/Part1/Chapter2/RandomGraphs
-    - file: content/notebooks/Part1/Chapter2/SmallWorlds
-    - file: content/notebooks/Part1/Chapter2/NetworkGrowth
-    - file: content/notebooks/Part1/Chapter2/FurtherReading
-  - file: content/notebooks/Part1/Chapter3/Chapter3Intro
+    - file: content/notebooks/Chapter2/RandomGraphs
+    - file: content/notebooks/Chapter2/SmallWorlds
+    - file: content/notebooks/Chapter2/NetworkGrowth
+    - file: content/notebooks/Chapter2/FurtherReading
+  - file: content/notebooks/Chapter3/Chapter3Intro
     sections:
-    - file: content/notebooks/Part1/Chapter3/CentralityMeasures
-    - file: content/notebooks/Part1/Chapter3/CommunityDetection
-    - file: content/notebooks/Part1/Chapter3/FurtherReading    
-  - file: content/notebooks/Part1/Chapter4/Chapter4Intro
+    - file: content/notebooks/Chapter3/CentralityMeasures
+    - file: content/notebooks/Chapter3/CommunityDetection
+    - file: content/notebooks/Chapter3/FurtherReading    
+  - file: content/notebooks/Chapter4/Chapter4Intro
     sections:
-    - file: content/notebooks/Part1/Chapter4/NetworkNeuro
-    - file: content/notebooks/Part1/Chapter4/MolecularNetworks
-    - file: content/notebooks/Part1/Chapter4/DiseaseNetworks    
+    - file: content/notebooks/Chapter4/NetworkNeuro
+    - file: content/notebooks/Chapter4/MolecularNetworks
+    - file: content/notebooks/Chapter4/DiseaseNetworks    
