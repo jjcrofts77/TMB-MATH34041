@@ -1,6 +1,8 @@
 <!-- #region -->
 # Topics in Mathematical Biology MATH34041
 
+# Part II Network Science
+
 # Course Overview
 
 This Jupyterbook provides the course notes for the second half of Topics in Mathematical Biology
