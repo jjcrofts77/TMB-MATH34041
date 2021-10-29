@@ -1,5 +1,5 @@
 <!-- #region -->
-# Topics in Mathematical Biology: Network Science MATH34041
+# Topics in Mathematical Biology MATH34041
 
 # Course Overview
 
