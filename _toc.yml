@@ -6,7 +6,7 @@ parts:
   chapters:
   - file: content/notebooks/Chapter1/Chapter1Intro  
     sections:
-    - file: content/notebooks/Chapter1/Networks
+    - file: content/notebooks/Chapter1/Network
     - file: content/notebooks/Chapter1/BasicStats
     - file: content/notebooks/Part1/Chapter1/SpectralProperties
     - file: content/notebooks/Part1/Chapter1/FurtherReading
