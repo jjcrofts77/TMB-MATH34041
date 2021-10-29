@@ -25,4 +25,4 @@ parts:
     sections:
     - file: content/notebooks/Part1/Chapter4/NetworkNeuro
     - file: content/notebooks/Part1/Chapter4/MolecularNetworks
-    - file: content/notebooks/Part1/Chapter4/DiseaseNetwroks    
+    - file: content/notebooks/Part1/Chapter4/DiseaseNetworks    
