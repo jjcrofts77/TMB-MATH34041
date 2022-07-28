@@ -1,4 +1,4 @@
-# Data for the Topics in Mathematical Biology coursework
+# Data for the Topics in Mathematical Biology Coursework
 
 This folder contains a selection of biological network data that can be used to complete the TMB coursework.
 
