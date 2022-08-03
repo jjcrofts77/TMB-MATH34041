@@ -26,6 +26,13 @@ filename_title_split_character : '_'  # If inferring titles based on filename, s
 
 # Math settings
 number_equations               : false  # Whether to automatically number all block equations with MathJax
+sphinx:
+  config:
+    mathjax_config:
+      "HTML-CSS": {
+        matchFontHeight: true,
+        scale: 80
+      }
 
 ########################
 # Interact link settings
