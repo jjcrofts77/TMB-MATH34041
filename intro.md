@@ -5,7 +5,7 @@
 
 # Course Overview
 
-This Jupyterbook provides the course notes for the second half of Topics in Mathematical Biology
+This Jupyterbook provides the course notes for the second half of Topics in Mathematical Biology (MATH34041)
 
 ### Chapter 1 Introduction and basic concepts
    - What are networks?
