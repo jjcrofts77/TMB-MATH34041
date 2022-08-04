@@ -9,7 +9,8 @@ This Jupyterbook provides the course notes for the second half of Topics in Math
 
 ### Chapter 1 Introduction and basic concepts
    - What are networks?
-   - Basic Statistics   
+   - Basic Statistics 
+      - hi  
    - Spectral properties of networks
    - Further reading
 
