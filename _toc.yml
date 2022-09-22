@@ -27,6 +27,7 @@ parts:
     - file: content/notebooks/Chapter4/MolecularNetworks
     - file: content/notebooks/Chapter4/DiseaseNetworks    
   - file: content/notebooks/Chapter5/Chapter5Intro    
+    sections:
     - file: content/notebooks/Chapter5/PythonBasics
     - file: content/notebooks/Chapter5/PythonNetworkX
     - file: content/notebooks/Chapter5/PythonNetworkExample
