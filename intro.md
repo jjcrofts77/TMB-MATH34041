@@ -31,6 +31,11 @@ This Jupyterbook provides the course notes for the second half of Topics in Math
    - Network neuroscience
    - Molecular networks
    - Disease networks
+
+### Chapter 5 Network analysis in Python
+   - Python basics
+   - Introduction to the NetworkX package
+   - Example network analysis
 <br>
 
 ## References
