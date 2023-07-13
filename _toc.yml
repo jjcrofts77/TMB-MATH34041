@@ -5,10 +5,11 @@ parts:
 - caption: Part II - Network Science
   chapters:
     sections:
-  - file: content/notebooks/Chapter5/Chapter5Intro  
-    - file: content/notebooks/Chapter5/PythonBasics
-    - file: content/notebooks/Chapter5/PythonNetworkX
-    - file: content/notebooks/Chapter5/PythonNetworkExample
+  - file: content/notebooks/Chapter0/Chapter0Intro  
+    - file: content/notebooks/Chapter0/PythonBasics
+    - file: content/notebooks/Chapter0/NumpyAndMatplotlib
+    - file: content/notebooks/Chapter0/PythonNetworkX
+    - file: content/notebooks/Chapter0/PythonNetworkExample
   - file: content/notebooks/Chapter1/Chapter1Intro  
     sections:
     - file: content/notebooks/Chapter1/Network
