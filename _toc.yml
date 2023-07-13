@@ -4,6 +4,11 @@ title: Introduction
 parts:
 - caption: Part II - Network Science
   chapters:
+    sections:
+  - file: content/notebooks/Chapter5/Chapter5Intro  
+    - file: content/notebooks/Chapter5/PythonBasics
+    - file: content/notebooks/Chapter5/PythonNetworkX
+    - file: content/notebooks/Chapter5/PythonNetworkExample
   - file: content/notebooks/Chapter1/Chapter1Intro  
     sections:
     - file: content/notebooks/Chapter1/Network
@@ -27,7 +32,3 @@ parts:
     - file: content/notebooks/Chapter4/MolecularNetworks
     - file: content/notebooks/Chapter4/DiseaseNetworks    
   - file: content/notebooks/Chapter5/Chapter5Intro    
-    sections:
-    - file: content/notebooks/Chapter5/PythonBasics
-    - file: content/notebooks/Chapter5/PythonNetworkX
-    - file: content/notebooks/Chapter5/PythonNetworkExample
