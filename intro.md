@@ -45,9 +45,9 @@ This Jupyterbook provides the course notes for the second half of Topics in Math
 
 [2] Newman M., Networks: an introduction (2010)
 
-[3] Buchanan M. Networks in cell biology (2010)
+[3] Buchanan M., Networks in cell biology (2010)
 
-[4] Zinoviev D. Complex Network Analysis in Python: Recognise-Construct-Visualise-Interpret (2018)
+[4] Zinoviev D., Complex Network Analysis in Python: Recognise-Construct-Visualise-Interpret (2018)
 
 
 ------
