@@ -4,8 +4,8 @@ title: Introduction
 parts:
 - caption: Part II - Network Science
   chapters:
-    sections:
   - file: content/notebooks/Chapter0/Chapter0Intro  
+    sections:  
     - file: content/notebooks/Chapter0/PythonBasics
     - file: content/notebooks/Chapter0/NumpyAndMatplotlib
     - file: content/notebooks/Chapter0/PythonNetworkX
