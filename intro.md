@@ -49,12 +49,13 @@ This Jupyterbook provides the course notes for the second half of Topics in Math
 
 [4] Zinoviev D., Complex Network Analysis in Python: Recognise-Construct-Visualise-Interpret (2018)
 
-
 ------
 ## Supplementary Video Lectures
 Steven Strogatz: How things tend to synch up. YouTube. https://www.youtube.com/watch?v=aSNrKS-sCE0
 
+K Jarrod Millman - Complex network analysis with NetworkX. YouTube. https://www.youtube.com/watch?v=ezL7j4nSXpQ
 
 ------
 ## Popular Press Reading
 Watts, D., 2003. SIX DEGREES The Science of a Connected Age. Vintage.
+
