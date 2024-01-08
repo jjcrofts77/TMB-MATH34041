@@ -127,5 +127,10 @@ plugins:
   - jekyll-redirect-from
   - jekyll-scholar
 
+sphinx:
+  extra_extensions:
+  - sphinx_proof
+  - sphinx_inline_tabs
+
 # Jupyter Book version - DO NOT CHANGE THIS. It is generated when a new book is created
 jupyter_book_version: "0.6.4"
