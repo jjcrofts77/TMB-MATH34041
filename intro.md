@@ -38,6 +38,8 @@ This Jupyterbook provides the course notes for the second half of Topics in Math
    - Molecular networks
    - Disease networks
      
+### Problem sheets and solutions
+     
 <br>
 
 ## References
