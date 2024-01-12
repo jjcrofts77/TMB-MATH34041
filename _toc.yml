@@ -32,10 +32,10 @@ parts:
       - file: content/notebooks/Chapter4/NetworkNeuro
       - file: content/notebooks/Chapter4/MolecularNetworks
       - file: content/notebooks/Chapter4/DiseaseNetworks     
-  - caption: Problem Sheets
-    chapters:
-    - file: content/ProblemSheets/ProblemSheet1
-    - file: content/ProblemSheets/ProblemSheet2
-    - file: content/ProblemSheets/ProblemSheet3
-    - file: content/ProblemSheets/ProblemSheet4
-    - file: content/ProblemSheets/ProblemSheet5
+    - file: content/ProblemSheets/ProblemSheets
+      sections:  
+      - file: content/ProblemSheets/ProblemSheet1
+      - file: content/ProblemSheets/ProblemSheet2
+      - file: content/ProblemSheets/ProblemSheet3
+      - file: content/ProblemSheets/ProblemSheet4
+      - file: content/ProblemSheets/ProblemSheet5      
