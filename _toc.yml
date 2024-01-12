@@ -2,36 +2,36 @@ format: jb-book
 root: intro
 title: Introduction
 parts:
-- caption: Part II - Network Science
-  chapters:
-  - file: content/notebooks/Chapter0/Chapter0Intro  
-    sections:  
-    - file: content/notebooks/Chapter0/PythonBasics
-    - file: content/notebooks/Chapter0/NumpyAndMatplotlib
-    - file: content/notebooks/Chapter0/PythonNetworkX
-    - file: content/notebooks/Chapter0/PythonNetworkExample
-  - file: content/notebooks/Chapter1/Chapter1Intro  
-    sections:
-    - file: content/notebooks/Chapter1/Network
-    - file: content/notebooks/Chapter1/BasicStats
-    - file: content/notebooks/Chapter1/SpectralProperties
-    - file: content/notebooks/Chapter1/FurtherReading
-  - file: content/notebooks/Chapter2/Chapter2Intro
-    sections:
-    - file: content/notebooks/Chapter2/RandomGraphs
-    - file: content/notebooks/Chapter2/SmallWorlds
-    - file: content/notebooks/Chapter2/NetworkGrowth
-    - file: content/notebooks/Chapter2/FurtherReading
-  - file: content/notebooks/Chapter3/Chapter3Intro
-    sections:
-    - file: content/notebooks/Chapter3/CentralityMeasures
-    - file: content/notebooks/Chapter3/CommunityDetection
-    - file: content/notebooks/Chapter3/FurtherReading    
-  - file: content/notebooks/Chapter4/Chapter4Intro
-    sections:
-    - file: content/notebooks/Chapter4/NetworkNeuro
-    - file: content/notebooks/Chapter4/MolecularNetworks
-    - file: content/notebooks/Chapter4/DiseaseNetworks     
+  - caption: Part II - Network Science
+    chapters:
+    - file: content/notebooks/Chapter0/Chapter0Intro  
+      sections:  
+      - file: content/notebooks/Chapter0/PythonBasics
+      - file: content/notebooks/Chapter0/NumpyAndMatplotlib
+      - file: content/notebooks/Chapter0/PythonNetworkX
+      - file: content/notebooks/Chapter0/PythonNetworkExample
+    - file: content/notebooks/Chapter1/Chapter1Intro  
+      sections:
+      - file: content/notebooks/Chapter1/Network
+      - file: content/notebooks/Chapter1/BasicStats
+      - file: content/notebooks/Chapter1/SpectralProperties
+      - file: content/notebooks/Chapter1/FurtherReading
+    - file: content/notebooks/Chapter2/Chapter2Intro
+      sections:
+      - file: content/notebooks/Chapter2/RandomGraphs
+      - file: content/notebooks/Chapter2/SmallWorlds
+      - file: content/notebooks/Chapter2/NetworkGrowth
+      - file: content/notebooks/Chapter2/FurtherReading
+    - file: content/notebooks/Chapter3/Chapter3Intro
+      sections:
+      - file: content/notebooks/Chapter3/CentralityMeasures
+      - file: content/notebooks/Chapter3/CommunityDetection
+      - file: content/notebooks/Chapter3/FurtherReading    
+    - file: content/notebooks/Chapter4/Chapter4Intro
+      sections:
+      - file: content/notebooks/Chapter4/NetworkNeuro
+      - file: content/notebooks/Chapter4/MolecularNetworks
+      - file: content/notebooks/Chapter4/DiseaseNetworks     
 - caption: Part II - Network Science
   chapters:
   - file: content/notebooks/Chapter0/Chapter0Intro  
