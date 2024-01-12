@@ -33,5 +33,5 @@ parts:
     - file: content/notebooks/Chapter4/MolecularNetworks
     - file: content/notebooks/Chapter4/DiseaseNetworks     
 -caption: Problem Sheets
-  - file: path/to/myfile
-  title: Problem sheet 1: Introudction to networks
+  - file: content/ProblemSheets/ProblemSheet1
+    title: Problem sheet 1: Introduction to networks
