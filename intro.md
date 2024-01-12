@@ -40,7 +40,7 @@ This Jupyterbook provides the course notes for the second half of Topics in Math
 
 ------
 ## Problem sheets and solutions
-   - Problem sheet 1: Introduction to networks
+   - [Problem sheet 1: Introduction to networks](https://github.com/jjcrofts77/TMB-MATH34041/blob/5a88350e8dd52901b7ffe361dd28abef5c332f51/content/ProblemSheets/ProblemSheet1.ipynb)
    - Problem sheet 2: The mathematics of networks
    - Problem sheet 3: Basic network measures
    - Problem sheet 4: Network models
