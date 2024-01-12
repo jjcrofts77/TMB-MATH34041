@@ -38,8 +38,7 @@ This Jupyterbook provides the course notes for the second half of Topics in Math
    - Molecular networks
    - Disease networks
 
-<br>
-
+------
 ## Problem sheets and solutions
    - Problem sheet 1: Introduction to networks
    - Problem sheet 2: The mathematics of networks
@@ -47,8 +46,7 @@ This Jupyterbook provides the course notes for the second half of Topics in Math
    - Problem sheet 4: Network models
    - Problem sheet 5: Revealing network structure: centrality and modularity
      
-<br>
-
+------
 ## References
 [1] Estrada E., The structure of complex networks: theory and applications (2012)
 
