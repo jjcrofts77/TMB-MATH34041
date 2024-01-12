@@ -37,8 +37,15 @@ This Jupyterbook provides the course notes for the second half of Topics in Math
    - Network neuroscience
    - Molecular networks
    - Disease networks
-     
-### Problem sheets and solutions
+
+<br>
+
+## Problem sheets and solutions
+   - Introduction to networks
+   - The mathematics of networks
+   - Basic network measures
+   - Network models
+   - Revealing network structure: centrality and modularity
      
 <br>
 
