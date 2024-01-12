@@ -7,6 +7,12 @@
 
 This Jupyterbook provides the course notes for the second half of Topics in Mathematical Biology
 
+### Chapter 0 Network analysis in Python
+   - Basics in Python
+   - Introduction to the NumPy and Matplotlib libraries
+   - Introduction to the NetworkX Package
+   - Example network analysis
+
 ### Chapter 1 Introduction and basic concepts
    - What are networks?
    - Basic Statistics   
@@ -28,6 +34,7 @@ This Jupyterbook provides the course notes for the second half of Topics in Math
    - Network neuroscience
    - Molecular networks
    - Disease networks
+   
 <br>
 
 ## References

@@ -1,0 +1,1548 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>References &#8212; Topics in Mathematical Biology MATH34041</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/myfonts.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../../_static/tabs.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"HTML-CSS": {"matchFontHeight": true, "scale": 110}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'content/notebooks/TD_1_graph_theory_4BIM (1)';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/FoldedBrainHeatDist.png" class="logo__image only-light" alt="Topics in Mathematical Biology MATH34041 - Home"/>
+    <script>document.write(`<img src="../../_static/FoldedBrainHeatDist.png" class="logo__image only-dark" alt="Topics in Mathematical Biology MATH34041 - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Topics in Mathematical Biology MATH34041
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Part II - Network Science</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="Chapter0/Chapter0Intro.html">Chapter 0 Network analysis in Python</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="Chapter0/PythonBasics.html">0.1 Basics in Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter0/NumpyAndMatplotlib.html">0.2 Introduction to the NumPy and Matplotlib libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter0/PythonNetworkX.html">0.3 Introduction to the NetworkX Package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter0/PythonNetworkExample.html">0.4 Python Network Example</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Chapter1/Chapter1Intro.html">Chapter 1 Introduction and Basic Concepts</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="Chapter1/Network.html">1.1 What are Networks?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter1/BasicStats.html">1.2 Basic Statistics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter1/SpectralProperties.html">1.3 Spectral Properties of Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter1/FurtherReading.html">1.4 Further Reading</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Chapter2/Chapter2Intro.html">Chapter 2 Network Models</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="Chapter2/RandomGraphs.html">2.1 Random Graphs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter2/SmallWorlds.html">2.2 Small-Worlds</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter2/NetworkGrowth.html">2.3 Modelling Network Growth</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter2/FurtherReading.html">2.4 Further Reading</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Chapter3/Chapter3Intro.html">Chapter 3 Additional Summary Statistics and Useful Concepts</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="Chapter3/CentralityMeasures.html">3.1 Centrality Measures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter3/CommunityDetection.html">3.2 Community Detection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter3/FurtherReading.html">3.3 Further Reading</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Chapter4/Chapter4Intro.html">Chapter 4 Complex Networks in Biology</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="Chapter4/NetworkNeuro.html">4.1 Network Neuroscience</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter4/MolecularNetworks.html">4.2 Molecular Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter4/DiseaseNetworks.html">4.3 Disease Networks</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/content/notebooks/TD_1_graph_theory_4BIM (1).ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>References</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">References</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#load-global-network-of-277-neurons-zip-dataset-from-kraiser-et-al-2006">Load Global network of 277 neurons (zip) dataset from [kraiser et al. 2006]</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-network">Plot network</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#networkx">Networkx</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#network-motifs">Network motifs</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition">Definition</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#most-important-motifs-in-this-dataset">Most important motifs in this dataset</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#roles">Roles</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#algorithms">Algorithms</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#rich-club-neurons">Rich Club Neurons</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics.pairwise</span> <span class="kn">import</span> <span class="n">pairwise_distances</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="references">
+<h1>References<a class="headerlink" href="#references" title="Permalink to this heading">#</a></h1>
+<p><a class="reference external" href="http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.0020095">http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.0020095</a>
+<a class="reference external" href="https://people.ece.cornell.edu/atang/pub/15/PLOS_One.pdf">https://people.ece.cornell.edu/atang/pub/15/PLOS_One.pdf</a></p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="load-global-network-of-277-neurons-zip-dataset-from-kraiser-et-al-2006">
+<h1>Load Global network of 277 neurons (zip) dataset from <a class="reference external" href="http://www.biological-networks.org/pubs/suppl/Kaiser2006.html">[kraiser et al. 2006]</a><a class="headerlink" href="#load-global-network-of-277-neurons-zip-dataset-from-kraiser-et-al-2006" title="Permalink to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nodes_labels</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;celegans277labels.csv&quot;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> 
+<span class="n">adjacency</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;celegans277matrix.csv&quot;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="n">locations</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;celegans277positions.csv&quot;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="n">adjacency</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">nodes_labels</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> 
+<span class="n">adjacency</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">nodes_labels</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">locations</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">nodes_labels</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">inter_neuron_dist</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">pairwise_distances</span><span class="p">(</span><span class="n">locations</span><span class="p">))</span>
+<span class="n">inter_neuron_dist</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">nodes_labels</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">inter_neuron_dist</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">nodes_labels</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">nodes_labels</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;celegans277labels.csv&quot;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> 
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">adjacency</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;celegans277matrix.csv&quot;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">locations</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;celegans277positions.csv&quot;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+
+<span class="nn">File ~\AppData\Local\anaconda3\Lib\site-packages\pandas\util\_decorators.py:211,</span> in <span class="ni">deprecate_kwarg.&lt;locals&gt;._deprecate_kwarg.&lt;locals&gt;.wrapper</span><span class="nt">(*args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">209</span>     <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">210</span>         <span class="n">kwargs</span><span class="p">[</span><span class="n">new_arg_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">new_arg_value</span>
+<span class="ne">--&gt; </span><span class="mi">211</span> <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="nn">File ~\AppData\Local\anaconda3\Lib\site-packages\pandas\util\_decorators.py:331,</span> in <span class="ni">deprecate_nonkeyword_arguments.&lt;locals&gt;.decorate.&lt;locals&gt;.wrapper</span><span class="nt">(*args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">325</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">num_allow_args</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">326</span>     <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">327</span>         <span class="n">msg</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">arguments</span><span class="o">=</span><span class="n">_format_argument_list</span><span class="p">(</span><span class="n">allow_args</span><span class="p">)),</span>
+<span class="g g-Whitespace">    </span><span class="mi">328</span>         <span class="ne">FutureWarning</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">329</span>         <span class="n">stacklevel</span><span class="o">=</span><span class="n">find_stack_level</span><span class="p">(),</span>
+<span class="g g-Whitespace">    </span><span class="mi">330</span>     <span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">331</span> <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="nn">File ~\AppData\Local\anaconda3\Lib\site-packages\pandas\io\parsers\readers.py:950,</span> in <span class="ni">read_csv</span><span class="nt">(filepath_or_buffer, sep, delimiter, header, names, index_col, usecols, squeeze, prefix, mangle_dupe_cols, dtype, engine, converters, true_values, false_values, skipinitialspace, skiprows, skipfooter, nrows, na_values, keep_default_na, na_filter, verbose, skip_blank_lines, parse_dates, infer_datetime_format, keep_date_col, date_parser, dayfirst, cache_dates, iterator, chunksize, compression, thousands, decimal, lineterminator, quotechar, quoting, doublequote, escapechar, comment, encoding, encoding_errors, dialect, error_bad_lines, warn_bad_lines, on_bad_lines, delim_whitespace, low_memory, memory_map, float_precision, storage_options)</span>
+<span class="g g-Whitespace">    </span><span class="mi">935</span> <span class="n">kwds_defaults</span> <span class="o">=</span> <span class="n">_refine_defaults_read</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">936</span>     <span class="n">dialect</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">937</span>     <span class="n">delimiter</span><span class="p">,</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">946</span>     <span class="n">defaults</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;delimiter&quot;</span><span class="p">:</span> <span class="s2">&quot;,&quot;</span><span class="p">},</span>
+<span class="g g-Whitespace">    </span><span class="mi">947</span> <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">948</span> <span class="n">kwds</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">kwds_defaults</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">950</span> <span class="k">return</span> <span class="n">_read</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="n">kwds</span><span class="p">)</span>
+
+<span class="nn">File ~\AppData\Local\anaconda3\Lib\site-packages\pandas\io\parsers\readers.py:605,</span> in <span class="ni">_read</span><span class="nt">(filepath_or_buffer, kwds)</span>
+<span class="g g-Whitespace">    </span><span class="mi">602</span> <span class="n">_validate_names</span><span class="p">(</span><span class="n">kwds</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;names&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">))</span>
+<span class="g g-Whitespace">    </span><span class="mi">604</span> <span class="c1"># Create the parser.</span>
+<span class="ne">--&gt; </span><span class="mi">605</span> <span class="n">parser</span> <span class="o">=</span> <span class="n">TextFileReader</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">607</span> <span class="k">if</span> <span class="n">chunksize</span> <span class="ow">or</span> <span class="n">iterator</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">608</span>     <span class="k">return</span> <span class="n">parser</span>
+
+<span class="nn">File ~\AppData\Local\anaconda3\Lib\site-packages\pandas\io\parsers\readers.py:1442,</span> in <span class="ni">TextFileReader.__init__</span><span class="nt">(self, f, engine, **kwds)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1439</span>     <span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="p">[</span><span class="s2">&quot;has_index_names&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">kwds</span><span class="p">[</span><span class="s2">&quot;has_index_names&quot;</span><span class="p">]</span>
+<span class="g g-Whitespace">   </span><span class="mi">1441</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span><span class="p">:</span> <span class="n">IOHandles</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="ne">-&gt; </span><span class="mi">1442</span> <span class="bp">self</span><span class="o">.</span><span class="n">_engine</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_engine</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">engine</span><span class="p">)</span>
+
+<span class="nn">File ~\AppData\Local\anaconda3\Lib\site-packages\pandas\io\parsers\readers.py:1735,</span> in <span class="ni">TextFileReader._make_engine</span><span class="nt">(self, f, engine)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1733</span>     <span class="k">if</span> <span class="s2">&quot;b&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">mode</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1734</span>         <span class="n">mode</span> <span class="o">+=</span> <span class="s2">&quot;b&quot;</span>
+<span class="ne">-&gt; </span><span class="mi">1735</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span> <span class="o">=</span> <span class="n">get_handle</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1736</span>     <span class="n">f</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1737</span>     <span class="n">mode</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1738</span>     <span class="n">encoding</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;encoding&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1739</span>     <span class="n">compression</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;compression&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1740</span>     <span class="n">memory_map</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;memory_map&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1741</span>     <span class="n">is_text</span><span class="o">=</span><span class="n">is_text</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1742</span>     <span class="n">errors</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;encoding_errors&quot;</span><span class="p">,</span> <span class="s2">&quot;strict&quot;</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1743</span>     <span class="n">storage_options</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;storage_options&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1744</span> <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1745</span> <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+<span class="g g-Whitespace">   </span><span class="mi">1746</span> <span class="n">f</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span><span class="o">.</span><span class="n">handle</span>
+
+<span class="nn">File ~\AppData\Local\anaconda3\Lib\site-packages\pandas\io\common.py:856,</span> in <span class="ni">get_handle</span><span class="nt">(path_or_buf, mode, encoding, compression, memory_map, is_text, errors, storage_options)</span>
+<span class="g g-Whitespace">    </span><span class="mi">851</span> <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">handle</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">852</span>     <span class="c1"># Check whether the filename is to be opened in binary mode.</span>
+<span class="g g-Whitespace">    </span><span class="mi">853</span>     <span class="c1"># Binary mode does not support &#39;encoding&#39; and &#39;newline&#39;.</span>
+<span class="g g-Whitespace">    </span><span class="mi">854</span>     <span class="k">if</span> <span class="n">ioargs</span><span class="o">.</span><span class="n">encoding</span> <span class="ow">and</span> <span class="s2">&quot;b&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">ioargs</span><span class="o">.</span><span class="n">mode</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">855</span>         <span class="c1"># Encoding</span>
+<span class="ne">--&gt; </span><span class="mi">856</span>         <span class="n">handle</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">857</span>             <span class="n">handle</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">858</span>             <span class="n">ioargs</span><span class="o">.</span><span class="n">mode</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">859</span>             <span class="n">encoding</span><span class="o">=</span><span class="n">ioargs</span><span class="o">.</span><span class="n">encoding</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">860</span>             <span class="n">errors</span><span class="o">=</span><span class="n">errors</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">861</span>             <span class="n">newline</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">862</span>         <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">863</span>     <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">864</span>         <span class="c1"># Binary mode</span>
+<span class="g g-Whitespace">    </span><span class="mi">865</span>         <span class="n">handle</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">handle</span><span class="p">,</span> <span class="n">ioargs</span><span class="o">.</span><span class="n">mode</span><span class="p">)</span>
+
+<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;celegans277labels.csv&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">inter_neuron_dist</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ADAL</th>
+      <th>ADAR</th>
+      <th>ADEL</th>
+      <th>ADER</th>
+      <th>ADFL</th>
+      <th>ADFR</th>
+      <th>ADLL</th>
+      <th>ADLR</th>
+      <th>AFDL</th>
+      <th>AFDR</th>
+      <th>...</th>
+      <th>VD12</th>
+      <th>VD13</th>
+      <th>VD2</th>
+      <th>VD3</th>
+      <th>VD4</th>
+      <th>VD5</th>
+      <th>VD6</th>
+      <th>VD7</th>
+      <th>VD8</th>
+      <th>VD9</th>
+    </tr>
+    <tr>
+      <th>0</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>ADAL</td>
+      <td>0.000000</td>
+      <td>3.605551</td>
+      <td>3.316625</td>
+      <td>3.464102</td>
+      <td>3.000000</td>
+      <td>3.741657</td>
+      <td>3.000000</td>
+      <td>3.000000</td>
+      <td>2.645751</td>
+      <td>3.000000</td>
+      <td>...</td>
+      <td>3.741657</td>
+      <td>3.162278</td>
+      <td>4.472136</td>
+      <td>4.795832</td>
+      <td>4.582576</td>
+      <td>4.000000</td>
+      <td>4.123106</td>
+      <td>4.000000</td>
+      <td>3.872983</td>
+      <td>3.741657</td>
+    </tr>
+    <tr>
+      <td>ADAR</td>
+      <td>3.605551</td>
+      <td>0.000000</td>
+      <td>3.162278</td>
+      <td>3.605551</td>
+      <td>3.162278</td>
+      <td>3.605551</td>
+      <td>3.162278</td>
+      <td>2.828427</td>
+      <td>3.162278</td>
+      <td>3.162278</td>
+      <td>...</td>
+      <td>3.872983</td>
+      <td>3.316625</td>
+      <td>4.582576</td>
+      <td>4.898979</td>
+      <td>4.690416</td>
+      <td>4.123106</td>
+      <td>4.242641</td>
+      <td>4.123106</td>
+      <td>4.000000</td>
+      <td>3.872983</td>
+    </tr>
+    <tr>
+      <td>ADEL</td>
+      <td>3.316625</td>
+      <td>3.162278</td>
+      <td>0.000000</td>
+      <td>2.645751</td>
+      <td>2.828427</td>
+      <td>3.605551</td>
+      <td>2.828427</td>
+      <td>2.828427</td>
+      <td>2.828427</td>
+      <td>2.828427</td>
+      <td>...</td>
+      <td>3.605551</td>
+      <td>3.000000</td>
+      <td>4.358899</td>
+      <td>4.690416</td>
+      <td>4.472136</td>
+      <td>3.872983</td>
+      <td>4.000000</td>
+      <td>3.872983</td>
+      <td>3.741657</td>
+      <td>3.605551</td>
+    </tr>
+    <tr>
+      <td>ADER</td>
+      <td>3.464102</td>
+      <td>3.605551</td>
+      <td>2.645751</td>
+      <td>0.000000</td>
+      <td>3.000000</td>
+      <td>3.741657</td>
+      <td>3.000000</td>
+      <td>3.000000</td>
+      <td>3.000000</td>
+      <td>3.000000</td>
+      <td>...</td>
+      <td>3.741657</td>
+      <td>2.828427</td>
+      <td>4.472136</td>
+      <td>4.795832</td>
+      <td>4.582576</td>
+      <td>4.000000</td>
+      <td>4.123106</td>
+      <td>4.000000</td>
+      <td>3.872983</td>
+      <td>3.741657</td>
+    </tr>
+    <tr>
+      <td>ADFL</td>
+      <td>3.000000</td>
+      <td>3.162278</td>
+      <td>2.828427</td>
+      <td>3.000000</td>
+      <td>0.000000</td>
+      <td>3.316625</td>
+      <td>2.449490</td>
+      <td>2.449490</td>
+      <td>2.449490</td>
+      <td>2.449490</td>
+      <td>...</td>
+      <td>3.316625</td>
+      <td>2.645751</td>
+      <td>4.123106</td>
+      <td>4.472136</td>
+      <td>4.242641</td>
+      <td>3.605551</td>
+      <td>3.741657</td>
+      <td>3.605551</td>
+      <td>3.464102</td>
+      <td>3.316625</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 277 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">locations</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+    </tr>
+    <tr>
+      <th>0</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>ADAL</td>
+      <td>0.011068</td>
+      <td>0.005903</td>
+    </tr>
+    <tr>
+      <td>ADAR</td>
+      <td>0.014206</td>
+      <td>0.002204</td>
+    </tr>
+    <tr>
+      <td>ADEL</td>
+      <td>0.016233</td>
+      <td>0.005657</td>
+    </tr>
+    <tr>
+      <td>ADER</td>
+      <td>0.014941</td>
+      <td>0.009308</td>
+    </tr>
+    <tr>
+      <td>ADFL</td>
+      <td>0.082393</td>
+      <td>-0.000984</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">adjacency</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ADAL</th>
+      <th>ADAR</th>
+      <th>ADEL</th>
+      <th>ADER</th>
+      <th>ADFL</th>
+      <th>ADFR</th>
+      <th>ADLL</th>
+      <th>ADLR</th>
+      <th>AFDL</th>
+      <th>AFDR</th>
+      <th>...</th>
+      <th>VD12</th>
+      <th>VD13</th>
+      <th>VD2</th>
+      <th>VD3</th>
+      <th>VD4</th>
+      <th>VD5</th>
+      <th>VD6</th>
+      <th>VD7</th>
+      <th>VD8</th>
+      <th>VD9</th>
+    </tr>
+    <tr>
+      <th>0</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>ADAL</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>ADAR</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>ADEL</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>ADER</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>ADFL</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 277 columns</p>
+</div></div></div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="plot-network">
+<h1>Plot network<a class="headerlink" href="#plot-network" title="Permalink to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s2">&quot;whitegrid&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">12</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">row</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">adjacency</span><span class="o">.</span><span class="n">values</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">j</span><span class="p">,</span><span class="n">columns</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">row</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">columns</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">xs</span> <span class="o">=</span> <span class="p">[</span><span class="n">locations</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span><span class="n">locations</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">j</span><span class="p">,</span><span class="mi">0</span><span class="p">]]</span>
+            <span class="n">ys</span> <span class="o">=</span> <span class="p">[</span><span class="n">locations</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span><span class="n">locations</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">j</span><span class="p">,</span><span class="mi">1</span><span class="p">]]</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span><span class="n">ys</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.03</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">locations</span><span class="o">.</span><span class="n">values</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span><span class="n">locations</span><span class="o">.</span><span class="n">values</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span><span class="s2">&quot;o&quot;</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.4</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Anterior - Posterior (mm)&quot;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Ventral - Dorsal (mm)&quot;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;connectome.pdf&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">locations</span><span class="o">.</span><span class="n">values</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span><span class="n">locations</span><span class="o">.</span><span class="n">values</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span><span class="s2">&quot;o&quot;</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.4</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;connectome_scale.pdf&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/13b3c7950c4a7db12b3f76f145b01a5291ef89cb799b0325aa7db40a1cea752f.png" src="../../_images/13b3c7950c4a7db12b3f76f145b01a5291ef89cb799b0325aa7db40a1cea752f.png" />
+<img alt="../../_images/34e8e50468d3081decc8d81c7c50f31e275ee06bfa6e75271fe08806376db600.png" src="../../_images/34e8e50468d3081decc8d81c7c50f31e275ee06bfa6e75271fe08806376db600.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">adjacency</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x7f80916c02d0&gt;
+</pre></div>
+</div>
+<img alt="../../_images/d177682c7b2ea23bd2ae870e114e8d520ec79f8f164eceb55b632b999f810af5.png" src="../../_images/d177682c7b2ea23bd2ae870e114e8d520ec79f8f164eceb55b632b999f810af5.png" />
+</div>
+</div>
+<p>Pas de symétrie, peu de point blancs <span class="math notranslate nohighlight">\(\to\)</span> matrice creuse</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">in_degree</span> <span class="o">=</span> <span class="n">adjacency</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">out_degree</span> <span class="o">=</span> <span class="n">adjacency</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">in_degree</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f80c0fe84d0&gt;]
+</pre></div>
+</div>
+<img alt="../../_images/2f319a5ef252032f691fd57bd8009ebf6eefa5c524df2d0016d8842b80ab7f51.png" src="../../_images/2f319a5ef252032f691fd57bd8009ebf6eefa5c524df2d0016d8842b80ab7f51.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">out_degree</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f80a17f2a50&gt;]
+</pre></div>
+</div>
+<img alt="../../_images/b93771502912cf1c340d65d94fa6bc6ba25ddfa54f1e3eaf39e04ad93f6cd01e.png" src="../../_images/b93771502912cf1c340d65d94fa6bc6ba25ddfa54f1e3eaf39e04ad93f6cd01e.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">in_degree</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">)</span> <span class="c1">#blue</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">out_degree</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">)</span> <span class="c1">#orange</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([102.,  90.,  48.,  18.,   5.,   7.,   0.,   4.,   1.,   2.]),
+ array([ 0. ,  4.4,  8.8, 13.2, 17.6, 22. , 26.4, 30.8, 35.2, 39.6, 44. ]),
+ &lt;a list of 10 Patch objects&gt;)
+</pre></div>
+</div>
+<img alt="../../_images/821f1b3925212883580369da7a6b8bb657f117ed90467b9805d335e38eb38071.png" src="../../_images/821f1b3925212883580369da7a6b8bb657f117ed90467b9805d335e38eb38071.png" />
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="networkx">
+<h1>Networkx<a class="headerlink" href="#networkx" title="Permalink to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">link_list</span><span class="o">=</span><span class="p">[]</span>
+<span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">adjacency</span><span class="o">.</span><span class="n">index</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">adjacency</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">adjacency</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">row</span><span class="p">,</span><span class="n">col</span><span class="p">]</span><span class="o">!=</span><span class="mi">0</span><span class="p">:</span>
+            <span class="n">link_list</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">row</span><span class="p">,</span><span class="n">col</span><span class="p">,</span> <span class="n">inter_neuron_dist</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">row</span><span class="p">,</span><span class="n">col</span><span class="p">]])</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">link_list</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2105
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">link_list</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;input&quot;</span><span class="p">,</span> <span class="s2">&quot;output&quot;</span><span class="p">,</span> <span class="s2">&quot;weight&quot;</span><span class="p">])</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>input</th>
+      <th>output</th>
+      <th>weight</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0</td>
+      <td>ADAL</td>
+      <td>ADEL</td>
+      <td>3.316625</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>ADAL</td>
+      <td>ADFL</td>
+      <td>3.000000</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>ADAL</td>
+      <td>AIAL</td>
+      <td>4.242641</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>ADAL</td>
+      <td>AWAL</td>
+      <td>2.449490</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>ADAL</td>
+      <td>PVPL</td>
+      <td>3.316625</td>
+    </tr>
+    <tr>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <td>2100</td>
+      <td>VD9</td>
+      <td>DB6</td>
+      <td>2.828427</td>
+    </tr>
+    <tr>
+      <td>2101</td>
+      <td>VD9</td>
+      <td>DB7</td>
+      <td>3.464102</td>
+    </tr>
+    <tr>
+      <td>2102</td>
+      <td>VD9</td>
+      <td>DD5</td>
+      <td>3.162278</td>
+    </tr>
+    <tr>
+      <td>2103</td>
+      <td>VD9</td>
+      <td>VA9</td>
+      <td>3.316625</td>
+    </tr>
+    <tr>
+      <td>2104</td>
+      <td>VD9</td>
+      <td>VC6</td>
+      <td>2.828427</td>
+    </tr>
+  </tbody>
+</table>
+<p>2105 rows × 3 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">g</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">from_pandas_edgelist</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="s2">&quot;input&quot;</span><span class="p">,</span> <span class="s2">&quot;output&quot;</span><span class="p">,</span> <span class="s2">&quot;weight&quot;</span><span class="p">)</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/sergiopeignier/anaconda3/lib/python3.7/site-packages/networkx/drawing/nx_pylab.py:579: MatplotlibDeprecationWarning: 
+The iterable function was deprecated in Matplotlib 3.1 and will be removed in 3.3. Use np.iterable instead.
+  if not cb.iterable(width):
+</pre></div>
+</div>
+<img alt="../../_images/d02e3e2ed03676f4ad5a3a462eb29a1d342f8c1beabf14ce5952cd9e8e3ee687.png" src="../../_images/d02e3e2ed03676f4ad5a3a462eb29a1d342f8c1beabf14ce5952cd9e8e3ee687.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">g2</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">from_pandas_edgelist</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="s2">&quot;input&quot;</span><span class="p">,</span> <span class="s2">&quot;output&quot;</span><span class="p">,</span> <span class="s2">&quot;weight&quot;</span><span class="p">,</span> <span class="n">create_using</span><span class="o">=</span><span class="n">nx</span><span class="o">.</span><span class="n">DiGraph</span><span class="p">())</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">g2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/sergiopeignier/anaconda3/lib/python3.7/site-packages/networkx/drawing/nx_pylab.py:676: MatplotlibDeprecationWarning: 
+The iterable function was deprecated in Matplotlib 3.1 and will be removed in 3.3. Use np.iterable instead.
+  if cb.iterable(node_size):  # many node sizes
+</pre></div>
+</div>
+<img alt="../../_images/ecf173a0ad0263a271bffe8f4a7146f26317f0e5646f88e7fb3acc3fea2a9a59.png" src="../../_images/ecf173a0ad0263a271bffe8f4a7146f26317f0e5646f88e7fb3acc3fea2a9a59.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">g2</span><span class="o">.</span><span class="n">nodes</span><span class="p">()</span> <span class="c1">#nodes</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>NodeView((&#39;ADAL&#39;, &#39;ADEL&#39;, &#39;ADFL&#39;, &#39;AIAL&#39;, &#39;AWAL&#39;, &#39;PVPL&#39;, &#39;RMGL&#39;, &#39;ADAR&#39;, &#39;ADER&#39;, &#39;ADFR&#39;, &#39;AIAR&#39;, &#39;ASHR&#39;, &#39;RICR&#39;, &#39;RIMR&#39;, &#39;RMGR&#39;, &#39;BDUL&#39;, &#39;BDUR&#39;, &#39;FLPL&#39;, &#39;IL2L&#39;, &#39;AVAR&#39;, &#39;AVM&#39;, &#39;FLPR&#39;, &#39;IL2R&#39;, &#39;AIZL&#39;, &#39;ASHL&#39;, &#39;AWBL&#39;, &#39;AIYR&#39;, &#39;ASEL&#39;, &#39;AVHL&#39;, &#39;AWAR&#39;, &#39;AWBR&#39;, &#39;PVPR&#39;, &#39;RIH&#39;, &#39;ADLL&#39;, &#39;AVAL&#39;, &#39;CEPVL&#39;, &#39;SDQR&#39;, &#39;ADLR&#39;, &#39;AVHR&#39;, &#39;AWCR&#39;, &#39;AFDL&#39;, &#39;AINR&#39;, &#39;ASER&#39;, &#39;AFDR&#39;, &#39;AINL&#39;, &#39;AIML&#39;, &#39;ASGL&#39;, &#39;ASKL&#39;, &#39;AWCL&#39;, &#39;HSNL&#39;, &#39;PVQL&#39;, &#39;AIMR&#39;, &#39;AIZR&#39;, &#39;ASGR&#39;, &#39;ASIR&#39;, &#39;ASKR&#39;, &#39;PVQR&#39;, &#39;AIBR&#39;, &#39;DVB&#39;, &#39;DVC&#39;, &#39;HSNR&#39;, &#39;RIBL&#39;, &#39;RMFR&#39;, &#39;SAADR&#39;, &#39;SDQL&#39;, &#39;VB1&#39;, &#39;AUAR&#39;, &#39;ASIL&#39;, &#39;DVA&#39;, &#39;RIGL&#39;, &#39;RIR&#39;, &#39;RIGR&#39;, &#39;ALA&#39;, &#39;ALML&#39;, &#39;RIFL&#39;, &#39;ALMR&#39;, &#39;ALNL&#39;, &#39;ALNR&#39;, &#39;AQR&#39;, &#39;PVCR&#39;, &#39;AS1&#39;, &#39;AVBL&#39;, &#39;AVBR&#39;, &#39;AVDL&#39;, &#39;AVDR&#39;, &#39;AVEL&#39;, &#39;AVER&#39;, &#39;AVL&#39;, &#39;DB1&#39;, &#39;PVCL&#39;, &#39;AS10&#39;, &#39;DB7&#39;, &#39;AS11&#39;, &#39;VA12&#39;, &#39;AS2&#39;, &#39;AS3&#39;, &#39;DB2&#39;, &#39;VD2&#39;, &#39;VD3&#39;, &#39;AS4&#39;, &#39;DB3&#39;, &#39;AS5&#39;, &#39;DB4&#39;, &#39;AS6&#39;, &#39;AS7&#39;, &#39;DB5&#39;, &#39;AS8&#39;, &#39;AS9&#39;, &#39;DB6&#39;, &#39;CEPVR&#39;, &#39;RIFR&#39;, &#39;ASJL&#39;, &#39;ASJR&#39;, &#39;AUAL&#39;, &#39;BAGR&#39;, &#39;IL2DL&#39;, &#39;URXL&#39;, &#39;URXR&#39;, &#39;AVG&#39;, &#39;AVJL&#39;, &#39;LUAL&#39;, &#39;LUAR&#39;, &#39;PHBL&#39;, &#39;PHBR&#39;, &#39;PHCL&#39;, &#39;PLMR&#39;, &#39;PQR&#39;, &#39;PVDL&#39;, &#39;PVWL&#39;, &#39;RICL&#39;, &#39;RIML&#39;, &#39;SAADL&#39;, &#39;SAAVL&#39;, &#39;SMBDR&#39;, &#39;URYVR&#39;, &#39;AVJR&#39;, &#39;BAGL&#39;, &#39;PVDR&#39;, &#39;PVNL&#39;, &#39;PVNR&#39;, &#39;PVWR&#39;, &#39;RIBR&#39;, &#39;SAAVR&#39;, &#39;SMBDL&#39;, &#39;AVFL&#39;, &#39;AVFR&#39;, &#39;AVKL&#39;, &#39;PVR&#39;, &#39;URBL&#39;, &#39;URBR&#39;, &#39;URYVL&#39;, &#39;PHAL&#39;, &#39;CEPDR&#39;, &#39;IL1R&#39;, &#39;OLLR&#39;, &#39;RIS&#39;, &#39;URYDR&#39;, &#39;CEPDL&#39;, &#39;IL1L&#39;, &#39;OLLL&#39;, &#39;URYDL&#39;, &#39;VC4&#39;, &#39;VC5&#39;, &#39;PHAR&#39;, &#39;PHCR&#39;, &#39;PDEL&#39;, &#39;PVM&#39;, &#39;RMDR&#39;, &#39;RMFL&#39;, &#39;AVKR&#39;, &#39;PDER&#39;, &#39;VC3&#39;, &#39;VC6&#39;, &#39;IL2VL&#39;, &#39;IL2DR&#39;, &#39;RIAR&#39;, &#39;DA1&#39;, &#39;DD1&#39;, &#39;DA2&#39;, &#39;DA3&#39;, &#39;DD2&#39;, &#39;DA4&#39;, &#39;DD3&#39;, &#39;DA5&#39;, &#39;DA6&#39;, &#39;DD4&#39;, &#39;DA7&#39;, &#39;DD5&#39;, &#39;DA8&#39;, &#39;DD6&#39;, &#39;DA9&#39;, &#39;PDA&#39;, &#39;VA1&#39;, &#39;VA2&#39;, &#39;VA3&#39;, &#39;VB2&#39;, &#39;VC1&#39;, &#39;VD1&#39;, &#39;VA4&#39;, &#39;VB3&#39;, &#39;VB4&#39;, &#39;VC2&#39;, &#39;VA5&#39;, &#39;VA6&#39;, &#39;VB5&#39;, &#39;VB6&#39;, &#39;VA7&#39;, &#39;VA8&#39;, &#39;VB7&#39;, &#39;VB8&#39;, &#39;VA10&#39;, &#39;VA9&#39;, &#39;VB10&#39;, &#39;VB9&#39;, &#39;PDB&#39;, &#39;RID&#39;, &#39;VA11&#39;, &#39;VB11&#39;, &#39;PLML&#39;, &#39;IL1DL&#39;, &#39;URADL&#39;, &#39;IL1DR&#39;, &#39;IL1VL&#39;, &#39;IL1VR&#39;, &#39;URAVR&#39;, &#39;OLQVL&#39;, &#39;IL2VR&#39;, &#39;OLQVR&#39;, &#39;RMDL&#39;, &#39;OLQDL&#39;, &#39;RIPL&#39;, &#39;OLQDR&#39;, &#39;RIPR&#39;, &#39;PLNL&#39;, &#39;SMBVR&#39;, &#39;PLNR&#39;, &#39;SMBVL&#39;, &#39;PVT&#39;, &#39;RIAL&#39;, &#39;RIVL&#39;, &#39;RIVR&#39;, &#39;SMDDL&#39;, &#39;SMDDR&#39;, &#39;SMDVR&#39;, &#39;RMDVL&#39;, &#39;RMED&#39;, &#39;URAVL&#39;, &#39;URADR&#39;, &#39;RMDDL&#39;, &#39;RMDVR&#39;, &#39;RMDDR&#39;, &#39;RMHL&#39;, &#39;RMEL&#39;, &#39;RMER&#39;, &#39;RMHR&#39;, &#39;RMEV&#39;, &#39;SABD&#39;, &#39;SABVL&#39;, &#39;SABVR&#39;, &#39;SIADL&#39;, &#39;SIADR&#39;, &#39;SIAVL&#39;, &#39;SIAVR&#39;, &#39;SIBDL&#39;, &#39;SIBDR&#39;, &#39;SIBVL&#39;, &#39;SIBVR&#39;, &#39;VD12&#39;, &#39;VD13&#39;, &#39;VD10&#39;, &#39;VD11&#39;, &#39;VD4&#39;, &#39;VD5&#39;, &#39;VD6&#39;, &#39;VD7&#39;, &#39;VD8&#39;, &#39;VD9&#39;))
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">g2</span><span class="o">.</span><span class="n">edges</span><span class="p">()</span> <span class="c1">#edges</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>OutEdgeView([(&#39;ADAL&#39;, &#39;ADEL&#39;), (&#39;ADAL&#39;, &#39;ADFL&#39;), (&#39;ADAL&#39;, &#39;AIAL&#39;), (&#39;ADAL&#39;, &#39;AWAL&#39;), (&#39;ADAL&#39;, &#39;PVPL&#39;), (&#39;ADAL&#39;, &#39;RMGL&#39;), (&#39;ADEL&#39;, &#39;ADER&#39;), (&#39;ADEL&#39;, &#39;BDUL&#39;), (&#39;ADEL&#39;, &#39;BDUR&#39;), (&#39;ADEL&#39;, &#39;FLPL&#39;), (&#39;ADEL&#39;, &#39;IL2L&#39;), (&#39;ADFL&#39;, &#39;AIZL&#39;), (&#39;ADFL&#39;, &#39;ASHL&#39;), (&#39;ADFL&#39;, &#39;AWBL&#39;), (&#39;AIAL&#39;, &#39;ADLL&#39;), (&#39;AIAL&#39;, &#39;AIML&#39;), (&#39;AIAL&#39;, &#39;AINR&#39;), (&#39;AIAL&#39;, &#39;AIZL&#39;), (&#39;AIAL&#39;, &#39;ASEL&#39;), (&#39;AIAL&#39;, &#39;ASER&#39;), (&#39;AIAL&#39;, &#39;ASGL&#39;), (&#39;AIAL&#39;, &#39;ASHL&#39;), (&#39;AIAL&#39;, &#39;ASKL&#39;), (&#39;AIAL&#39;, &#39;AWCL&#39;), (&#39;AIAL&#39;, &#39;HSNL&#39;), (&#39;AIAL&#39;, &#39;PVQL&#39;), (&#39;PVPL&#39;, &#39;AQR&#39;), (&#39;PVPL&#39;, &#39;AVG&#39;), (&#39;PVPL&#39;, &#39;AVHR&#39;), (&#39;PVPL&#39;, &#39;AVKR&#39;), (&#39;PVPL&#39;, &#39;RIFL&#39;), (&#39;RMGL&#39;, &#39;ADEL&#39;), (&#39;RMGL&#39;, &#39;ALML&#39;), (&#39;RMGL&#39;, &#39;CEPDL&#39;), (&#39;RMGL&#39;, &#39;PVQL&#39;), (&#39;RMGL&#39;, &#39;RMHR&#39;), (&#39;RMGL&#39;, &#39;SAADL&#39;), (&#39;RMGL&#39;, &#39;SAADR&#39;), (&#39;ADAR&#39;, &#39;ADER&#39;), (&#39;ADAR&#39;, &#39;ADFR&#39;), (&#39;ADAR&#39;, &#39;AIAR&#39;), (&#39;ADAR&#39;, &#39;ASHR&#39;), (&#39;ADAR&#39;, &#39;RICR&#39;), (&#39;ADAR&#39;, &#39;RIMR&#39;), (&#39;ADAR&#39;, &#39;RMGR&#39;), (&#39;ADER&#39;, &#39;AVAR&#39;), (&#39;ADER&#39;, &#39;AVM&#39;), (&#39;ADER&#39;, &#39;BDUR&#39;), (&#39;ADER&#39;, &#39;FLPL&#39;), (&#39;ADER&#39;, &#39;FLPR&#39;), (&#39;ADER&#39;, &#39;IL2R&#39;), (&#39;ADFR&#39;, &#39;AIYR&#39;), (&#39;ADFR&#39;, &#39;ASEL&#39;), (&#39;ADFR&#39;, &#39;ASHR&#39;), (&#39;ADFR&#39;, &#39;AVHL&#39;), (&#39;ADFR&#39;, &#39;AWAR&#39;), (&#39;ADFR&#39;, &#39;AWBR&#39;), (&#39;ADFR&#39;, &#39;PVPR&#39;), (&#39;ADFR&#39;, &#39;RIH&#39;), (&#39;AIAR&#39;, &#39;ADLR&#39;), (&#39;AIAR&#39;, &#39;AIMR&#39;), (&#39;AIAR&#39;, &#39;AIZR&#39;), (&#39;AIAR&#39;, &#39;ASER&#39;), (&#39;AIAR&#39;, &#39;ASGR&#39;), (&#39;AIAR&#39;, &#39;ASHR&#39;), (&#39;AIAR&#39;, &#39;ASIR&#39;), (&#39;AIAR&#39;, &#39;ASKR&#39;), (&#39;AIAR&#39;, &#39;AWCL&#39;), (&#39;AIAR&#39;, &#39;AWCR&#39;), (&#39;AIAR&#39;, &#39;PVQR&#39;), (&#39;ASHR&#39;, &#39;ADFR&#39;), (&#39;ASHR&#39;, &#39;ADLR&#39;), (&#39;ASHR&#39;, &#39;ASIR&#39;), (&#39;ASHR&#39;, &#39;HSNL&#39;), (&#39;ASHR&#39;, &#39;RIFR&#39;), (&#39;ASHR&#39;, &#39;RMGR&#39;), (&#39;RICR&#39;, &#39;ADLR&#39;), (&#39;RICR&#39;, &#39;CEPDL&#39;), (&#39;RICR&#39;, &#39;CEPDR&#39;), (&#39;RICR&#39;, &#39;CEPVL&#39;), (&#39;RICR&#39;, &#39;CEPVR&#39;), (&#39;RICR&#39;, &#39;IL2DR&#39;), (&#39;RICR&#39;, &#39;OLQDL&#39;), (&#39;RICR&#39;, &#39;OLQDR&#39;), (&#39;RICR&#39;, &#39;OLQVR&#39;), (&#39;RICR&#39;, &#39;SDQL&#39;), (&#39;RICR&#39;, &#39;URBL&#39;), (&#39;RICR&#39;, &#39;URBR&#39;), (&#39;RICR&#39;, &#39;URXR&#39;), (&#39;RIMR&#39;, &#39;ADAR&#39;), (&#39;RIMR&#39;, &#39;AIBR&#39;), (&#39;RIMR&#39;, &#39;AIZR&#39;), (&#39;RIMR&#39;, &#39;AVHL&#39;), (&#39;RIMR&#39;, &#39;AVKL&#39;), (&#39;RIMR&#39;, &#39;AVKR&#39;), (&#39;RIMR&#39;, &#39;DVA&#39;), (&#39;RIMR&#39;, &#39;HSNR&#39;), (&#39;RIMR&#39;, &#39;PVPR&#39;), (&#39;RIMR&#39;, &#39;RICL&#39;), (&#39;RIMR&#39;, &#39;RIFL&#39;), (&#39;RIMR&#39;, &#39;RIFR&#39;), (&#39;RIMR&#39;, &#39;RIS&#39;), (&#39;RIMR&#39;, &#39;SAADL&#39;), (&#39;RIMR&#39;, &#39;SAADR&#39;), (&#39;RIMR&#39;, &#39;SAAVL&#39;), (&#39;RIMR&#39;, &#39;SAAVR&#39;), (&#39;RMGR&#39;, &#39;ADER&#39;), (&#39;RMGR&#39;, &#39;AIMR&#39;), (&#39;RMGR&#39;, &#39;ASHR&#39;), (&#39;RMGR&#39;, &#39;CEPDR&#39;), (&#39;RMGR&#39;, &#39;HSNR&#39;), (&#39;RMGR&#39;, &#39;RMFL&#39;), (&#39;RMGR&#39;, &#39;URBR&#39;), (&#39;BDUL&#39;, &#39;ADEL&#39;), (&#39;BDUL&#39;, &#39;ALML&#39;), (&#39;BDUL&#39;, &#39;AVM&#39;), (&#39;BDUL&#39;, &#39;PVNR&#39;), (&#39;BDUR&#39;, &#39;ALMR&#39;), (&#39;BDUR&#39;, &#39;AVM&#39;), (&#39;BDUR&#39;, &#39;CEPDR&#39;), (&#39;BDUR&#39;, &#39;HSNR&#39;), (&#39;BDUR&#39;, &#39;PVNL&#39;), (&#39;BDUR&#39;, &#39;PVNR&#39;), (&#39;FLPL&#39;, &#39;ADEL&#39;), (&#39;FLPL&#39;, &#39;ADER&#39;), (&#39;FLPL&#39;, &#39;FLPR&#39;), (&#39;FLPL&#39;, &#39;PVCR&#39;), (&#39;FLPL&#39;, &#39;SDQL&#39;), (&#39;IL2L&#39;, &#39;ADEL&#39;), (&#39;AVAR&#39;, &#39;ADAL&#39;), (&#39;AVAR&#39;, &#39;ADEL&#39;), (&#39;AVAR&#39;, &#39;ADER&#39;), (&#39;AVAR&#39;, &#39;ADLL&#39;), (&#39;AVAR&#39;, &#39;ADLR&#39;), (&#39;AVAR&#39;, &#39;AIBR&#39;), (&#39;AVAR&#39;, &#39;AQR&#39;), (&#39;AVAR&#39;, &#39;ASHR&#39;), (&#39;AVAR&#39;, &#39;AUAR&#39;), (&#39;AVAR&#39;, &#39;AVAL&#39;), (&#39;AVAR&#39;, &#39;AVBL&#39;), (&#39;AVAR&#39;, &#39;AVDR&#39;), (&#39;AVAR&#39;, &#39;AVER&#39;), (&#39;AVAR&#39;, &#39;AVG&#39;), (&#39;AVAR&#39;, &#39;AVJR&#39;), (&#39;AVAR&#39;, &#39;BAGL&#39;), (&#39;AVAR&#39;, &#39;BDUL&#39;), (&#39;AVAR&#39;, &#39;DVC&#39;), (&#39;AVAR&#39;, &#39;FLPL&#39;), (&#39;AVAR&#39;, &#39;FLPR&#39;), (&#39;AVAR&#39;, &#39;LUAL&#39;), (&#39;AVAR&#39;, &#39;LUAR&#39;), (&#39;AVAR&#39;, &#39;PHBL&#39;), (&#39;AVAR&#39;, &#39;PHBR&#39;), (&#39;AVAR&#39;, &#39;PQR&#39;), (&#39;AVAR&#39;, &#39;PVCL&#39;), (&#39;AVAR&#39;, &#39;PVCR&#39;), (&#39;AVAR&#39;, &#39;PVDR&#39;), (&#39;AVAR&#39;, &#39;PVNL&#39;), (&#39;AVAR&#39;, &#39;PVNR&#39;), (&#39;AVAR&#39;, &#39;PVPL&#39;), (&#39;AVAR&#39;, &#39;PVPR&#39;), (&#39;AVAR&#39;, &#39;PVWR&#39;), (&#39;AVAR&#39;, &#39;RIBR&#39;), (&#39;AVAR&#39;, &#39;RICL&#39;), (&#39;AVAR&#39;, &#39;RICR&#39;), (&#39;AVAR&#39;, &#39;RMGR&#39;), (&#39;AVAR&#39;, &#39;SAADR&#39;), (&#39;AVAR&#39;, &#39;SAAVR&#39;), (&#39;AVAR&#39;, &#39;SDQL&#39;), (&#39;AVAR&#39;, &#39;SMBDL&#39;), (&#39;AVM&#39;, &#39;AVJR&#39;), (&#39;AVM&#39;, &#39;AVKL&#39;), (&#39;AVM&#39;, &#39;PVM&#39;), (&#39;FLPR&#39;, &#39;ADAL&#39;), (&#39;FLPR&#39;, &#39;ADER&#39;), (&#39;FLPR&#39;, &#39;FLPL&#39;), (&#39;IL2R&#39;, &#39;OLLR&#39;), (&#39;IL2R&#39;, &#39;RIH&#39;), (&#39;IL2R&#39;, &#39;URBR&#39;), (&#39;AIZL&#39;, &#39;ADFL&#39;), (&#39;AIZL&#39;, &#39;AIAL&#39;), (&#39;AIZL&#39;, &#39;ASIL&#39;), (&#39;AIZL&#39;, &#39;AWAL&#39;), (&#39;AIZL&#39;, &#39;AWBL&#39;), (&#39;AIZL&#39;, &#39;DVA&#39;), (&#39;AIZL&#39;, &#39;HSNL&#39;), (&#39;AIZL&#39;, &#39;HSNR&#39;), (&#39;AIZL&#39;, &#39;RIGL&#39;), (&#39;AIZL&#39;, &#39;RIH&#39;), (&#39;AIZL&#39;, &#39;RIR&#39;), (&#39;ASHL&#39;, &#39;ADLL&#39;), (&#39;ASHL&#39;, &#39;HSNL&#39;), (&#39;ASHL&#39;, &#39;HSNR&#39;), (&#39;AWBL&#39;, &#39;ADLL&#39;), (&#39;AWBL&#39;, &#39;AWAL&#39;), (&#39;AWBL&#39;, &#39;HSNL&#39;), (&#39;AWBL&#39;, &#39;HSNR&#39;), (&#39;AIYR&#39;, &#39;ADFR&#39;), (&#39;AIYR&#39;, &#39;AFDR&#39;), (&#39;AIYR&#39;, &#39;ASEL&#39;), (&#39;AIYR&#39;, &#39;ASER&#39;), (&#39;AIYR&#39;, &#39;AUAR&#39;), (&#39;AIYR&#39;, &#39;AWAR&#39;), (&#39;AIYR&#39;, &#39;AWCR&#39;), (&#39;ASEL&#39;, &#39;AINL&#39;), (&#39;ASEL&#39;, &#39;AIZL&#39;), (&#39;ASEL&#39;, &#39;ASIL&#39;), (&#39;ASEL&#39;, &#39;ASIR&#39;), (&#39;ASEL&#39;, &#39;AWAL&#39;), (&#39;ASEL&#39;, &#39;AWAR&#39;), (&#39;AVHL&#39;, &#39;AIML&#39;), (&#39;AVHL&#39;, &#39;AVHR&#39;), (&#39;AVHL&#39;, &#39;AVJR&#39;), (&#39;AVHL&#39;, &#39;BDUL&#39;), (&#39;AVHL&#39;, &#39;BDUR&#39;), (&#39;AVHL&#39;, &#39;PHAL&#39;), (&#39;AVHL&#39;, &#39;PVPR&#39;), (&#39;AVHL&#39;, &#39;RIFR&#39;), (&#39;AWAR&#39;, &#39;AIAR&#39;), (&#39;AWAR&#39;, &#39;AIYR&#39;), (&#39;AWAR&#39;, &#39;ASER&#39;), (&#39;AWAR&#39;, &#39;ASKR&#39;), (&#39;AWBR&#39;, &#39;ADFR&#39;), (&#39;AWBR&#39;, &#39;AVHL&#39;), (&#39;AWBR&#39;, &#39;AWAR&#39;), (&#39;AWBR&#39;, &#39;HSNL&#39;), (&#39;PVPR&#39;, &#39;ADFR&#39;), (&#39;PVPR&#39;, &#39;ASHR&#39;), (&#39;PVPR&#39;, &#39;AVG&#39;), (&#39;PVPR&#39;, &#39;AVHL&#39;), (&#39;PVPR&#39;, &#39;AVL&#39;), (&#39;PVPR&#39;, &#39;DVB&#39;), (&#39;PVPR&#39;, &#39;RIFR&#39;), (&#39;RIH&#39;, &#39;ADEL&#39;), (&#39;RIH&#39;, &#39;ADER&#39;), (&#39;RIH&#39;, &#39;AIZL&#39;), (&#39;RIH&#39;, &#39;DVB&#39;), (&#39;RIH&#39;, &#39;IL2DR&#39;), (&#39;RIH&#39;, &#39;IL2L&#39;), (&#39;RIH&#39;, &#39;IL2R&#39;), (&#39;RIH&#39;, &#39;IL2VL&#39;), (&#39;RIH&#39;, &#39;IL2VR&#39;), (&#39;RIH&#39;, &#39;OLQVL&#39;), (&#39;RIH&#39;, &#39;OLQVR&#39;), (&#39;RIH&#39;, &#39;RIBR&#39;), (&#39;RIH&#39;, &#39;URYVL&#39;), (&#39;ADLL&#39;, &#39;AVAL&#39;), (&#39;ADLL&#39;, &#39;CEPVL&#39;), (&#39;ADLL&#39;, &#39;SDQR&#39;), (&#39;AVAL&#39;, &#39;ADEL&#39;), (&#39;AVAL&#39;, &#39;ADER&#39;), (&#39;AVAL&#39;, &#39;ADLL&#39;), (&#39;AVAL&#39;, &#39;AQR&#39;), (&#39;AVAL&#39;, &#39;ASHL&#39;), (&#39;AVAL&#39;, &#39;AUAL&#39;), (&#39;AVAL&#39;, &#39;AVAR&#39;), (&#39;AVAL&#39;, &#39;AVBR&#39;), (&#39;AVAL&#39;, &#39;AVDL&#39;), (&#39;AVAL&#39;, &#39;AVEL&#39;), (&#39;AVAL&#39;, &#39;AVG&#39;), (&#39;AVAL&#39;, &#39;AVJL&#39;), (&#39;AVAL&#39;, &#39;AWCL&#39;), (&#39;AVAL&#39;, &#39;BAGR&#39;), (&#39;AVAL&#39;, &#39;BDUR&#39;), (&#39;AVAL&#39;, &#39;DVA&#39;), (&#39;AVAL&#39;, &#39;DVC&#39;), (&#39;AVAL&#39;, &#39;FLPL&#39;), (&#39;AVAL&#39;, &#39;FLPR&#39;), (&#39;AVAL&#39;, &#39;LUAL&#39;), (&#39;AVAL&#39;, &#39;LUAR&#39;), (&#39;AVAL&#39;, &#39;PHBL&#39;), (&#39;AVAL&#39;, &#39;PHBR&#39;), (&#39;AVAL&#39;, &#39;PHCL&#39;), (&#39;AVAL&#39;, &#39;PLMR&#39;), (&#39;AVAL&#39;, &#39;PQR&#39;), (&#39;AVAL&#39;, &#39;PVCL&#39;), (&#39;AVAL&#39;, &#39;PVCR&#39;), (&#39;AVAL&#39;, &#39;PVDL&#39;), (&#39;AVAL&#39;, &#39;PVPL&#39;), (&#39;AVAL&#39;, &#39;PVPR&#39;), (&#39;AVAL&#39;, &#39;PVWL&#39;), (&#39;AVAL&#39;, &#39;RIBL&#39;), (&#39;AVAL&#39;, &#39;RICL&#39;), (&#39;AVAL&#39;, &#39;RICR&#39;), (&#39;AVAL&#39;, &#39;RIML&#39;), (&#39;AVAL&#39;, &#39;RIMR&#39;), (&#39;AVAL&#39;, &#39;RMGL&#39;), (&#39;AVAL&#39;, &#39;SAADL&#39;), (&#39;AVAL&#39;, &#39;SAAVL&#39;), (&#39;AVAL&#39;, &#39;SDQL&#39;), (&#39;AVAL&#39;, &#39;SDQR&#39;), (&#39;AVAL&#39;, &#39;SMBDR&#39;), (&#39;AVAL&#39;, &#39;URYVR&#39;), (&#39;CEPVL&#39;, &#39;ALML&#39;), (&#39;CEPVL&#39;, &#39;OLLL&#39;), (&#39;CEPVL&#39;, &#39;RIH&#39;), (&#39;CEPVL&#39;, &#39;RIS&#39;), (&#39;SDQR&#39;, &#39;BDUR&#39;), (&#39;ADLR&#39;, &#39;AIAR&#39;), (&#39;ADLR&#39;, &#39;AVHR&#39;), (&#39;ADLR&#39;, &#39;AWCR&#39;), (&#39;AVHR&#39;, &#39;ADLR&#39;), (&#39;AVHR&#39;, &#39;AIML&#39;), (&#39;AVHR&#39;, &#39;AVFL&#39;), (&#39;AVHR&#39;, &#39;AVFR&#39;), (&#39;AVHR&#39;, &#39;AVHL&#39;), (&#39;AVHR&#39;, &#39;AVJL&#39;), (&#39;AVHR&#39;, &#39;PHAL&#39;), (&#39;AVHR&#39;, &#39;PHAR&#39;), (&#39;AVHR&#39;, &#39;PHCR&#39;), (&#39;AVHR&#39;, &#39;PVPL&#39;), (&#39;AVHR&#39;, &#39;RIFL&#39;), (&#39;AWCR&#39;, &#39;ADLR&#39;), (&#39;AWCR&#39;, &#39;AIAL&#39;), (&#39;AWCR&#39;, &#39;AIAR&#39;), (&#39;AWCR&#39;, &#39;ASEL&#39;), (&#39;AWCR&#39;, &#39;ASER&#39;), (&#39;AWCR&#39;, &#39;ASIL&#39;), (&#39;AWCR&#39;, &#39;ASIR&#39;), (&#39;AFDL&#39;, &#39;AINR&#39;), (&#39;AFDL&#39;, &#39;ASER&#39;), (&#39;AFDL&#39;, &#39;AWAL&#39;), (&#39;AINR&#39;, &#39;AFDL&#39;), (&#39;AINR&#39;, &#39;ASGL&#39;), (&#39;ASER&#39;, &#39;ADLL&#39;), (&#39;ASER&#39;, &#39;ADLR&#39;), (&#39;ASER&#39;, &#39;AFDR&#39;), (&#39;ASER&#39;, &#39;AIAL&#39;), (&#39;ASER&#39;, &#39;AIAR&#39;), (&#39;ASER&#39;, &#39;AINR&#39;), (&#39;ASER&#39;, &#39;ASIL&#39;), (&#39;ASER&#39;, &#39;AWAR&#39;), (&#39;AFDR&#39;, &#39;AINL&#39;), (&#39;AFDR&#39;, &#39;ASER&#39;), (&#39;AFDR&#39;, &#39;AWAR&#39;), (&#39;AIML&#39;, &#39;AIAL&#39;), (&#39;AIML&#39;, &#39;ASKL&#39;), (&#39;ASGL&#39;, &#39;AIAL&#39;), (&#39;ASGL&#39;, &#39;AIML&#39;), (&#39;ASGL&#39;, &#39;AWAL&#39;), (&#39;ASKL&#39;, &#39;AIAL&#39;), (&#39;ASKL&#39;, &#39;AIML&#39;), (&#39;ASKL&#39;, &#39;ASGL&#39;), (&#39;ASKL&#39;, &#39;ASHL&#39;), (&#39;ASKL&#39;, &#39;ASIL&#39;), (&#39;ASKL&#39;, &#39;ASJL&#39;), (&#39;ASKL&#39;, &#39;HSNL&#39;), (&#39;ASKL&#39;, &#39;PVQL&#39;), (&#39;ASKL&#39;, &#39;RMGL&#39;), (&#39;AWCL&#39;, &#39;ASEL&#39;), (&#39;AWCL&#39;, &#39;ASER&#39;), (&#39;AWCL&#39;, &#39;ASIL&#39;), (&#39;AWCL&#39;, &#39;ASIR&#39;), (&#39;AWCL&#39;, &#39;AWCR&#39;), (&#39;HSNL&#39;, &#39;AIAL&#39;), (&#39;HSNL&#39;, &#39;AIMR&#39;), (&#39;HSNL&#39;, &#39;AIYR&#39;), (&#39;HSNL&#39;, &#39;AVBR&#39;), (&#39;HSNL&#39;, &#39;AVFL&#39;), (&#39;HSNL&#39;, &#39;AVJR&#39;), (&#39;HSNL&#39;, &#39;BDUL&#39;), (&#39;HSNL&#39;, &#39;HSNR&#39;), (&#39;HSNL&#39;, &#39;PLML&#39;), (&#39;HSNL&#39;, &#39;PVQL&#39;), (&#39;HSNL&#39;, &#39;RIR&#39;), (&#39;PVQL&#39;, &#39;AIML&#39;), (&#39;PVQL&#39;, &#39;ASJL&#39;), (&#39;PVQL&#39;, &#39;AVFL&#39;), (&#39;PVQL&#39;, &#39;AVFR&#39;), (&#39;PVQL&#39;, &#39;AVG&#39;), (&#39;PVQL&#39;, &#39;AVHR&#39;), (&#39;PVQL&#39;, &#39;AVJR&#39;), (&#39;PVQL&#39;, &#39;AVKR&#39;), (&#39;PVQL&#39;, &#39;PHAL&#39;), (&#39;PVQL&#39;, &#39;PHAR&#39;), (&#39;PVQL&#39;, &#39;PVPR&#39;), (&#39;PVQL&#39;, &#39;VC6&#39;), (&#39;AIMR&#39;, &#39;ASKR&#39;), (&#39;AIZR&#39;, &#39;ADFR&#39;), (&#39;AIZR&#39;, &#39;AIAR&#39;), (&#39;AIZR&#39;, &#39;AIYR&#39;), (&#39;AIZR&#39;, &#39;AWAR&#39;), (&#39;AIZR&#39;, &#39;AWBR&#39;), (&#39;AIZR&#39;, &#39;HSNL&#39;), (&#39;AIZR&#39;, &#39;HSNR&#39;), (&#39;AIZR&#39;, &#39;RIGL&#39;), (&#39;AIZR&#39;, &#39;RIGR&#39;), (&#39;AIZR&#39;, &#39;RIH&#39;), (&#39;AIZR&#39;, &#39;RIR&#39;), (&#39;ASGR&#39;, &#39;AIMR&#39;), (&#39;ASGR&#39;, &#39;AINL&#39;), (&#39;ASGR&#39;, &#39;AWBR&#39;), (&#39;ASGR&#39;, &#39;CEPVR&#39;), (&#39;ASKR&#39;, &#39;AIMR&#39;), (&#39;ASKR&#39;, &#39;ASJR&#39;), (&#39;ASKR&#39;, &#39;PVQR&#39;), (&#39;PVQR&#39;, &#39;ASJR&#39;), (&#39;PVQR&#39;, &#39;AVG&#39;), (&#39;PVQR&#39;, &#39;AVHL&#39;), (&#39;PVQR&#39;, &#39;AVJL&#39;), (&#39;PVQR&#39;, &#39;AVKL&#39;), (&#39;PVQR&#39;, &#39;HSNR&#39;), (&#39;PVQR&#39;, &#39;PVPL&#39;), (&#39;PVQR&#39;, &#39;VC3&#39;), (&#39;AIBR&#39;, &#39;ADAL&#39;), (&#39;AIBR&#39;, &#39;ADLL&#39;), (&#39;AIBR&#39;, &#39;ADLR&#39;), (&#39;AIBR&#39;, &#39;AIAR&#39;), (&#39;AIBR&#39;, &#39;AIZL&#39;), (&#39;AIBR&#39;, &#39;AIZR&#39;), (&#39;AIBR&#39;, &#39;ASEL&#39;), (&#39;AIBR&#39;, &#39;ASER&#39;), (&#39;AIBR&#39;, &#39;ASGR&#39;), (&#39;AIBR&#39;, &#39;ASHR&#39;), (&#39;AIBR&#39;, &#39;ASKR&#39;), (&#39;AIBR&#39;, &#39;AWBL&#39;), (&#39;AIBR&#39;, &#39;AWCL&#39;), (&#39;AIBR&#39;, &#39;AWCR&#39;), (&#39;AIBR&#39;, &#39;DVB&#39;), (&#39;AIBR&#39;, &#39;DVC&#39;), (&#39;AIBR&#39;, &#39;FLPL&#39;), (&#39;AIBR&#39;, &#39;FLPR&#39;), (&#39;AIBR&#39;, &#39;HSNR&#39;), (&#39;AIBR&#39;, &#39;RIBL&#39;), (&#39;AIBR&#39;, &#39;RMFR&#39;), (&#39;AIBR&#39;, &#39;RMGL&#39;), (&#39;AIBR&#39;, &#39;SAADR&#39;), (&#39;AIBR&#39;, &#39;SDQL&#39;), (&#39;AIBR&#39;, &#39;VB1&#39;), (&#39;DVB&#39;, &#39;AVEL&#39;), (&#39;DVB&#39;, &#39;AVER&#39;), (&#39;DVB&#39;, &#39;AVG&#39;), (&#39;DVB&#39;, &#39;DVC&#39;), (&#39;DVB&#39;, &#39;PVQL&#39;), (&#39;DVB&#39;, &#39;PVQR&#39;), (&#39;DVB&#39;, &#39;VC4&#39;), (&#39;DVB&#39;, &#39;VC5&#39;), (&#39;DVC&#39;, &#39;AVDL&#39;), (&#39;DVC&#39;, &#39;AVDR&#39;), (&#39;DVC&#39;, &#39;DVB&#39;), (&#39;DVC&#39;, &#39;PVPL&#39;), (&#39;DVC&#39;, &#39;PVPR&#39;), (&#39;DVC&#39;, &#39;PVQL&#39;), (&#39;DVC&#39;, &#39;PVQR&#39;), (&#39;DVC&#39;, &#39;RIGL&#39;), (&#39;DVC&#39;, &#39;VC4&#39;), (&#39;DVC&#39;, &#39;VC5&#39;), (&#39;HSNR&#39;, &#39;AIMR&#39;), (&#39;HSNR&#39;, &#39;ASHR&#39;), (&#39;HSNR&#39;, &#39;ASJR&#39;), (&#39;HSNR&#39;, &#39;AVBL&#39;), (&#39;HSNR&#39;, &#39;AVFR&#39;), (&#39;HSNR&#39;, &#39;AVJL&#39;), (&#39;HSNR&#39;, &#39;BDUR&#39;), (&#39;HSNR&#39;, &#39;HSNL&#39;), (&#39;HSNR&#39;, &#39;PLMR&#39;), (&#39;HSNR&#39;, &#39;PVQR&#39;), (&#39;HSNR&#39;, &#39;RIFR&#39;), (&#39;HSNR&#39;, &#39;VC1&#39;), (&#39;HSNR&#39;, &#39;VC2&#39;), (&#39;HSNR&#39;, &#39;VC3&#39;), (&#39;HSNR&#39;, &#39;VC6&#39;), (&#39;RIBL&#39;, &#39;AIBR&#39;), (&#39;RIBL&#39;, &#39;AINL&#39;), (&#39;RIBL&#39;, &#39;AINR&#39;), (&#39;RIBL&#39;, &#39;AUAL&#39;), (&#39;RIBL&#39;, &#39;BAGR&#39;), (&#39;RIBL&#39;, &#39;CEPDL&#39;), (&#39;RIBL&#39;, &#39;DVC&#39;), (&#39;RIBL&#39;, &#39;IL2DL&#39;), (&#39;RIBL&#39;, &#39;OLLL&#39;), (&#39;RIBL&#39;, &#39;RIGL&#39;), (&#39;RIBL&#39;, &#39;RIH&#39;), (&#39;RIBL&#39;, &#39;RIML&#39;), (&#39;RIBL&#39;, &#39;RIS&#39;), (&#39;RIBL&#39;, &#39;RMED&#39;), (&#39;RIBL&#39;, &#39;URYDL&#39;), (&#39;RIBL&#39;, &#39;URYVL&#39;), (&#39;RMFR&#39;, &#39;DVB&#39;), (&#39;RMFR&#39;, &#39;DVC&#39;), (&#39;RMFR&#39;, &#39;RICL&#39;), (&#39;RMFR&#39;, &#39;RIML&#39;), (&#39;RMFR&#39;, &#39;RIMR&#39;), (&#39;RMFR&#39;, &#39;SAAVL&#39;), (&#39;SAADR&#39;, &#39;AVKL&#39;), (&#39;SAADR&#39;, &#39;BDUR&#39;), (&#39;SAADR&#39;, &#39;DVA&#39;), (&#39;SAADR&#39;, &#39;OLLL&#39;), (&#39;SAADR&#39;, &#39;PLNR&#39;), (&#39;SAADR&#39;, &#39;RIAR&#39;), (&#39;SAADR&#39;, &#39;RIML&#39;), (&#39;SAADR&#39;, &#39;RIVL&#39;), (&#39;SAADR&#39;, &#39;SMBVR&#39;), (&#39;SAADR&#39;, &#39;VB1&#39;), (&#39;SDQL&#39;, &#39;ALML&#39;), (&#39;VB1&#39;, &#39;AIBR&#39;), (&#39;VB1&#39;, &#39;AVFL&#39;), (&#39;VB1&#39;, &#39;DVA&#39;), (&#39;VB1&#39;, &#39;FLPR&#39;), (&#39;VB1&#39;, &#39;VA1&#39;), (&#39;AUAR&#39;, &#39;ADFR&#39;), (&#39;AUAR&#39;, &#39;AINL&#39;), (&#39;AUAR&#39;, &#39;DVA&#39;), (&#39;AUAR&#39;, &#39;RIH&#39;), (&#39;AUAR&#39;, &#39;URXR&#39;), (&#39;ASIL&#39;, &#39;AIZL&#39;), (&#39;DVA&#39;, &#39;AIZL&#39;), (&#39;DVA&#39;, &#39;AIZR&#39;), (&#39;DVA&#39;, &#39;AQR&#39;), (&#39;DVA&#39;, &#39;AVKL&#39;), (&#39;DVA&#39;, &#39;AVKR&#39;), (&#39;DVA&#39;, &#39;FLPL&#39;), (&#39;DVA&#39;, &#39;FLPR&#39;), (&#39;DVA&#39;, &#39;PDEL&#39;), (&#39;DVA&#39;, &#39;PDER&#39;), (&#39;DVA&#39;, &#39;PHAL&#39;), (&#39;DVA&#39;, &#39;PHAR&#39;), (&#39;DVA&#39;, &#39;PHCL&#39;), (&#39;DVA&#39;, &#39;PHCR&#39;), (&#39;DVA&#39;, &#39;PLMR&#39;), (&#39;DVA&#39;, &#39;PVCL&#39;), (&#39;DVA&#39;, &#39;PVCR&#39;), (&#39;DVA&#39;, &#39;PVDL&#39;), (&#39;DVA&#39;, &#39;PVDR&#39;), (&#39;DVA&#39;, &#39;PVM&#39;), (&#39;DVA&#39;, &#39;PVR&#39;), (&#39;DVA&#39;, &#39;RIR&#39;), (&#39;DVA&#39;, &#39;SDQR&#39;), (&#39;RIGL&#39;, &#39;ADEL&#39;), (&#39;RIGL&#39;, &#39;ADER&#39;), (&#39;RIGL&#39;, &#39;AVAR&#39;), (&#39;RIGL&#39;, &#39;AVHR&#39;), (&#39;RIGL&#39;, &#39;BAGL&#39;), (&#39;RIGL&#39;, &#39;BAGR&#39;), (&#39;RIGL&#39;, &#39;DVB&#39;), (&#39;RIGL&#39;, &#39;DVC&#39;), (&#39;RIGL&#39;, &#39;PVPL&#39;), (&#39;RIGL&#39;, &#39;URXL&#39;), (&#39;RIR&#39;, &#39;ADFL&#39;), (&#39;RIR&#39;, &#39;ADFR&#39;), (&#39;RIR&#39;, &#39;ASHL&#39;), (&#39;RIR&#39;, &#39;AVHL&#39;), (&#39;RIR&#39;, &#39;AVHR&#39;), (&#39;RIR&#39;, &#39;AWAR&#39;), (&#39;RIR&#39;, &#39;AWBR&#39;), (&#39;RIR&#39;, &#39;DVA&#39;), (&#39;RIR&#39;, &#39;RIGL&#39;), (&#39;RIR&#39;, &#39;RIGR&#39;), (&#39;RIR&#39;, &#39;RMGR&#39;), (&#39;RIGR&#39;, &#39;ADEL&#39;), (&#39;RIGR&#39;, &#39;ADER&#39;), (&#39;RIGR&#39;, &#39;ADFR&#39;), (&#39;RIGR&#39;, &#39;BAGL&#39;), (&#39;RIGR&#39;, &#39;DVB&#39;), (&#39;RIGR&#39;, &#39;DVC&#39;), (&#39;RIGR&#39;, &#39;PVPR&#39;), (&#39;RIGR&#39;, &#39;URXR&#39;), (&#39;ALA&#39;, &#39;ADLL&#39;), (&#39;ALML&#39;, &#39;AIML&#39;), (&#39;ALML&#39;, &#39;RIFL&#39;), (&#39;ALML&#39;, &#39;RMGL&#39;), (&#39;ALML&#39;, &#39;SDQL&#39;), (&#39;RIFL&#39;, &#39;ADEL&#39;), (&#39;RIFL&#39;, &#39;AIAL&#39;), (&#39;RIFL&#39;, &#39;AIML&#39;), (&#39;RIFL&#39;, &#39;HSNL&#39;), (&#39;ALMR&#39;, &#39;BDUR&#39;), (&#39;ALNL&#39;, &#39;RIGL&#39;), (&#39;ALNL&#39;, &#39;RMGL&#39;), (&#39;ALNR&#39;, &#39;RIGR&#39;), (&#39;ALNR&#39;, &#39;RMGR&#39;), (&#39;AQR&#39;, &#39;AVHR&#39;), (&#39;AQR&#39;, &#39;DVA&#39;), (&#39;AQR&#39;, &#39;PVCR&#39;), (&#39;AQR&#39;, &#39;PVPL&#39;), (&#39;AQR&#39;, &#39;PVPR&#39;), (&#39;AQR&#39;, &#39;RIR&#39;), (&#39;PVCR&#39;, &#39;ALML&#39;), (&#39;PVCR&#39;, &#39;ALMR&#39;), (&#39;PVCR&#39;, &#39;AQR&#39;), (&#39;PVCR&#39;, &#39;AVAL&#39;), (&#39;PVCR&#39;, &#39;AVDR&#39;), (&#39;PVCR&#39;, &#39;AVER&#39;), (&#39;PVCR&#39;, &#39;AVG&#39;), (&#39;PVCR&#39;, &#39;AVJL&#39;), (&#39;PVCR&#39;, &#39;AVJR&#39;), (&#39;PVCR&#39;, &#39;AVM&#39;), (&#39;PVCR&#39;, &#39;BDUR&#39;), (&#39;PVCR&#39;, &#39;LUAR&#39;), (&#39;PVCR&#39;, &#39;PDER&#39;), (&#39;PVCR&#39;, &#39;PHBR&#39;), (&#39;PVCR&#39;, &#39;PHCR&#39;), (&#39;PVCR&#39;, &#39;PLMR&#39;), (&#39;PVCR&#39;, &#39;PVCL&#39;), (&#39;PVCR&#39;, &#39;PVDL&#39;), (&#39;PVCR&#39;, &#39;PVNL&#39;), (&#39;PVCR&#39;, &#39;PVNR&#39;), (&#39;PVCR&#39;, &#39;PVPL&#39;), (&#39;PVCR&#39;, &#39;PVPR&#39;), (&#39;PVCR&#39;, &#39;PVR&#39;), (&#39;PVCR&#39;, &#39;PVWR&#39;), (&#39;PVCR&#39;, &#39;RIFR&#39;), (&#39;PVCR&#39;, &#39;VA12&#39;), (&#39;AS1&#39;, &#39;AVAL&#39;), (&#39;AS1&#39;, &#39;AVAR&#39;), (&#39;AS1&#39;, &#39;AVBL&#39;), (&#39;AS1&#39;, &#39;AVBR&#39;), (&#39;AS1&#39;, &#39;AVDL&#39;), (&#39;AS1&#39;, &#39;AVDR&#39;), (&#39;AS1&#39;, &#39;AVEL&#39;), (&#39;AS1&#39;, &#39;AVER&#39;), (&#39;AS1&#39;, &#39;AVL&#39;), (&#39;AS1&#39;, &#39;DB1&#39;), (&#39;AS1&#39;, &#39;PVCL&#39;), (&#39;AS1&#39;, &#39;PVCR&#39;), (&#39;AVBL&#39;, &#39;ADAL&#39;), (&#39;AVBL&#39;, &#39;ADAR&#39;), (&#39;AVBL&#39;, &#39;ADLL&#39;), (&#39;AVBL&#39;, &#39;ADLR&#39;), (&#39;AVBL&#39;, &#39;AQR&#39;), (&#39;AVBL&#39;, &#39;ASHL&#39;), (&#39;AVBL&#39;, &#39;AVAL&#39;), (&#39;AVBL&#39;, &#39;AVBR&#39;), (&#39;AVBL&#39;, &#39;AVDL&#39;), (&#39;AVBL&#39;, &#39;AVFL&#39;), (&#39;AVBL&#39;, &#39;AVFR&#39;), (&#39;AVBL&#39;, &#39;AVG&#39;), (&#39;AVBL&#39;, &#39;AVHR&#39;), (&#39;AVBL&#39;, &#39;AVJL&#39;), (&#39;AVBL&#39;, &#39;AVJR&#39;), (&#39;AVBL&#39;, &#39;AVKL&#39;), (&#39;AVBL&#39;, &#39;AVM&#39;), (&#39;AVBL&#39;, &#39;AWBL&#39;), (&#39;AVBL&#39;, &#39;DVA&#39;), (&#39;AVBL&#39;, &#39;DVC&#39;), (&#39;AVBL&#39;, &#39;FLPL&#39;), (&#39;AVBL&#39;, &#39;FLPR&#39;), (&#39;AVBL&#39;, &#39;PVCL&#39;), (&#39;AVBL&#39;, &#39;PVCR&#39;), (&#39;AVBL&#39;, &#39;PVPL&#39;), (&#39;AVBL&#39;, &#39;PVPR&#39;), (&#39;AVBL&#39;, &#39;PVR&#39;), (&#39;AVBL&#39;, &#39;RIFL&#39;), (&#39;AVBL&#39;, &#39;RIFR&#39;), (&#39;AVBL&#39;, &#39;RIML&#39;), (&#39;AVBL&#39;, &#39;RIMR&#39;), (&#39;AVBL&#39;, &#39;SDQR&#39;), (&#39;AVBL&#39;, &#39;URBL&#39;), (&#39;AVBL&#39;, &#39;URXL&#39;), (&#39;AVBL&#39;, &#39;URXR&#39;), (&#39;AVBR&#39;, &#39;ADAL&#39;), (&#39;AVBR&#39;, &#39;ADAR&#39;), (&#39;AVBR&#39;, &#39;ADLR&#39;), (&#39;AVBR&#39;, &#39;AIBR&#39;), (&#39;AVBR&#39;, &#39;AIML&#39;), (&#39;AVBR&#39;, &#39;AQR&#39;), (&#39;AVBR&#39;, &#39;ASHR&#39;), (&#39;AVBR&#39;, &#39;AVAR&#39;), (&#39;AVBR&#39;, &#39;AVBL&#39;), (&#39;AVBR&#39;, &#39;AVDR&#39;), (&#39;AVBR&#39;, &#39;AVFR&#39;), (&#39;AVBR&#39;, &#39;AVHL&#39;), (&#39;AVBR&#39;, &#39;AVJL&#39;), (&#39;AVBR&#39;, &#39;AVJR&#39;), (&#39;AVBR&#39;, &#39;AVM&#39;), (&#39;AVBR&#39;, &#39;AWBR&#39;), (&#39;AVBR&#39;, &#39;FLPL&#39;), (&#39;AVBR&#39;, &#39;FLPR&#39;), (&#39;AVBR&#39;, &#39;PVCL&#39;), (&#39;AVBR&#39;, &#39;PVCR&#39;), (&#39;AVBR&#39;, &#39;PVNL&#39;), (&#39;AVBR&#39;, &#39;PVNR&#39;), (&#39;AVBR&#39;, &#39;PVPL&#39;), (&#39;AVBR&#39;, &#39;PVPR&#39;), (&#39;AVBR&#39;, &#39;PVR&#39;), (&#39;AVBR&#39;, &#39;RIBL&#39;), (&#39;AVBR&#39;, &#39;RIFL&#39;), (&#39;AVBR&#39;, &#39;RIFR&#39;), (&#39;AVBR&#39;, &#39;RIML&#39;), (&#39;AVBR&#39;, &#39;RIMR&#39;), (&#39;AVBR&#39;, &#39;RMGL&#39;), (&#39;AVBR&#39;, &#39;RMGR&#39;), (&#39;AVBR&#39;, &#39;SDQR&#39;), (&#39;AVBR&#39;, &#39;URBR&#39;), (&#39;AVBR&#39;, &#39;URXR&#39;), (&#39;AVBR&#39;, &#39;URYVL&#39;), (&#39;AVDL&#39;, &#39;ADLL&#39;), (&#39;AVDL&#39;, &#39;ADLR&#39;), (&#39;AVDL&#39;, &#39;AIML&#39;), (&#39;AVDL&#39;, &#39;AQR&#39;), (&#39;AVDL&#39;, &#39;ASHL&#39;), (&#39;AVDL&#39;, &#39;ASHR&#39;), (&#39;AVDL&#39;, &#39;AVAL&#39;), (&#39;AVDL&#39;, &#39;AVBR&#39;), (&#39;AVDL&#39;, &#39;AVDR&#39;), (&#39;AVDL&#39;, &#39;AVEL&#39;), (&#39;AVDL&#39;, &#39;AVG&#39;), (&#39;AVDL&#39;, &#39;AVHL&#39;), (&#39;AVDL&#39;, &#39;AVJL&#39;), (&#39;AVDL&#39;, &#39;FLPL&#39;), (&#39;AVDL&#39;, &#39;FLPR&#39;), (&#39;AVDL&#39;, &#39;HSNL&#39;), (&#39;AVDL&#39;, &#39;HSNR&#39;), (&#39;AVDL&#39;, &#39;LUAL&#39;), (&#39;AVDL&#39;, &#39;LUAR&#39;), (&#39;AVDL&#39;, &#39;PHBL&#39;), (&#39;AVDL&#39;, &#39;PHBR&#39;), (&#39;AVDL&#39;, &#39;PLMR&#39;), (&#39;AVDL&#39;, &#39;PVCL&#39;), (&#39;AVDL&#39;, &#39;PVCR&#39;), (&#39;AVDL&#39;, &#39;PVWL&#39;), (&#39;AVDL&#39;, &#39;RMGR&#39;), (&#39;AVDR&#39;, &#39;ADER&#39;), (&#39;AVDR&#39;, &#39;ADLL&#39;), (&#39;AVDR&#39;, &#39;ADLR&#39;), (&#39;AVDR&#39;, &#39;AIML&#39;), (&#39;AVDR&#39;, &#39;AIMR&#39;), (&#39;AVDR&#39;, &#39;ALML&#39;), (&#39;AVDR&#39;, &#39;AQR&#39;), (&#39;AVDR&#39;, &#39;ASHL&#39;), (&#39;AVDR&#39;, &#39;ASHR&#39;), (&#39;AVDR&#39;, &#39;AUAL&#39;), (&#39;AVDR&#39;, &#39;AVAR&#39;), (&#39;AVDR&#39;, &#39;AVBL&#39;), (&#39;AVDR&#39;, &#39;AVDL&#39;), (&#39;AVDR&#39;, &#39;AVER&#39;), (&#39;AVDR&#39;, &#39;AVG&#39;), (&#39;AVDR&#39;, &#39;AVHR&#39;), (&#39;AVDR&#39;, &#39;AVJR&#39;), (&#39;AVDR&#39;, &#39;FLPL&#39;), (&#39;AVDR&#39;, &#39;FLPR&#39;), (&#39;AVDR&#39;, &#39;LUAL&#39;), (&#39;AVDR&#39;, &#39;LUAR&#39;), (&#39;AVDR&#39;, &#39;PHAL&#39;), (&#39;AVDR&#39;, &#39;PHBR&#39;), (&#39;AVDR&#39;, &#39;PQR&#39;), (&#39;AVDR&#39;, &#39;PVCL&#39;), (&#39;AVDR&#39;, &#39;PVCR&#39;), (&#39;AVDR&#39;, &#39;PVNL&#39;), (&#39;AVDR&#39;, &#39;PVNR&#39;), (&#39;AVDR&#39;, &#39;PVPL&#39;), (&#39;AVDR&#39;, &#39;PVWR&#39;), (&#39;AVDR&#39;, &#39;RIBL&#39;), (&#39;AVEL&#39;, &#39;ADAL&#39;), (&#39;AVEL&#39;, &#39;ADAR&#39;), (&#39;AVEL&#39;, &#39;ADEL&#39;), (&#39;AVEL&#39;, &#39;AIBR&#39;), (&#39;AVEL&#39;, &#39;AIZR&#39;), (&#39;AVEL&#39;, &#39;ALA&#39;), (&#39;AVEL&#39;, &#39;ALML&#39;), (&#39;AVEL&#39;, &#39;AUAL&#39;), (&#39;AVEL&#39;, &#39;AVAL&#39;), (&#39;AVEL&#39;, &#39;AVBR&#39;), (&#39;AVEL&#39;, &#39;AVJR&#39;), (&#39;AVEL&#39;, &#39;AVKL&#39;), (&#39;AVEL&#39;, &#39;BAGL&#39;), (&#39;AVEL&#39;, &#39;BAGR&#39;), (&#39;AVEL&#39;, &#39;CEPDR&#39;), (&#39;AVEL&#39;, &#39;CEPVR&#39;), (&#39;AVEL&#39;, &#39;DVA&#39;), (&#39;AVEL&#39;, &#39;FLPR&#39;), (&#39;AVEL&#39;, &#39;IL1R&#39;), (&#39;AVEL&#39;, &#39;IL2L&#39;), (&#39;AVEL&#39;, &#39;OLLR&#39;), (&#39;AVEL&#39;, &#39;PVCL&#39;), (&#39;AVEL&#39;, &#39;PVCR&#39;), (&#39;AVEL&#39;, &#39;PVPR&#39;), (&#39;AVEL&#39;, &#39;RIBL&#39;), (&#39;AVEL&#39;, &#39;RIBR&#39;), (&#39;AVEL&#39;, &#39;RIGL&#39;), (&#39;AVEL&#39;, &#39;RIS&#39;), (&#39;AVEL&#39;, &#39;RMGL&#39;), (&#39;AVEL&#39;, &#39;SDQL&#39;), (&#39;AVEL&#39;, &#39;URXL&#39;), (&#39;AVEL&#39;, &#39;URYDR&#39;), (&#39;AVEL&#39;, &#39;URYVR&#39;), (&#39;AVER&#39;, &#39;ADER&#39;), (&#39;AVER&#39;, &#39;AIML&#39;), (&#39;AVER&#39;, &#39;AIZL&#39;), (&#39;AVER&#39;, &#39;AIZR&#39;), (&#39;AVER&#39;, &#39;ALA&#39;), (&#39;AVER&#39;, &#39;ASHR&#39;), (&#39;AVER&#39;, &#39;AUAR&#39;), (&#39;AVER&#39;, &#39;AVAR&#39;), (&#39;AVER&#39;, &#39;AVBL&#39;), (&#39;AVER&#39;, &#39;AVG&#39;), (&#39;AVER&#39;, &#39;AVJL&#39;), (&#39;AVER&#39;, &#39;AVKL&#39;), (&#39;AVER&#39;, &#39;AVL&#39;), (&#39;AVER&#39;, &#39;BAGL&#39;), (&#39;AVER&#39;, &#39;CEPDL&#39;), (&#39;AVER&#39;, &#39;CEPVL&#39;), (&#39;AVER&#39;, &#39;DVA&#39;), (&#39;AVER&#39;, &#39;FLPR&#39;), (&#39;AVER&#39;, &#39;IL1L&#39;), (&#39;AVER&#39;, &#39;OLLL&#39;), (&#39;AVER&#39;, &#39;OLLR&#39;), (&#39;AVER&#39;, &#39;PVCL&#39;), (&#39;AVER&#39;, &#39;PVCR&#39;), (&#39;AVER&#39;, &#39;PVNL&#39;), (&#39;AVER&#39;, &#39;PVNR&#39;), (&#39;AVER&#39;, &#39;PVPL&#39;), (&#39;AVER&#39;, &#39;RIBL&#39;), (&#39;AVER&#39;, &#39;RIGL&#39;), (&#39;AVER&#39;, &#39;RIGR&#39;), (&#39;AVER&#39;, &#39;RIS&#39;), (&#39;AVER&#39;, &#39;RMGR&#39;), (&#39;AVER&#39;, &#39;URXR&#39;), (&#39;AVER&#39;, &#39;URYDL&#39;), (&#39;AVER&#39;, &#39;URYDR&#39;), (&#39;AVER&#39;, &#39;URYVL&#39;), (&#39;AVL&#39;, &#39;AVBL&#39;), (&#39;AVL&#39;, &#39;AVBR&#39;), (&#39;AVL&#39;, &#39;AVFL&#39;), (&#39;AVL&#39;, &#39;AVFR&#39;), (&#39;AVL&#39;, &#39;DVB&#39;), (&#39;AVL&#39;, &#39;PVCL&#39;), (&#39;AVL&#39;, &#39;PVCR&#39;), (&#39;AVL&#39;, &#39;PVNL&#39;), (&#39;AVL&#39;, &#39;PVNR&#39;), (&#39;AVL&#39;, &#39;PVPL&#39;), (&#39;AVL&#39;, &#39;PVPR&#39;), (&#39;AVL&#39;, &#39;PVQL&#39;), (&#39;AVL&#39;, &#39;PVQR&#39;), (&#39;AVL&#39;, &#39;RIS&#39;), (&#39;AVL&#39;, &#39;VC3&#39;), (&#39;AVL&#39;, &#39;VC6&#39;), (&#39;PVCL&#39;, &#39;ADLR&#39;), (&#39;PVCL&#39;, &#39;ALML&#39;), (&#39;PVCL&#39;, &#39;AQR&#39;), (&#39;PVCL&#39;, &#39;AVAR&#39;), (&#39;PVCL&#39;, &#39;AVDL&#39;), (&#39;PVCL&#39;, &#39;AVEL&#39;), (&#39;PVCL&#39;, &#39;AVG&#39;), (&#39;PVCL&#39;, &#39;AVJL&#39;), (&#39;PVCL&#39;, &#39;AVJR&#39;), (&#39;PVCL&#39;, &#39;AVM&#39;), (&#39;PVCL&#39;, &#39;BDUL&#39;), (&#39;PVCL&#39;, &#39;BDUR&#39;), (&#39;PVCL&#39;, &#39;DVA&#39;), (&#39;PVCL&#39;, &#39;FLPR&#39;), (&#39;PVCL&#39;, &#39;PDEL&#39;), (&#39;PVCL&#39;, &#39;PHBL&#39;), (&#39;PVCL&#39;, &#39;PHBR&#39;), (&#39;PVCL&#39;, &#39;PHCL&#39;), (&#39;PVCL&#39;, &#39;PVCR&#39;), (&#39;PVCL&#39;, &#39;PVDR&#39;), (&#39;PVCL&#39;, &#39;PVM&#39;), (&#39;PVCL&#39;, &#39;PVPR&#39;), (&#39;PVCL&#39;, &#39;PVWL&#39;), (&#39;PVCL&#39;, &#39;RIFR&#39;), (&#39;PVCL&#39;, &#39;VA12&#39;), (&#39;AS10&#39;, &#39;AVAL&#39;), (&#39;AS10&#39;, &#39;AVAR&#39;), (&#39;AS10&#39;, &#39;AVBL&#39;), (&#39;AS10&#39;, &#39;AVBR&#39;), (&#39;AS10&#39;, &#39;AVDL&#39;), (&#39;AS10&#39;, &#39;AVDR&#39;), (&#39;AS10&#39;, &#39;DB7&#39;), (&#39;DB7&#39;, &#39;DVA&#39;), (&#39;DB7&#39;, &#39;PVCL&#39;), (&#39;DB7&#39;, &#39;PVCR&#39;), (&#39;DB7&#39;, &#39;VA12&#39;), (&#39;AS11&#39;, &#39;AVAL&#39;), (&#39;AS11&#39;, &#39;AVAR&#39;), (&#39;AS11&#39;, &#39;AVDL&#39;), (&#39;AS11&#39;, &#39;AVDR&#39;), (&#39;AS11&#39;, &#39;DB7&#39;), (&#39;AS11&#39;, &#39;VA12&#39;), (&#39;VA12&#39;, &#39;AVAL&#39;), (&#39;VA12&#39;, &#39;AVAR&#39;), (&#39;VA12&#39;, &#39;DVA&#39;), (&#39;VA12&#39;, &#39;PHBL&#39;), (&#39;VA12&#39;, &#39;PHBR&#39;), (&#39;VA12&#39;, &#39;PHCL&#39;), (&#39;VA12&#39;, &#39;PHCR&#39;), (&#39;VA12&#39;, &#39;PVWL&#39;), (&#39;VA12&#39;, &#39;PVWR&#39;), (&#39;VA12&#39;, &#39;VA11&#39;), (&#39;VA12&#39;, &#39;VB11&#39;), (&#39;VA12&#39;, &#39;VD12&#39;), (&#39;VA12&#39;, &#39;VD13&#39;), (&#39;AS2&#39;, &#39;AVAL&#39;), (&#39;AS2&#39;, &#39;AVAR&#39;), (&#39;AS2&#39;, &#39;AVEL&#39;), (&#39;AS2&#39;, &#39;AVER&#39;), (&#39;AS2&#39;, &#39;DB1&#39;), (&#39;AS2&#39;, &#39;PVCL&#39;), (&#39;AS2&#39;, &#39;PVCR&#39;), (&#39;AS3&#39;, &#39;AVAL&#39;), (&#39;AS3&#39;, &#39;AVAR&#39;), (&#39;AS3&#39;, &#39;AVBL&#39;), (&#39;AS3&#39;, &#39;AVBR&#39;), (&#39;AS3&#39;, &#39;AVEL&#39;), (&#39;AS3&#39;, &#39;AVER&#39;), (&#39;AS3&#39;, &#39;DB2&#39;), (&#39;AS3&#39;, &#39;VD2&#39;), (&#39;AS3&#39;, &#39;VD3&#39;), (&#39;DB2&#39;, &#39;DVA&#39;), (&#39;DB2&#39;, &#39;PVCL&#39;), (&#39;DB2&#39;, &#39;PVCR&#39;), (&#39;DB2&#39;, &#39;PVR&#39;), (&#39;VD2&#39;, &#39;AS2&#39;), (&#39;VD2&#39;, &#39;AS3&#39;), (&#39;VD2&#39;, &#39;AVEL&#39;), (&#39;VD2&#39;, &#39;AVER&#39;), (&#39;VD2&#39;, &#39;DA1&#39;), (&#39;VD2&#39;, &#39;DA2&#39;), (&#39;VD2&#39;, &#39;DB1&#39;), (&#39;VD2&#39;, &#39;DB2&#39;), (&#39;VD2&#39;, &#39;DD1&#39;), (&#39;VD2&#39;, &#39;VA2&#39;), (&#39;VD2&#39;, &#39;VA3&#39;), (&#39;VD2&#39;, &#39;VB1&#39;), (&#39;VD2&#39;, &#39;VB2&#39;), (&#39;VD2&#39;, &#39;VC3&#39;), (&#39;VD3&#39;, &#39;AS3&#39;), (&#39;VD3&#39;, &#39;AS4&#39;), (&#39;VD3&#39;, &#39;AVBL&#39;), (&#39;VD3&#39;, &#39;AVBR&#39;), (&#39;VD3&#39;, &#39;AVEL&#39;), (&#39;VD3&#39;, &#39;AVER&#39;), (&#39;VD3&#39;, &#39;DA2&#39;), (&#39;VD3&#39;, &#39;DA3&#39;), (&#39;VD3&#39;, &#39;DB1&#39;), (&#39;VD3&#39;, &#39;DB2&#39;), (&#39;VD3&#39;, &#39;DB3&#39;), (&#39;VD3&#39;, &#39;DD2&#39;), (&#39;VD3&#39;, &#39;PVNL&#39;), (&#39;VD3&#39;, &#39;PVNR&#39;), (&#39;VD3&#39;, &#39;VA3&#39;), (&#39;VD3&#39;, &#39;VB2&#39;), (&#39;VD3&#39;, &#39;VC3&#39;), (&#39;AS4&#39;, &#39;AVAL&#39;), (&#39;AS4&#39;, &#39;AVAR&#39;), (&#39;AS4&#39;, &#39;AVBL&#39;), (&#39;AS4&#39;, &#39;AVBR&#39;), (&#39;AS4&#39;, &#39;AVDL&#39;), (&#39;AS4&#39;, &#39;AVDR&#39;), (&#39;AS4&#39;, &#39;DB3&#39;), (&#39;DB3&#39;, &#39;AVAL&#39;), (&#39;DB3&#39;, &#39;AVAR&#39;), (&#39;DB3&#39;, &#39;AVEL&#39;), (&#39;DB3&#39;, &#39;AVER&#39;), (&#39;DB3&#39;, &#39;DVA&#39;), (&#39;DB3&#39;, &#39;PVCL&#39;), (&#39;DB3&#39;, &#39;PVCR&#39;), (&#39;DB3&#39;, &#39;PVR&#39;), (&#39;AS5&#39;, &#39;AVAL&#39;), (&#39;AS5&#39;, &#39;AVAR&#39;), (&#39;AS5&#39;, &#39;AVBL&#39;), (&#39;AS5&#39;, &#39;AVBR&#39;), (&#39;AS5&#39;, &#39;AVDL&#39;), (&#39;AS5&#39;, &#39;AVDR&#39;), (&#39;AS5&#39;, &#39;DB4&#39;), (&#39;AS5&#39;, &#39;HSNL&#39;), (&#39;AS5&#39;, &#39;HSNR&#39;), (&#39;DB4&#39;, &#39;AVDL&#39;), (&#39;DB4&#39;, &#39;AVDR&#39;), (&#39;DB4&#39;, &#39;DVA&#39;), (&#39;DB4&#39;, &#39;PVCL&#39;), (&#39;DB4&#39;, &#39;PVCR&#39;), (&#39;AS6&#39;, &#39;AVAL&#39;), (&#39;AS6&#39;, &#39;AVAR&#39;), (&#39;AS6&#39;, &#39;AVBL&#39;), (&#39;AS6&#39;, &#39;AVBR&#39;), (&#39;AS6&#39;, &#39;DB4&#39;), (&#39;AS7&#39;, &#39;DB5&#39;), (&#39;DB5&#39;, &#39;AVAL&#39;), (&#39;DB5&#39;, &#39;AVAR&#39;), (&#39;DB5&#39;, &#39;DVA&#39;), (&#39;DB5&#39;, &#39;HSNR&#39;), (&#39;DB5&#39;, &#39;PVCL&#39;), (&#39;DB5&#39;, &#39;PVCR&#39;), (&#39;AS8&#39;, &#39;DB5&#39;), (&#39;AS9&#39;, &#39;DB6&#39;), (&#39;CEPVR&#39;, &#39;ALMR&#39;), (&#39;CEPVR&#39;, &#39;OLLR&#39;), (&#39;CEPVR&#39;, &#39;RIAR&#39;), (&#39;CEPVR&#39;, &#39;RIH&#39;), (&#39;CEPVR&#39;, &#39;RIS&#39;), (&#39;RIFR&#39;, &#39;AIAR&#39;), (&#39;RIFR&#39;, &#39;AIMR&#39;), (&#39;RIFR&#39;, &#39;AVJL&#39;), (&#39;RIFR&#39;, &#39;AWAR&#39;), (&#39;RIFR&#39;, &#39;HSNR&#39;), (&#39;RIFR&#39;, &#39;PVNL&#39;), (&#39;RIFR&#39;, &#39;PVNR&#39;), (&#39;RIFR&#39;, &#39;PVQR&#39;), (&#39;ASJL&#39;, &#39;ASKL&#39;), (&#39;ASJL&#39;, &#39;PVQL&#39;), (&#39;ASJR&#39;, &#39;AIMR&#39;), (&#39;ASJR&#39;, &#39;HSNL&#39;), (&#39;AUAL&#39;, &#39;ADFL&#39;), (&#39;AUAL&#39;, &#39;BAGR&#39;), (&#39;AUAL&#39;, &#39;DVA&#39;), (&#39;AUAL&#39;, &#39;IL2DL&#39;), (&#39;AUAL&#39;, &#39;RIBL&#39;), (&#39;AUAL&#39;, &#39;RIR&#39;), (&#39;AUAL&#39;, &#39;URXL&#39;), (&#39;BAGR&#39;, &#39;AINR&#39;), (&#39;BAGR&#39;, &#39;AQR&#39;), (&#39;BAGR&#39;, &#39;BAGL&#39;), (&#39;BAGR&#39;, &#39;IL2VL&#39;), (&#39;BAGR&#39;, &#39;RIGL&#39;), (&#39;BAGR&#39;, &#39;RIGR&#39;), (&#39;BAGR&#39;, &#39;RIH&#39;), (&#39;BAGR&#39;, &#39;RIR&#39;), (&#39;URXL&#39;, &#39;AQR&#39;), (&#39;URXL&#39;, &#39;IL2L&#39;), (&#39;URXL&#39;, &#39;RIR&#39;), (&#39;URXL&#39;, &#39;RMGL&#39;), (&#39;URXL&#39;, &#39;URBL&#39;), (&#39;URXR&#39;, &#39;ADFR&#39;), (&#39;URXR&#39;, &#39;AUAR&#39;), (&#39;URXR&#39;, &#39;IL1R&#39;), (&#39;URXR&#39;, &#39;IL2VR&#39;), (&#39;URXR&#39;, &#39;RIR&#39;), (&#39;URXR&#39;, &#39;RMGR&#39;), (&#39;URXR&#39;, &#39;URBR&#39;), (&#39;AVG&#39;, &#39;AVFL&#39;), (&#39;AVG&#39;, &#39;AVFR&#39;), (&#39;AVG&#39;, &#39;PHAL&#39;), (&#39;AVG&#39;, &#39;PHAR&#39;), (&#39;AVG&#39;, &#39;PQR&#39;), (&#39;AVG&#39;, &#39;PVNL&#39;), (&#39;AVG&#39;, &#39;PVNR&#39;), (&#39;AVJL&#39;, &#39;ADAR&#39;), (&#39;AVJL&#39;, &#39;ADLL&#39;), (&#39;AVJL&#39;, &#39;AIML&#39;), (&#39;AVJL&#39;, &#39;AQR&#39;), (&#39;AVJL&#39;, &#39;AVFR&#39;), (&#39;AVJL&#39;, &#39;AVHL&#39;), (&#39;AVJL&#39;, &#39;AVHR&#39;), (&#39;AVJL&#39;, &#39;AVJR&#39;), (&#39;AVJL&#39;, &#39;BDUR&#39;), (&#39;AVJL&#39;, &#39;HSNL&#39;), (&#39;AVJL&#39;, &#39;HSNR&#39;), (&#39;AVJL&#39;, &#39;LUAL&#39;), (&#39;AVJL&#39;, &#39;PVCL&#39;), (&#39;AVJL&#39;, &#39;PVNL&#39;), (&#39;AVJL&#39;, &#39;PVNR&#39;), (&#39;AVJL&#39;, &#39;PVR&#39;), (&#39;AVJL&#39;, &#39;PVWR&#39;), (&#39;AVJL&#39;, &#39;RIFR&#39;), (&#39;AVJL&#39;, &#39;RIMR&#39;), (&#39;AVJL&#39;, &#39;RMGR&#39;), (&#39;LUAL&#39;, &#39;AVAL&#39;), (&#39;LUAL&#39;, &#39;AVDL&#39;), (&#39;LUAL&#39;, &#39;PHCL&#39;), (&#39;LUAL&#39;, &#39;PQR&#39;), (&#39;LUAL&#39;, &#39;PVCR&#39;), (&#39;LUAL&#39;, &#39;VA12&#39;), (&#39;LUAR&#39;, &#39;AVAR&#39;), (&#39;LUAR&#39;, &#39;AVDR&#39;), (&#39;LUAR&#39;, &#39;PHCR&#39;), (&#39;LUAR&#39;, &#39;PVCL&#39;), (&#39;PHBL&#39;, &#39;LUAL&#39;), (&#39;PHBL&#39;, &#39;PHAL&#39;), (&#39;PHBL&#39;, &#39;PHAR&#39;), (&#39;PHBL&#39;, &#39;PHBR&#39;), (&#39;PHBR&#39;, &#39;PHAL&#39;), (&#39;PHBR&#39;, &#39;PHAR&#39;), (&#39;PHBR&#39;, &#39;PHBL&#39;), (&#39;PHCL&#39;, &#39;PHCR&#39;), (&#39;PQR&#39;, &#39;AVDL&#39;), (&#39;PQR&#39;, &#39;AVDR&#39;), (&#39;PQR&#39;, &#39;LUAR&#39;), (&#39;PQR&#39;, &#39;PVNL&#39;), (&#39;PQR&#39;, &#39;PVNR&#39;), (&#39;PVDL&#39;, &#39;PVDR&#39;), (&#39;PVWL&#39;, &#39;LUAL&#39;), (&#39;PVWL&#39;, &#39;LUAR&#39;), (&#39;PVWL&#39;, &#39;PVCL&#39;), (&#39;PVWL&#39;, &#39;PVNL&#39;), (&#39;PVWL&#39;, &#39;PVWR&#39;), (&#39;RICL&#39;, &#39;ADLR&#39;), (&#39;RICL&#39;, &#39;CEPDL&#39;), (&#39;RICL&#39;, &#39;CEPDR&#39;), (&#39;RICL&#39;, &#39;CEPVL&#39;), (&#39;RICL&#39;, &#39;CEPVR&#39;), (&#39;RICL&#39;, &#39;IL2L&#39;), (&#39;RICL&#39;, &#39;OLQDR&#39;), (&#39;RICL&#39;, &#39;OLQVL&#39;), (&#39;RICL&#39;, &#39;URXL&#39;), (&#39;RIML&#39;, &#39;ADAL&#39;), (&#39;RIML&#39;, &#39;AIBR&#39;), (&#39;RIML&#39;, &#39;AIZL&#39;), (&#39;RIML&#39;, &#39;ASHL&#39;), (&#39;RIML&#39;, &#39;AVKL&#39;), (&#39;RIML&#39;, &#39;AVKR&#39;), (&#39;RIML&#39;, &#39;HSNL&#39;), (&#39;RIML&#39;, &#39;RICL&#39;), (&#39;RIML&#39;, &#39;RIFL&#39;), (&#39;RIML&#39;, &#39;RIS&#39;), (&#39;RIML&#39;, &#39;SAADL&#39;), (&#39;RIML&#39;, &#39;SAADR&#39;), (&#39;RIML&#39;, &#39;SAAVL&#39;), (&#39;RIML&#39;, &#39;SAAVR&#39;), (&#39;RIML&#39;, &#39;VB1&#39;), (&#39;SAADL&#39;, &#39;AIBR&#39;), (&#39;SAADL&#39;, &#39;AVKR&#39;), (&#39;SAADL&#39;, &#39;BDUL&#39;), (&#39;SAADL&#39;, &#39;PLNL&#39;), (&#39;SAADL&#39;, &#39;RIVR&#39;), (&#39;SAADL&#39;, &#39;SMBVL&#39;), (&#39;SAADL&#39;, &#39;VB1&#39;), (&#39;SAAVL&#39;, &#39;ALNL&#39;), (&#39;SAAVL&#39;, &#39;DVA&#39;), (&#39;SAAVL&#39;, &#39;RIML&#39;), (&#39;SAAVL&#39;, &#39;RIMR&#39;), (&#39;SAAVL&#39;, &#39;SMBDR&#39;), (&#39;SMBDR&#39;, &#39;ADEL&#39;), (&#39;SMBDR&#39;, &#39;AIZR&#39;), (&#39;SMBDR&#39;, &#39;ALNL&#39;), (&#39;SMBDR&#39;, &#39;AVHL&#39;), (&#39;SMBDR&#39;, &#39;AVKR&#39;), (&#39;SMBDR&#39;, &#39;AWBL&#39;), (&#39;SMBDR&#39;, &#39;CEPDR&#39;), (&#39;SMBDR&#39;, &#39;DVA&#39;), (&#39;SMBDR&#39;, &#39;DVB&#39;), (&#39;SMBDR&#39;, &#39;RICR&#39;), (&#39;SMBDR&#39;, &#39;URBL&#39;), (&#39;URYVR&#39;, &#39;RIH&#39;), (&#39;URYVR&#39;, &#39;RIS&#39;), (&#39;AVJR&#39;, &#39;ADAL&#39;), (&#39;AVJR&#39;, &#39;ADER&#39;), (&#39;AVJR&#39;, &#39;ADLL&#39;), (&#39;AVJR&#39;, &#39;ADLR&#39;), (&#39;AVJR&#39;, &#39;AIMR&#39;), (&#39;AVJR&#39;, &#39;AVFL&#39;), (&#39;AVJR&#39;, &#39;AVG&#39;), (&#39;AVJR&#39;, &#39;AVHL&#39;), (&#39;AVJR&#39;, &#39;AVHR&#39;), (&#39;AVJR&#39;, &#39;AVM&#39;), (&#39;AVJR&#39;, &#39;BDUL&#39;), (&#39;AVJR&#39;, &#39;LUAR&#39;), (&#39;AVJR&#39;, &#39;PVNL&#39;), (&#39;AVJR&#39;, &#39;PVNR&#39;), (&#39;AVJR&#39;, &#39;PVR&#39;), (&#39;AVJR&#39;, &#39;PVWL&#39;), (&#39;AVJR&#39;, &#39;RIFL&#39;), (&#39;AVJR&#39;, &#39;RIFR&#39;), (&#39;AVJR&#39;, &#39;URXL&#39;), (&#39;BAGL&#39;, &#39;AINL&#39;), (&#39;BAGL&#39;, &#39;AQR&#39;), (&#39;PVDR&#39;, &#39;PVDL&#39;), (&#39;PVNL&#39;, &#39;AVG&#39;), (&#39;PVNL&#39;, &#39;AVJR&#39;), (&#39;PVNL&#39;, &#39;BDUL&#39;), (&#39;PVNL&#39;, &#39;BDUR&#39;), (&#39;PVNL&#39;, &#39;LUAL&#39;), (&#39;PVNL&#39;, &#39;PVNR&#39;), (&#39;PVNR&#39;, &#39;AVG&#39;), (&#39;PVNR&#39;, &#39;AVJL&#39;), (&#39;PVNR&#39;, &#39;BDUL&#39;), (&#39;PVNR&#39;, &#39;BDUR&#39;), (&#39;PVNR&#39;, &#39;HSNR&#39;), (&#39;PVNR&#39;, &#39;PDA&#39;), (&#39;PVNR&#39;, &#39;PQR&#39;), (&#39;PVNR&#39;, &#39;PVNL&#39;), (&#39;PVWR&#39;, &#39;AVL&#39;), (&#39;PVWR&#39;, &#39;PVCR&#39;), (&#39;PVWR&#39;, &#39;PVNR&#39;), (&#39;PVWR&#39;, &#39;PVWL&#39;), (&#39;RIBR&#39;, &#39;AINL&#39;), (&#39;RIBR&#39;, &#39;AIYR&#39;), (&#39;RIBR&#39;, &#39;AUAR&#39;), (&#39;RIBR&#39;, &#39;BAGL&#39;), (&#39;RIBR&#39;, &#39;CEPDR&#39;), (&#39;RIBR&#39;, &#39;OLLR&#39;), (&#39;RIBR&#39;, &#39;RIGR&#39;), (&#39;RIBR&#39;, &#39;RIH&#39;), (&#39;RIBR&#39;, &#39;RIMR&#39;), (&#39;RIBR&#39;, &#39;RIS&#39;), (&#39;RIBR&#39;, &#39;RMED&#39;), (&#39;RIBR&#39;, &#39;URYDR&#39;), (&#39;RIBR&#39;, &#39;URYVR&#39;), (&#39;SAAVR&#39;, &#39;ADER&#39;), (&#39;SAAVR&#39;, &#39;ALNR&#39;), (&#39;SAAVR&#39;, &#39;DVA&#39;), (&#39;SAAVR&#39;, &#39;RIML&#39;), (&#39;SAAVR&#39;, &#39;RIMR&#39;), (&#39;SAAVR&#39;, &#39;SMBDL&#39;), (&#39;SMBDL&#39;, &#39;ADFR&#39;), (&#39;SMBDL&#39;, &#39;AIZL&#39;), (&#39;SMBDL&#39;, &#39;ALNR&#39;), (&#39;SMBDL&#39;, &#39;AVHR&#39;), (&#39;SMBDL&#39;, &#39;CEPDL&#39;), (&#39;SMBDL&#39;, &#39;DVA&#39;), (&#39;SMBDL&#39;, &#39;RICL&#39;), (&#39;SMBDL&#39;, &#39;URBR&#39;), (&#39;AVFL&#39;, &#39;AIML&#39;), (&#39;AVFL&#39;, &#39;AIMR&#39;), (&#39;AVFL&#39;, &#39;AVFR&#39;), (&#39;AVFL&#39;, &#39;AVG&#39;), (&#39;AVFL&#39;, &#39;AVHR&#39;), (&#39;AVFL&#39;, &#39;AVJR&#39;), (&#39;AVFL&#39;, &#39;HSNL&#39;), (&#39;AVFL&#39;, &#39;HSNR&#39;), (&#39;AVFL&#39;, &#39;PHAL&#39;), (&#39;AVFL&#39;, &#39;RIFR&#39;), (&#39;AVFL&#39;, &#39;VC4&#39;), (&#39;AVFL&#39;, &#39;VC5&#39;), (&#39;AVFR&#39;, &#39;AIML&#39;), (&#39;AVFR&#39;, &#39;AIMR&#39;), (&#39;AVFR&#39;, &#39;AVFL&#39;), (&#39;AVFR&#39;, &#39;AVHL&#39;), (&#39;AVFR&#39;, &#39;AVJL&#39;), (&#39;AVFR&#39;, &#39;AVL&#39;), (&#39;AVFR&#39;, &#39;PVNL&#39;), (&#39;AVFR&#39;, &#39;PVNR&#39;), (&#39;AVFR&#39;, &#39;PVQR&#39;), (&#39;AVFR&#39;, &#39;VC4&#39;), (&#39;AVFR&#39;, &#39;VC5&#39;), (&#39;AVKL&#39;, &#39;DVB&#39;), (&#39;AVKL&#39;, &#39;DVC&#39;), (&#39;AVKL&#39;, &#39;PDEL&#39;), (&#39;AVKL&#39;, &#39;PVM&#39;), (&#39;AVKL&#39;, &#39;RIGL&#39;), (&#39;AVKL&#39;, &#39;RIGR&#39;), (&#39;AVKL&#39;, &#39;RIMR&#39;), (&#39;AVKL&#39;, &#39;RIS&#39;), (&#39;AVKL&#39;, &#39;RMDR&#39;), (&#39;AVKL&#39;, &#39;RMFL&#39;), (&#39;AVKL&#39;, &#39;RMFR&#39;), (&#39;PVR&#39;, &#39;AVM&#39;), (&#39;PVR&#39;, &#39;DVA&#39;), (&#39;PVR&#39;, &#39;IL1DL&#39;), (&#39;PVR&#39;, &#39;LUAR&#39;), (&#39;PVR&#39;, &#39;PDEL&#39;), (&#39;PVR&#39;, &#39;PDER&#39;), (&#39;PVR&#39;, &#39;PVCL&#39;), (&#39;PVR&#39;, &#39;PVCR&#39;), (&#39;PVR&#39;, &#39;PVM&#39;), (&#39;URBL&#39;, &#39;ADEL&#39;), (&#39;URBL&#39;, &#39;CEPDL&#39;), (&#39;URBR&#39;, &#39;CEPDR&#39;), (&#39;URBR&#39;, &#39;IL2R&#39;), (&#39;URYVL&#39;, &#39;IL1VL&#39;), (&#39;PHAL&#39;, &#39;AVG&#39;), (&#39;PHAL&#39;, &#39;PHAR&#39;), (&#39;CEPDR&#39;, &#39;ADER&#39;), (&#39;CEPDR&#39;, &#39;ALMR&#39;), (&#39;CEPDR&#39;, &#39;IL2DR&#39;), (&#39;CEPDR&#39;, &#39;OLLR&#39;), (&#39;CEPDR&#39;, &#39;RIH&#39;), (&#39;CEPDR&#39;, &#39;RIS&#39;), (&#39;CEPDR&#39;, &#39;URBR&#39;), (&#39;IL1R&#39;, &#39;CEPDR&#39;), (&#39;IL1R&#39;, &#39;IL1VR&#39;), (&#39;IL1R&#39;, &#39;IL2R&#39;), (&#39;IL1R&#39;, &#39;RIAR&#39;), (&#39;IL1R&#39;, &#39;URAVR&#39;), (&#39;IL1R&#39;, &#39;URBR&#39;), (&#39;OLLR&#39;, &#39;ADER&#39;), (&#39;OLLR&#39;, &#39;ADLR&#39;), (&#39;OLLR&#39;, &#39;CEPDR&#39;), (&#39;OLLR&#39;, &#39;CEPVR&#39;), (&#39;OLLR&#39;, &#39;IL2R&#39;), (&#39;OLLR&#39;, &#39;RIS&#39;), (&#39;OLLR&#39;, &#39;RMDL&#39;), (&#39;OLLR&#39;, &#39;SAAVL&#39;), (&#39;RIS&#39;, &#39;AVJL&#39;), (&#39;RIS&#39;, &#39;CEPDL&#39;), (&#39;RIS&#39;, &#39;PVCL&#39;), (&#39;RIS&#39;, &#39;RIML&#39;), (&#39;RIS&#39;, &#39;RIMR&#39;), (&#39;RIS&#39;, &#39;SDQL&#39;), (&#39;RIS&#39;, &#39;URYVL&#39;), (&#39;URYDR&#39;, &#39;CEPDR&#39;), (&#39;URYDR&#39;, &#39;URADR&#39;), (&#39;CEPDL&#39;, &#39;ADEL&#39;), (&#39;CEPDL&#39;, &#39;ALML&#39;), (&#39;CEPDL&#39;, &#39;OLLL&#39;), (&#39;CEPDL&#39;, &#39;RIH&#39;), (&#39;CEPDL&#39;, &#39;RIS&#39;), (&#39;CEPDL&#39;, &#39;RMGL&#39;), (&#39;CEPDL&#39;, &#39;URBL&#39;), (&#39;IL1L&#39;, &#39;ADEL&#39;), (&#39;IL1L&#39;, &#39;CEPDL&#39;), (&#39;IL1L&#39;, &#39;IL1DL&#39;), (&#39;IL1L&#39;, &#39;IL1VL&#39;), (&#39;IL1L&#39;, &#39;IL2L&#39;), (&#39;IL1L&#39;, &#39;URBL&#39;), (&#39;OLLL&#39;, &#39;ADEL&#39;), (&#39;OLLL&#39;, &#39;CEPDL&#39;), (&#39;OLLL&#39;, &#39;CEPVL&#39;), (&#39;OLLL&#39;, &#39;SAADR&#39;), (&#39;URYDL&#39;, &#39;CEPDL&#39;), (&#39;URYDL&#39;, &#39;OLLL&#39;), (&#39;VC4&#39;, &#39;VC3&#39;), (&#39;VC4&#39;, &#39;VC5&#39;), (&#39;VC5&#39;, &#39;HSNL&#39;), (&#39;VC5&#39;, &#39;HSNR&#39;), (&#39;VC5&#39;, &#39;VC4&#39;), (&#39;VC5&#39;, &#39;VC6&#39;), (&#39;PHAR&#39;, &#39;AVG&#39;), (&#39;PHAR&#39;, &#39;PHAL&#39;), (&#39;PDEL&#39;, &#39;AVAL&#39;), (&#39;PDEL&#39;, &#39;AVFL&#39;), (&#39;PDEL&#39;, &#39;AVKR&#39;), (&#39;PDEL&#39;, &#39;PDER&#39;), (&#39;PDEL&#39;, &#39;PVCL&#39;), (&#39;PDEL&#39;, &#39;PVM&#39;), (&#39;PVM&#39;, &#39;AVKL&#39;), (&#39;PVM&#39;, &#39;AVKR&#39;), (&#39;PVM&#39;, &#39;PDEL&#39;), (&#39;PVM&#39;, &#39;PDER&#39;), (&#39;RMDR&#39;, &#39;ADER&#39;), (&#39;RMDR&#39;, &#39;ALA&#39;), (&#39;RMDR&#39;, &#39;IL1L&#39;), (&#39;RMDR&#39;, &#39;IL1R&#39;), (&#39;RMDR&#39;, &#39;IL2L&#39;), (&#39;RMDR&#39;, &#39;OLLR&#39;), (&#39;RMDR&#39;, &#39;RIAL&#39;), (&#39;RMDR&#39;, &#39;RIAR&#39;), (&#39;RMDR&#39;, &#39;RIML&#39;), (&#39;RMDR&#39;, &#39;RIMR&#39;), (&#39;RMDR&#39;, &#39;RIS&#39;), (&#39;RMDR&#39;, &#39;RIVR&#39;), (&#39;RMDR&#39;, &#39;RMDL&#39;), (&#39;RMDR&#39;, &#39;RMFL&#39;), (&#39;RMDR&#39;, &#39;RMFR&#39;), (&#39;RMDR&#39;, &#39;RMGL&#39;), (&#39;RMDR&#39;, &#39;RMGR&#39;), (&#39;RMDR&#39;, &#39;RMHL&#39;), (&#39;RMDR&#39;, &#39;URBR&#39;), (&#39;RMDR&#39;, &#39;URXR&#39;), (&#39;RMFL&#39;, &#39;DVB&#39;), (&#39;RMFL&#39;, &#39;DVC&#39;), (&#39;RMFL&#39;, &#39;RIGL&#39;), (&#39;RMFL&#39;, &#39;RMDL&#39;), (&#39;RMFL&#39;, &#39;SAADR&#39;), (&#39;RMFL&#39;, &#39;SDQL&#39;), (&#39;RMFL&#39;, &#39;VB1&#39;), (&#39;AVKR&#39;, &#39;ADER&#39;), (&#39;AVKR&#39;, &#39;DVB&#39;), (&#39;AVKR&#39;, &#39;DVC&#39;), (&#39;AVKR&#39;, &#39;PDER&#39;), (&#39;AVKR&#39;, &#39;PVR&#39;), (&#39;AVKR&#39;, &#39;RIGR&#39;), (&#39;AVKR&#39;, &#39;RIS&#39;), (&#39;AVKR&#39;, &#39;RMFL&#39;), (&#39;AVKR&#39;, &#39;RMFR&#39;), (&#39;PDER&#39;, &#39;AVAR&#39;), (&#39;PDER&#39;, &#39;AVFR&#39;), (&#39;PDER&#39;, &#39;AVKL&#39;), (&#39;PDER&#39;, &#39;DVA&#39;), (&#39;PDER&#39;, &#39;PDEL&#39;), (&#39;PDER&#39;, &#39;PLMR&#39;), (&#39;PDER&#39;, &#39;PVCR&#39;), (&#39;PDER&#39;, &#39;PVR&#39;), (&#39;VC3&#39;, &#39;HSNR&#39;), (&#39;VC3&#39;, &#39;PVNL&#39;), (&#39;VC3&#39;, &#39;PVNR&#39;), (&#39;VC3&#39;, &#39;VC5&#39;), (&#39;IL2VL&#39;, &#39;OLQVL&#39;), (&#39;RIAR&#39;, &#39;ADFR&#39;), (&#39;RIAR&#39;, &#39;AIYR&#39;), (&#39;RIAR&#39;, &#39;AIZR&#39;), (&#39;RIAR&#39;, &#39;AQR&#39;), (&#39;RIAR&#39;, &#39;ASEL&#39;), (&#39;RIAR&#39;, &#39;ASHR&#39;), (&#39;RIAR&#39;, &#39;AUAR&#39;), (&#39;RIAR&#39;, &#39;AWBR&#39;), (&#39;RIAR&#39;, &#39;BAGL&#39;), (&#39;RIAR&#39;, &#39;DVA&#39;), (&#39;RIAR&#39;, &#39;IL2VR&#39;), (&#39;RIAR&#39;, &#39;PVPR&#39;), (&#39;RIAR&#39;, &#39;RIAL&#39;), (&#39;RIAR&#39;, &#39;RIBR&#39;), (&#39;RIAR&#39;, &#39;RIH&#39;), (&#39;RIAR&#39;, &#39;RIR&#39;), (&#39;RIAR&#39;, &#39;RIVL&#39;), (&#39;RIAR&#39;, &#39;RIVR&#39;), (&#39;RIAR&#39;, &#39;RMDL&#39;), (&#39;RIAR&#39;, &#39;RMDR&#39;), (&#39;RIAR&#39;, &#39;RMDVL&#39;), (&#39;RIAR&#39;, &#39;SMDDL&#39;), (&#39;RIAR&#39;, &#39;SMDDR&#39;), (&#39;RIAR&#39;, &#39;SMDVR&#39;), (&#39;RIAR&#39;, &#39;URXR&#39;), (&#39;RIAR&#39;, &#39;URYVR&#39;), (&#39;DA1&#39;, &#39;AS1&#39;), (&#39;DA1&#39;, &#39;AVAL&#39;), (&#39;DA1&#39;, &#39;AVAR&#39;), (&#39;DA1&#39;, &#39;AVDL&#39;), (&#39;DA1&#39;, &#39;AVDR&#39;), (&#39;DA1&#39;, &#39;AVEL&#39;), (&#39;DA1&#39;, &#39;AVER&#39;), (&#39;DA1&#39;, &#39;AVM&#39;), (&#39;DA1&#39;, &#39;DD1&#39;), (&#39;DD1&#39;, &#39;AVL&#39;), (&#39;DD1&#39;, &#39;DA2&#39;), (&#39;DD1&#39;, &#39;DB1&#39;), (&#39;DD1&#39;, &#39;DB2&#39;), (&#39;DD1&#39;, &#39;PVNL&#39;), (&#39;DD1&#39;, &#39;PVNR&#39;), (&#39;DD1&#39;, &#39;PVQL&#39;), (&#39;DD1&#39;, &#39;PVQR&#39;), (&#39;DD1&#39;, &#39;VA1&#39;), (&#39;DD1&#39;, &#39;VA2&#39;), (&#39;DD1&#39;, &#39;VA3&#39;), (&#39;DD1&#39;, &#39;VB1&#39;), (&#39;DD1&#39;, &#39;VB2&#39;), (&#39;DD1&#39;, &#39;VC1&#39;), (&#39;DD1&#39;, &#39;VC3&#39;), (&#39;DD1&#39;, &#39;VD1&#39;), (&#39;DA2&#39;, &#39;AS2&#39;), (&#39;DA2&#39;, &#39;AVAL&#39;), (&#39;DA2&#39;, &#39;AVAR&#39;), (&#39;DA2&#39;, &#39;AVDL&#39;), (&#39;DA2&#39;, &#39;AVDR&#39;), (&#39;DA2&#39;, &#39;AVEL&#39;), (&#39;DA2&#39;, &#39;AVER&#39;), (&#39;DA2&#39;, &#39;AVL&#39;), (&#39;DA2&#39;, &#39;PVCL&#39;), (&#39;DA2&#39;, &#39;PVCR&#39;), (&#39;DA3&#39;, &#39;AS11&#39;), (&#39;DA3&#39;, &#39;AS3&#39;), (&#39;DA3&#39;, &#39;AVAL&#39;), (&#39;DA3&#39;, &#39;AVAR&#39;), (&#39;DA3&#39;, &#39;AVDL&#39;), (&#39;DA3&#39;, &#39;AVDR&#39;), (&#39;DA3&#39;, &#39;AVEL&#39;), (&#39;DA3&#39;, &#39;AVER&#39;), (&#39;DA3&#39;, &#39;DD2&#39;), (&#39;DD2&#39;, &#39;DA3&#39;), (&#39;DD2&#39;, &#39;DB2&#39;), (&#39;DD2&#39;, &#39;DB3&#39;), (&#39;DD2&#39;, &#39;PVNL&#39;), (&#39;DD2&#39;, &#39;PVNR&#39;), (&#39;DD2&#39;, &#39;PVPL&#39;), (&#39;DD2&#39;, &#39;PVPR&#39;), (&#39;DD2&#39;, &#39;VA3&#39;), (&#39;DD2&#39;, &#39;VA4&#39;), (&#39;DD2&#39;, &#39;VB2&#39;), (&#39;DD2&#39;, &#39;VB3&#39;), (&#39;DD2&#39;, &#39;VB4&#39;), (&#39;DD2&#39;, &#39;VC2&#39;), (&#39;DD2&#39;, &#39;VC3&#39;), (&#39;DD2&#39;, &#39;VC6&#39;), (&#39;DA4&#39;, &#39;AS5&#39;), (&#39;DA4&#39;, &#39;AVAL&#39;), (&#39;DA4&#39;, &#39;AVAR&#39;), (&#39;DA4&#39;, &#39;AVDL&#39;), (&#39;DA4&#39;, &#39;AVDR&#39;), (&#39;DA4&#39;, &#39;AVEL&#39;), (&#39;DA4&#39;, &#39;AVER&#39;), (&#39;DA4&#39;, &#39;DA3&#39;), (&#39;DA4&#39;, &#39;DD3&#39;), (&#39;DD3&#39;, &#39;DA4&#39;), (&#39;DD3&#39;, &#39;DB3&#39;), (&#39;DD3&#39;, &#39;DB4&#39;), (&#39;DD3&#39;, &#39;VA5&#39;), (&#39;DD3&#39;, &#39;VA6&#39;), (&#39;DD3&#39;, &#39;VB4&#39;), (&#39;DD3&#39;, &#39;VB5&#39;), (&#39;DD3&#39;, &#39;VB6&#39;), (&#39;DD3&#39;, &#39;VC3&#39;), (&#39;DD3&#39;, &#39;VC6&#39;), (&#39;DA5&#39;, &#39;AS6&#39;), (&#39;DA5&#39;, &#39;AVAL&#39;), (&#39;DA5&#39;, &#39;AVAR&#39;), (&#39;DA5&#39;, &#39;AVBL&#39;), (&#39;DA5&#39;, &#39;AVBR&#39;), (&#39;DA5&#39;, &#39;AVDL&#39;), (&#39;DA5&#39;, &#39;AVDR&#39;), (&#39;DA5&#39;, &#39;DA4&#39;), (&#39;DA5&#39;, &#39;HSNL&#39;), (&#39;DA5&#39;, &#39;HSNR&#39;), (&#39;DA6&#39;, &#39;AS8&#39;), (&#39;DA6&#39;, &#39;AVAL&#39;), (&#39;DA6&#39;, &#39;AVAR&#39;), (&#39;DA6&#39;, &#39;DA5&#39;), (&#39;DA6&#39;, &#39;DD4&#39;), (&#39;DA6&#39;, &#39;HSNR&#39;), (&#39;DD4&#39;, &#39;DA5&#39;), (&#39;DD4&#39;, &#39;DA6&#39;), (&#39;DD4&#39;, &#39;DB4&#39;), (&#39;DD4&#39;, &#39;DB5&#39;), (&#39;DD4&#39;, &#39;VA7&#39;), (&#39;DD4&#39;, &#39;VA8&#39;), (&#39;DD4&#39;, &#39;VB6&#39;), (&#39;DD4&#39;, &#39;VB7&#39;), (&#39;DD4&#39;, &#39;VB8&#39;), (&#39;DD4&#39;, &#39;VC3&#39;), (&#39;DD4&#39;, &#39;VC4&#39;), (&#39;DD4&#39;, &#39;VC6&#39;), (&#39;DA7&#39;, &#39;AS10&#39;), (&#39;DA7&#39;, &#39;AVAL&#39;), (&#39;DA7&#39;, &#39;AVAR&#39;), (&#39;DA7&#39;, &#39;DA6&#39;), (&#39;DA7&#39;, &#39;DD5&#39;), (&#39;DD5&#39;, &#39;DB5&#39;), (&#39;DD5&#39;, &#39;DB6&#39;), (&#39;DD5&#39;, &#39;VA10&#39;), (&#39;DD5&#39;, &#39;VA9&#39;), (&#39;DD5&#39;, &#39;VB10&#39;), (&#39;DD5&#39;, &#39;VB8&#39;), (&#39;DD5&#39;, &#39;VB9&#39;), (&#39;DD5&#39;, &#39;VC6&#39;), (&#39;DA8&#39;, &#39;AS11&#39;), (&#39;DA8&#39;, &#39;AVAL&#39;), (&#39;DA8&#39;, &#39;AVAR&#39;), (&#39;DA8&#39;, &#39;AVDL&#39;), (&#39;DA8&#39;, &#39;AVDR&#39;), (&#39;DA8&#39;, &#39;AVG&#39;), (&#39;DA8&#39;, &#39;DA7&#39;), (&#39;DA8&#39;, &#39;DD6&#39;), (&#39;DA8&#39;, &#39;DVB&#39;), (&#39;DA8&#39;, &#39;PHAL&#39;), (&#39;DA8&#39;, &#39;VA12&#39;), (&#39;DD6&#39;, &#39;AVL&#39;), (&#39;DD6&#39;, &#39;DA7&#39;), (&#39;DD6&#39;, &#39;DA8&#39;), (&#39;DD6&#39;, &#39;DA9&#39;), (&#39;DD6&#39;, &#39;DB6&#39;), (&#39;DD6&#39;, &#39;DB7&#39;), (&#39;DD6&#39;, &#39;DVB&#39;), (&#39;DD6&#39;, &#39;PDA&#39;), (&#39;DD6&#39;, &#39;PDB&#39;), (&#39;DD6&#39;, &#39;RID&#39;), (&#39;DD6&#39;, &#39;VA11&#39;), (&#39;DD6&#39;, &#39;VA12&#39;), (&#39;DD6&#39;, &#39;VB10&#39;), (&#39;DD6&#39;, &#39;VB11&#39;), (&#39;DA9&#39;, &#39;AS11&#39;), (&#39;DA9&#39;, &#39;AVAL&#39;), (&#39;DA9&#39;, &#39;AVAR&#39;), (&#39;DA9&#39;, &#39;AVDL&#39;), (&#39;DA9&#39;, &#39;AVDR&#39;), (&#39;DA9&#39;, &#39;DA8&#39;), (&#39;DA9&#39;, &#39;PDA&#39;), (&#39;DA9&#39;, &#39;PHCR&#39;), (&#39;DA9&#39;, &#39;PVR&#39;), (&#39;DA9&#39;, &#39;VA12&#39;), (&#39;PDA&#39;, &#39;DVB&#39;), (&#39;VA1&#39;, &#39;AVEL&#39;), (&#39;VA1&#39;, &#39;AVER&#39;), (&#39;VA1&#39;, &#39;VB1&#39;), (&#39;VA1&#39;, &#39;VD1&#39;), (&#39;VA2&#39;, &#39;AVAL&#39;), (&#39;VA2&#39;, &#39;AVAR&#39;), (&#39;VA2&#39;, &#39;AVDL&#39;), (&#39;VA2&#39;, &#39;AVDR&#39;), (&#39;VA2&#39;, &#39;AVEL&#39;), (&#39;VA2&#39;, &#39;AVER&#39;), (&#39;VA2&#39;, &#39;SABD&#39;), (&#39;VA2&#39;, &#39;VA1&#39;), (&#39;VA2&#39;, &#39;VB1&#39;), (&#39;VA2&#39;, &#39;VB2&#39;), (&#39;VA3&#39;, &#39;AVAL&#39;), (&#39;VA3&#39;, &#39;AVAR&#39;), (&#39;VA3&#39;, &#39;AVDL&#39;), (&#39;VA3&#39;, &#39;AVDR&#39;), (&#39;VA3&#39;, &#39;AVEL&#39;), (&#39;VA3&#39;, &#39;AVER&#39;), (&#39;VA3&#39;, &#39;VA2&#39;), (&#39;VA3&#39;, &#39;VB1&#39;), (&#39;VB2&#39;, &#39;VD2&#39;), (&#39;VB2&#39;, &#39;VD3&#39;), (&#39;VC1&#39;, &#39;VC3&#39;), (&#39;VD1&#39;, &#39;AS1&#39;), (&#39;VD1&#39;, &#39;AVHL&#39;), (&#39;VD1&#39;, &#39;AVHR&#39;), (&#39;VD1&#39;, &#39;DA1&#39;), (&#39;VD1&#39;, &#39;DA2&#39;), (&#39;VD1&#39;, &#39;DB1&#39;), (&#39;VD1&#39;, &#39;DD1&#39;), (&#39;VD1&#39;, &#39;PVQL&#39;), (&#39;VD1&#39;, &#39;PVQR&#39;), (&#39;VD1&#39;, &#39;VA1&#39;), (&#39;VD1&#39;, &#39;VA2&#39;), (&#39;VD1&#39;, &#39;VB1&#39;), (&#39;VD1&#39;, &#39;VC1&#39;), (&#39;VD1&#39;, &#39;VC2&#39;), (&#39;VD1&#39;, &#39;VC3&#39;), (&#39;VA4&#39;, &#39;AVAL&#39;), (&#39;VA4&#39;, &#39;AVAR&#39;), (&#39;VA4&#39;, &#39;AVBL&#39;), (&#39;VA4&#39;, &#39;AVBR&#39;), (&#39;VA4&#39;, &#39;AVEL&#39;), (&#39;VA4&#39;, &#39;AVER&#39;), (&#39;VA4&#39;, &#39;VA3&#39;), (&#39;VB3&#39;, &#39;PVCL&#39;), (&#39;VB3&#39;, &#39;PVCR&#39;), (&#39;VB4&#39;, &#39;PVCL&#39;), (&#39;VB4&#39;, &#39;PVCR&#39;), (&#39;VC2&#39;, &#39;HSNL&#39;), (&#39;VC2&#39;, &#39;HSNR&#39;), (&#39;VC2&#39;, &#39;PVNL&#39;), (&#39;VC2&#39;, &#39;PVNR&#39;), (&#39;VC2&#39;, &#39;VB2&#39;), (&#39;VC2&#39;, &#39;VC1&#39;), (&#39;VC2&#39;, &#39;VC3&#39;), (&#39;VA5&#39;, &#39;AVAL&#39;), (&#39;VA5&#39;, &#39;AVAR&#39;), (&#39;VA5&#39;, &#39;AVDL&#39;), (&#39;VA5&#39;, &#39;AVDR&#39;), (&#39;VA5&#39;, &#39;HSNR&#39;), (&#39;VA5&#39;, &#39;VA4&#39;), (&#39;VA6&#39;, &#39;AVAL&#39;), (&#39;VA6&#39;, &#39;AVAR&#39;), (&#39;VA6&#39;, &#39;AVDL&#39;), (&#39;VA6&#39;, &#39;AVDR&#39;), (&#39;VA6&#39;, &#39;AVEL&#39;), (&#39;VA6&#39;, &#39;AVER&#39;), (&#39;VA6&#39;, &#39;HSNL&#39;), (&#39;VA6&#39;, &#39;HSNR&#39;), (&#39;VA6&#39;, &#39;VA5&#39;), (&#39;VB5&#39;, &#39;PVCL&#39;), (&#39;VB5&#39;, &#39;PVCR&#39;), (&#39;VB6&#39;, &#39;PVCL&#39;), (&#39;VB6&#39;, &#39;PVCR&#39;), (&#39;VA7&#39;, &#39;AVBL&#39;), (&#39;VA7&#39;, &#39;AVBR&#39;), (&#39;VA7&#39;, &#39;VA6&#39;), (&#39;VA8&#39;, &#39;VA7&#39;), (&#39;VB7&#39;, &#39;PVCL&#39;), (&#39;VB7&#39;, &#39;PVCR&#39;), (&#39;VB8&#39;, &#39;PVCL&#39;), (&#39;VB8&#39;, &#39;PVCR&#39;), (&#39;VA10&#39;, &#39;AVAL&#39;), (&#39;VA10&#39;, &#39;AVAR&#39;), (&#39;VA10&#39;, &#39;AVBL&#39;), (&#39;VA10&#39;, &#39;AVBR&#39;), (&#39;VA10&#39;, &#39;VA9&#39;), (&#39;VA9&#39;, &#39;PDEL&#39;), (&#39;VA9&#39;, &#39;PDER&#39;), (&#39;VA9&#39;, &#39;VA8&#39;), (&#39;RID&#39;, &#39;AINR&#39;), (&#39;RID&#39;, &#39;AVM&#39;), (&#39;RID&#39;, &#39;PVCL&#39;), (&#39;RID&#39;, &#39;PVCR&#39;), (&#39;VA11&#39;, &#39;AVAL&#39;), (&#39;VA11&#39;, &#39;AVAR&#39;), (&#39;VA11&#39;, &#39;AVDL&#39;), (&#39;VA11&#39;, &#39;AVDR&#39;), (&#39;VA11&#39;, &#39;AVG&#39;), (&#39;VA11&#39;, &#39;VA10&#39;), (&#39;VA11&#39;, &#39;VA12&#39;), (&#39;VB11&#39;, &#39;DVA&#39;), (&#39;VB11&#39;, &#39;PVCL&#39;), (&#39;VB11&#39;, &#39;PVCR&#39;), (&#39;IL1DL&#39;, &#39;CEPDL&#39;), (&#39;IL1DL&#39;, &#39;IL1L&#39;), (&#39;IL1DL&#39;, &#39;IL2DL&#39;), (&#39;IL1DL&#39;, &#39;PVR&#39;), (&#39;IL1DL&#39;, &#39;URADL&#39;), (&#39;URADL&#39;, &#39;BDUL&#39;), (&#39;URADL&#39;, &#39;CEPDL&#39;), (&#39;URADL&#39;, &#39;IL2DL&#39;), (&#39;IL1DR&#39;, &#39;CEPDR&#39;), (&#39;IL1DR&#39;, &#39;IL1R&#39;), (&#39;IL1DR&#39;, &#39;IL2DR&#39;), (&#39;IL1DR&#39;, &#39;OLLR&#39;), (&#39;IL1DR&#39;, &#39;PVR&#39;), (&#39;IL1VL&#39;, &#39;CEPVL&#39;), (&#39;IL1VL&#39;, &#39;IL2VL&#39;), (&#39;IL1VL&#39;, &#39;OLLL&#39;), (&#39;IL1VL&#39;, &#39;OLQVL&#39;), (&#39;IL1VL&#39;, &#39;PVR&#39;), (&#39;IL1VL&#39;, &#39;URYVL&#39;), (&#39;IL1VR&#39;, &#39;CEPVR&#39;), (&#39;IL1VR&#39;, &#39;IL2VR&#39;), (&#39;IL1VR&#39;, &#39;OLLR&#39;), (&#39;IL1VR&#39;, &#39;OLQVR&#39;), (&#39;IL1VR&#39;, &#39;PVR&#39;), (&#39;IL1VR&#39;, &#39;URYVR&#39;), (&#39;URAVR&#39;, &#39;CEPVR&#39;), (&#39;URAVR&#39;, &#39;IL2R&#39;), (&#39;URAVR&#39;, &#39;IL2VR&#39;), (&#39;OLQVL&#39;, &#39;ADFL&#39;), (&#39;OLQVL&#39;, &#39;ADLL&#39;), (&#39;OLQVL&#39;, &#39;CEPVL&#39;), (&#39;OLQVL&#39;, &#39;IL2L&#39;), (&#39;OLQVL&#39;, &#39;IL2VL&#39;), (&#39;OLQVL&#39;, &#39;RIH&#39;), (&#39;IL2VR&#39;, &#39;CEPVR&#39;), (&#39;IL2VR&#39;, &#39;IL1VR&#39;), (&#39;IL2VR&#39;, &#39;OLQVR&#39;), (&#39;OLQVR&#39;, &#39;CEPVR&#39;), (&#39;OLQVR&#39;, &#39;IL2R&#39;), (&#39;OLQVR&#39;, &#39;IL2VR&#39;), (&#39;OLQVR&#39;, &#39;RIH&#39;), (&#39;OLQVR&#39;, &#39;URXR&#39;), (&#39;RMDL&#39;, &#39;ADEL&#39;), (&#39;RMDL&#39;, &#39;IL1L&#39;), (&#39;RMDL&#39;, &#39;IL1R&#39;), (&#39;RMDL&#39;, &#39;IL2L&#39;), (&#39;RMDL&#39;, &#39;IL2R&#39;), (&#39;RMDL&#39;, &#39;OLLL&#39;), (&#39;RMDL&#39;, &#39;OLLR&#39;), (&#39;RMDL&#39;, &#39;RIAL&#39;), (&#39;RMDL&#39;, &#39;RIAR&#39;), (&#39;RMDL&#39;, &#39;RIML&#39;), (&#39;RMDL&#39;, &#39;RIMR&#39;), (&#39;RMDL&#39;, &#39;RIS&#39;), (&#39;RMDL&#39;, &#39;RIVL&#39;), (&#39;RMDL&#39;, &#39;RMDR&#39;), (&#39;RMDL&#39;, &#39;RMFL&#39;), (&#39;RMDL&#39;, &#39;RMGL&#39;), (&#39;RMDL&#39;, &#39;RMGR&#39;), (&#39;RMDL&#39;, &#39;URBR&#39;), (&#39;OLQDL&#39;, &#39;CEPDL&#39;), (&#39;OLQDL&#39;, &#39;IL2DL&#39;), (&#39;OLQDL&#39;, &#39;IL2L&#39;), (&#39;OLQDL&#39;, &#39;RIH&#39;), (&#39;OLQDL&#39;, &#39;RIPL&#39;), (&#39;RIPL&#39;, &#39;ADAL&#39;), (&#39;RIPL&#39;, &#39;ADLL&#39;), (&#39;RIPL&#39;, &#39;ASHL&#39;), (&#39;RIPL&#39;, &#39;CEPDL&#39;), (&#39;RIPL&#39;, &#39;CEPVL&#39;), (&#39;RIPL&#39;, &#39;IL1DL&#39;), (&#39;RIPL&#39;, &#39;IL1VL&#39;), (&#39;RIPL&#39;, &#39;IL2DL&#39;), (&#39;RIPL&#39;, &#39;IL2VL&#39;), (&#39;RIPL&#39;, &#39;OLQVL&#39;), (&#39;RIPL&#39;, &#39;PVR&#39;), (&#39;RIPL&#39;, &#39;RIH&#39;), (&#39;RIPL&#39;, &#39;URADL&#39;), (&#39;RIPL&#39;, &#39;URAVL&#39;), (&#39;OLQDR&#39;, &#39;CEPDR&#39;), (&#39;OLQDR&#39;, &#39;IL2R&#39;), (&#39;OLQDR&#39;, &#39;RIH&#39;), (&#39;OLQDR&#39;, &#39;RIPR&#39;), (&#39;RIPR&#39;, &#39;ADAR&#39;), (&#39;RIPR&#39;, &#39;CEPVR&#39;), (&#39;RIPR&#39;, &#39;IL1DR&#39;), (&#39;RIPR&#39;, &#39;IL1VR&#39;), (&#39;RIPR&#39;, &#39;IL2DR&#39;), (&#39;RIPR&#39;, &#39;IL2VR&#39;), (&#39;RIPR&#39;, &#39;OLQVR&#39;), (&#39;RIPR&#39;, &#39;PVR&#39;), (&#39;RIPR&#39;, &#39;RIFR&#39;), (&#39;RIPR&#39;, &#39;RIH&#39;), (&#39;RIPR&#39;, &#39;URADR&#39;), (&#39;RIPR&#39;, &#39;URAVR&#39;), (&#39;RIPR&#39;, &#39;URXR&#39;), (&#39;PLNL&#39;, &#39;SMBVR&#39;), (&#39;SMBVR&#39;, &#39;ADFR&#39;), (&#39;SMBVR&#39;, &#39;AIZR&#39;), (&#39;SMBVR&#39;, &#39;AVHL&#39;), (&#39;SMBVR&#39;, &#39;AWBR&#39;), (&#39;SMBVR&#39;, &#39;DVA&#39;), (&#39;SMBVR&#39;, &#39;PLNR&#39;), (&#39;SMBVR&#39;, &#39;RIVL&#39;), (&#39;PLNR&#39;, &#39;SMBVL&#39;), (&#39;SMBVL&#39;, &#39;ADFL&#39;), (&#39;SMBVL&#39;, &#39;AIML&#39;), (&#39;SMBVL&#39;, &#39;AIZL&#39;), (&#39;SMBVL&#39;, &#39;AVHR&#39;), (&#39;SMBVL&#39;, &#39;DVA&#39;), (&#39;SMBVL&#39;, &#39;PLNL&#39;), (&#39;SMBVL&#39;, &#39;RMGL&#39;), (&#39;PVT&#39;, &#39;PVNL&#39;), (&#39;PVT&#39;, &#39;PVNR&#39;), (&#39;PVT&#39;, &#39;PVWL&#39;), (&#39;PVT&#39;, &#39;PVWR&#39;), (&#39;PVT&#39;, &#39;VC3&#39;), (&#39;RIAL&#39;, &#39;ADEL&#39;), (&#39;RIAL&#39;, &#39;ADFL&#39;), (&#39;RIAL&#39;, &#39;AIBR&#39;), (&#39;RIAL&#39;, &#39;AIZL&#39;), (&#39;RIAL&#39;, &#39;AQR&#39;), (&#39;RIAL&#39;, &#39;ASHL&#39;), (&#39;RIAL&#39;, &#39;AUAL&#39;), (&#39;RIAL&#39;, &#39;AWBL&#39;), (&#39;RIAL&#39;, &#39;AWCL&#39;), (&#39;RIAL&#39;, &#39;BAGR&#39;), (&#39;RIAL&#39;, &#39;DVA&#39;), (&#39;RIAL&#39;, &#39;IL2VL&#39;), (&#39;RIAL&#39;, &#39;RIBL&#39;), (&#39;RIAL&#39;, &#39;RIH&#39;), (&#39;RIAL&#39;, &#39;RIR&#39;), (&#39;RIAL&#39;, &#39;RIVL&#39;), (&#39;RIAL&#39;, &#39;RIVR&#39;), (&#39;RIAL&#39;, &#39;RMDL&#39;), (&#39;RIAL&#39;, &#39;RMDR&#39;), (&#39;RIAL&#39;, &#39;SMDDL&#39;), (&#39;RIAL&#39;, &#39;SMDDR&#39;), (&#39;RIAL&#39;, &#39;SMDVR&#39;), (&#39;RIAL&#39;, &#39;URXL&#39;), (&#39;RIAL&#39;, &#39;URYVL&#39;), (&#39;RIVL&#39;, &#39;ADEL&#39;), (&#39;RIVL&#39;, &#39;CEPVR&#39;), (&#39;RIVL&#39;, &#39;RIAL&#39;), (&#39;RIVL&#39;, &#39;RIAR&#39;), (&#39;RIVR&#39;, &#39;ADAR&#39;), (&#39;RIVR&#39;, &#39;ADEL&#39;), (&#39;RIVR&#39;, &#39;RIAL&#39;), (&#39;RIVR&#39;, &#39;RICL&#39;), (&#39;RIVR&#39;, &#39;SMDVR&#39;), (&#39;SMDDL&#39;, &#39;ADLL&#39;), (&#39;SMDDL&#39;, &#39;AIBR&#39;), (&#39;SMDDL&#39;, &#39;AVKR&#39;), (&#39;SMDDL&#39;, &#39;OLLL&#39;), (&#39;SMDDL&#39;, &#39;OLLR&#39;), (&#39;SMDDL&#39;, &#39;RIAL&#39;), (&#39;SMDDL&#39;, &#39;RIAR&#39;), (&#39;SMDDL&#39;, &#39;RIBR&#39;), (&#39;SMDDL&#39;, &#39;RICL&#39;), (&#39;SMDDL&#39;, &#39;RICR&#39;), (&#39;SMDDL&#39;, &#39;RIMR&#39;), (&#39;SMDDL&#39;, &#39;RIS&#39;), (&#39;SMDDL&#39;, &#39;RIVR&#39;), (&#39;SMDDL&#39;, &#39;SAAVR&#39;), (&#39;SMDDL&#39;, &#39;SMDVR&#39;), (&#39;SMDDL&#39;, &#39;URYDL&#39;), (&#39;SMDDL&#39;, &#39;URYDR&#39;), (&#39;SMDDR&#39;, &#39;ALNR&#39;), (&#39;SMDDR&#39;, &#39;AVKR&#39;), (&#39;SMDDR&#39;, &#39;OLLL&#39;), (&#39;SMDDR&#39;, &#39;OLLR&#39;), (&#39;SMDDR&#39;, &#39;RIAL&#39;), (&#39;SMDDR&#39;, &#39;RIAR&#39;), (&#39;SMDDR&#39;, &#39;RICL&#39;), (&#39;SMDDR&#39;, &#39;RICR&#39;), (&#39;SMDDR&#39;, &#39;RIML&#39;), (&#39;SMDDR&#39;, &#39;RIMR&#39;), (&#39;SMDDR&#39;, &#39;RIS&#39;), (&#39;SMDDR&#39;, &#39;RIVL&#39;), (&#39;SMDDR&#39;, &#39;RMEV&#39;), (&#39;SMDDR&#39;, &#39;SAAVL&#39;), (&#39;SMDDR&#39;, &#39;URYDL&#39;), (&#39;SMDDR&#39;, &#39;URYDR&#39;), (&#39;SMDVR&#39;, &#39;ADAR&#39;), (&#39;SMDVR&#39;, &#39;AVKR&#39;), (&#39;SMDVR&#39;, &#39;OLLL&#39;), (&#39;SMDVR&#39;, &#39;OLLR&#39;), (&#39;SMDVR&#39;, &#39;RIAL&#39;), (&#39;SMDVR&#39;, &#39;RIAR&#39;), (&#39;SMDVR&#39;, &#39;RIBL&#39;), (&#39;SMDVR&#39;, &#39;RICL&#39;), (&#39;SMDVR&#39;, &#39;RICR&#39;), (&#39;SMDVR&#39;, &#39;RIS&#39;), (&#39;SMDVR&#39;, &#39;RIVR&#39;), (&#39;SMDVR&#39;, &#39;SMDDL&#39;), (&#39;SMDVR&#39;, &#39;URYVL&#39;), (&#39;RMDVL&#39;, &#39;CEPDL&#39;), (&#39;RMDVL&#39;, &#39;IL1DL&#39;), (&#39;RMDVL&#39;, &#39;IL1L&#39;), (&#39;RMDVL&#39;, &#39;IL1R&#39;), (&#39;RMDVL&#39;, &#39;OLLL&#39;), (&#39;RMDVL&#39;, &#39;OLQVR&#39;), (&#39;RMDVL&#39;, &#39;RIAL&#39;), (&#39;RMDVL&#39;, &#39;RIAR&#39;), (&#39;RMDVL&#39;, &#39;RIVL&#39;), (&#39;RMDVL&#39;, &#39;RMDDR&#39;), (&#39;RMDVL&#39;, &#39;RMGL&#39;), (&#39;RMDVL&#39;, &#39;RMGR&#39;), (&#39;RMDVL&#39;, &#39;URAVR&#39;), (&#39;RMDVL&#39;, &#39;URYDL&#39;), (&#39;RMDVL&#39;, &#39;URYVR&#39;), (&#39;RMED&#39;, &#39;IL2DR&#39;), (&#39;RMED&#39;, &#39;RID&#39;), (&#39;RMED&#39;, &#39;SMBDL&#39;), (&#39;RMED&#39;, &#39;SMBDR&#39;), (&#39;RMED&#39;, &#39;URADR&#39;), (&#39;URAVL&#39;, &#39;CEPVL&#39;), (&#39;URAVL&#39;, &#39;IL2VL&#39;), (&#39;URADR&#39;, &#39;BDUR&#39;), (&#39;URADR&#39;, &#39;CEPDR&#39;), (&#39;URADR&#39;, &#39;IL2DR&#39;), (&#39;RMDDL&#39;, &#39;ALMR&#39;), (&#39;RMDDL&#39;, &#39;CEPDR&#39;), (&#39;RMDDL&#39;, &#39;CEPVL&#39;), (&#39;RMDDL&#39;, &#39;IL1L&#39;), (&#39;RMDDL&#39;, &#39;IL1R&#39;), (&#39;RMDDL&#39;, &#39;IL1VL&#39;), (&#39;RMDDL&#39;, &#39;OLLL&#39;), (&#39;RMDDL&#39;, &#39;OLQDR&#39;), (&#39;RMDDL&#39;, &#39;RIAL&#39;), (&#39;RMDDL&#39;, &#39;RIAR&#39;), (&#39;RMDDL&#39;, &#39;RIS&#39;), (&#39;RMDDL&#39;, &#39;RIVR&#39;), (&#39;RMDDL&#39;, &#39;RMDR&#39;), (&#39;RMDDL&#39;, &#39;RMDVL&#39;), (&#39;RMDDL&#39;, &#39;RMDVR&#39;), (&#39;RMDDL&#39;, &#39;SMDVR&#39;), (&#39;RMDDL&#39;, &#39;URYDR&#39;), (&#39;RMDDL&#39;, &#39;URYVL&#39;), (&#39;RMDDL&#39;, &#39;URYVR&#39;), (&#39;RMDVR&#39;, &#39;CEPDR&#39;), (&#39;RMDVR&#39;, &#39;IL1DR&#39;), (&#39;RMDVR&#39;, &#39;IL1L&#39;), (&#39;RMDVR&#39;, &#39;IL1R&#39;), (&#39;RMDVR&#39;, &#39;OLLR&#39;), (&#39;RMDVR&#39;, &#39;OLQVL&#39;), (&#39;RMDVR&#39;, &#39;RIAL&#39;), (&#39;RMDVR&#39;, &#39;RIAR&#39;), (&#39;RMDVR&#39;, &#39;RIVR&#39;), (&#39;RMDVR&#39;, &#39;RMDDL&#39;), (&#39;RMDVR&#39;, &#39;RMGR&#39;), (&#39;RMDVR&#39;, &#39;URADR&#39;), (&#39;RMDVR&#39;, &#39;URYDR&#39;), (&#39;RMDVR&#39;, &#39;URYVL&#39;), (&#39;RMDDR&#39;, &#39;ALML&#39;), (&#39;RMDDR&#39;, &#39;CEPVR&#39;), (&#39;RMDDR&#39;, &#39;IL1R&#39;), (&#39;RMDDR&#39;, &#39;IL1VR&#39;), (&#39;RMDDR&#39;, &#39;OLLL&#39;), (&#39;RMDDR&#39;, &#39;OLLR&#39;), (&#39;RMDDR&#39;, &#39;OLQDL&#39;), (&#39;RMDDR&#39;, &#39;RIAL&#39;), (&#39;RMDDR&#39;, &#39;RIAR&#39;), (&#39;RMDDR&#39;, &#39;RMDL&#39;), (&#39;RMDDR&#39;, &#39;RMDVL&#39;), (&#39;RMDDR&#39;, &#39;URADL&#39;), (&#39;RMDDR&#39;, &#39;URBL&#39;), (&#39;RMDDR&#39;, &#39;URYDL&#39;), (&#39;RMDDR&#39;, &#39;URYVR&#39;), (&#39;RMHL&#39;, &#39;ADEL&#39;), (&#39;RMHL&#39;, &#39;CEPDR&#39;), (&#39;RMHL&#39;, &#39;CEPVL&#39;), (&#39;RMHL&#39;, &#39;RIGR&#39;), (&#39;RMHL&#39;, &#39;SDQR&#39;), (&#39;RMEL&#39;, &#39;IL1R&#39;), (&#39;RMEL&#39;, &#39;IL2DL&#39;), (&#39;RMEL&#39;, &#39;IL2DR&#39;), (&#39;RMEL&#39;, &#39;IL2R&#39;), (&#39;RMEL&#39;, &#39;IL2VL&#39;), (&#39;RMEL&#39;, &#39;IL2VR&#39;), (&#39;RMEL&#39;, &#39;OLLL&#39;), (&#39;RMEL&#39;, &#39;URADL&#39;), (&#39;RMEL&#39;, &#39;URAVL&#39;), (&#39;RMER&#39;, &#39;IL1L&#39;), (&#39;RMER&#39;, &#39;IL2DL&#39;), (&#39;RMER&#39;, &#39;IL2DR&#39;), (&#39;RMER&#39;, &#39;IL2L&#39;), (&#39;RMER&#39;, &#39;IL2VL&#39;), (&#39;RMER&#39;, &#39;IL2VR&#39;), (&#39;RMER&#39;, &#39;OLLR&#39;), (&#39;RMER&#39;, &#39;OLQVR&#39;), (&#39;RMER&#39;, &#39;RIH&#39;), (&#39;RMER&#39;, &#39;RMHR&#39;), (&#39;RMER&#39;, &#39;URADR&#39;), (&#39;RMER&#39;, &#39;URAVL&#39;), (&#39;RMER&#39;, &#39;URAVR&#39;), (&#39;RMHR&#39;, &#39;ALNR&#39;), (&#39;RMHR&#39;, &#39;CEPDL&#39;), (&#39;RMHR&#39;, &#39;CEPVR&#39;), (&#39;RMHR&#39;, &#39;OLQDR&#39;), (&#39;RMHR&#39;, &#39;RIGL&#39;), (&#39;RMHR&#39;, &#39;RMGL&#39;), (&#39;RMHR&#39;, &#39;SDQR&#39;), (&#39;RMEV&#39;, &#39;DVB&#39;), (&#39;RMEV&#39;, &#39;IL2L&#39;), (&#39;RMEV&#39;, &#39;IL2R&#39;), (&#39;RMEV&#39;, &#39;IL2VL&#39;), (&#39;RMEV&#39;, &#39;IL2VR&#39;), (&#39;RMEV&#39;, &#39;RIH&#39;), (&#39;RMEV&#39;, &#39;RIVR&#39;), (&#39;RMEV&#39;, &#39;SMBVL&#39;), (&#39;RMEV&#39;, &#39;SMBVR&#39;), (&#39;RMEV&#39;, &#39;URAVL&#39;), (&#39;RMEV&#39;, &#39;URAVR&#39;), (&#39;SABD&#39;, &#39;AVAL&#39;), (&#39;SABD&#39;, &#39;AVAR&#39;), (&#39;SABD&#39;, &#39;AVDL&#39;), (&#39;SABD&#39;, &#39;AVDR&#39;), (&#39;SABD&#39;, &#39;AVEL&#39;), (&#39;SABD&#39;, &#39;AVER&#39;), (&#39;SABD&#39;, &#39;AVL&#39;), (&#39;SABD&#39;, &#39;HSNL&#39;), (&#39;SABD&#39;, &#39;HSNR&#39;), (&#39;SABD&#39;, &#39;PVR&#39;), (&#39;SABD&#39;, &#39;VB1&#39;), (&#39;SABVL&#39;, &#39;AVAR&#39;), (&#39;SABVL&#39;, &#39;AVDL&#39;), (&#39;SABVL&#39;, &#39;AVEL&#39;), (&#39;SABVL&#39;, &#39;AVJR&#39;), (&#39;SABVL&#39;, &#39;HSNL&#39;), (&#39;SABVL&#39;, &#39;HSNR&#39;), (&#39;SABVR&#39;, &#39;AVAL&#39;), (&#39;SABVR&#39;, &#39;AVDR&#39;), (&#39;SABVR&#39;, &#39;AVER&#39;), (&#39;SABVR&#39;, &#39;AVJL&#39;), (&#39;SABVR&#39;, &#39;AVL&#39;), (&#39;SIADL&#39;, &#39;ALMR&#39;), (&#39;SIADL&#39;, &#39;CEPDR&#39;), (&#39;SIADL&#39;, &#39;RIAL&#39;), (&#39;SIADL&#39;, &#39;RIAR&#39;), (&#39;SIADL&#39;, &#39;URBR&#39;), (&#39;SIADR&#39;, &#39;ADEL&#39;), (&#39;SIADR&#39;, &#39;CEPDL&#39;), (&#39;SIADR&#39;, &#39;RIAR&#39;), (&#39;SIAVL&#39;, &#39;CEPVL&#39;), (&#39;SIAVL&#39;, &#39;RIAR&#39;), (&#39;SIAVL&#39;, &#39;RIVR&#39;), (&#39;SIAVL&#39;, &#39;RMGL&#39;), (&#39;SIAVL&#39;, &#39;URBL&#39;), (&#39;SIAVR&#39;, &#39;AVKL&#39;), (&#39;SIAVR&#39;, &#39;CEPVR&#39;), (&#39;SIAVR&#39;, &#39;RIVL&#39;), (&#39;SIAVR&#39;, &#39;URBR&#39;), (&#39;SIAVR&#39;, &#39;URXR&#39;), (&#39;SIBDL&#39;, &#39;OLQVL&#39;), (&#39;SIBDR&#39;, &#39;ADEL&#39;), (&#39;SIBDR&#39;, &#39;OLQVR&#39;), (&#39;SIBVL&#39;, &#39;AVM&#39;), (&#39;SIBVL&#39;, &#39;OLQDL&#39;), (&#39;SIBVL&#39;, &#39;PVCL&#39;), (&#39;SIBVL&#39;, &#39;RMGL&#39;), (&#39;SIBVL&#39;, &#39;URYVL&#39;), (&#39;SIBVL&#39;, &#39;URYVR&#39;), (&#39;SIBVR&#39;, &#39;OLQDR&#39;), (&#39;SIBVR&#39;, &#39;PVCR&#39;), (&#39;SIBVR&#39;, &#39;RMDVR&#39;), (&#39;SIBVR&#39;, &#39;URYVR&#39;), (&#39;VD12&#39;, &#39;AVL&#39;), (&#39;VD12&#39;, &#39;DA8&#39;), (&#39;VD12&#39;, &#39;DA9&#39;), (&#39;VD12&#39;, &#39;DD6&#39;), (&#39;VD12&#39;, &#39;PVNL&#39;), (&#39;VD12&#39;, &#39;PVNR&#39;), (&#39;VD12&#39;, &#39;VA12&#39;), (&#39;VD12&#39;, &#39;VC6&#39;), (&#39;VD13&#39;, &#39;AVAL&#39;), (&#39;VD13&#39;, &#39;AVAR&#39;), (&#39;VD13&#39;, &#39;VA12&#39;), (&#39;VD13&#39;, &#39;VC6&#39;), (&#39;VD10&#39;, &#39;AS10&#39;), (&#39;VD10&#39;, &#39;AS11&#39;), (&#39;VD10&#39;, &#39;DA7&#39;), (&#39;VD10&#39;, &#39;DB7&#39;), (&#39;VD10&#39;, &#39;DD5&#39;), (&#39;VD10&#39;, &#39;VA11&#39;), (&#39;VD10&#39;, &#39;VC6&#39;), (&#39;VD11&#39;, &#39;AS11&#39;), (&#39;VD11&#39;, &#39;AVFL&#39;), (&#39;VD11&#39;, &#39;AVFR&#39;), (&#39;VD11&#39;, &#39;DA7&#39;), (&#39;VD11&#39;, &#39;DA8&#39;), (&#39;VD11&#39;, &#39;DA9&#39;), (&#39;VD11&#39;, &#39;DB7&#39;), (&#39;VD11&#39;, &#39;DD6&#39;), (&#39;VD11&#39;, &#39;VA11&#39;), (&#39;VD11&#39;, &#39;VC6&#39;), (&#39;VD4&#39;, &#39;AS4&#39;), (&#39;VD4&#39;, &#39;AS5&#39;), (&#39;VD4&#39;, &#39;DA3&#39;), (&#39;VD4&#39;, &#39;DA4&#39;), (&#39;VD4&#39;, &#39;DB1&#39;), (&#39;VD4&#39;, &#39;DB2&#39;), (&#39;VD4&#39;, &#39;DB3&#39;), (&#39;VD4&#39;, &#39;DB4&#39;), (&#39;VD4&#39;, &#39;DD2&#39;), (&#39;VD4&#39;, &#39;PVNL&#39;), (&#39;VD4&#39;, &#39;PVNR&#39;), (&#39;VD4&#39;, &#39;VA4&#39;), (&#39;VD4&#39;, &#39;VA5&#39;), (&#39;VD4&#39;, &#39;VC2&#39;), (&#39;VD4&#39;, &#39;VC3&#39;), (&#39;VD5&#39;, &#39;AS5&#39;), (&#39;VD5&#39;, &#39;AS6&#39;), (&#39;VD5&#39;, &#39;DA4&#39;), (&#39;VD5&#39;, &#39;DB2&#39;), (&#39;VD5&#39;, &#39;DB3&#39;), (&#39;VD5&#39;, &#39;DB4&#39;), (&#39;VD5&#39;, &#39;DB5&#39;), (&#39;VD5&#39;, &#39;DD3&#39;), (&#39;VD5&#39;, &#39;VA5&#39;), (&#39;VD5&#39;, &#39;VC3&#39;), (&#39;VD6&#39;, &#39;AS6&#39;), (&#39;VD6&#39;, &#39;AS7&#39;), (&#39;VD6&#39;, &#39;DA4&#39;), (&#39;VD6&#39;, &#39;DA5&#39;), (&#39;VD6&#39;, &#39;DB3&#39;), (&#39;VD6&#39;, &#39;DB4&#39;), (&#39;VD6&#39;, &#39;DB5&#39;), (&#39;VD6&#39;, &#39;DB6&#39;), (&#39;VD6&#39;, &#39;DD3&#39;), (&#39;VD6&#39;, &#39;VA7&#39;), (&#39;VD6&#39;, &#39;VC3&#39;), (&#39;VD7&#39;, &#39;AS7&#39;), (&#39;VD7&#39;, &#39;AS8&#39;), (&#39;VD7&#39;, &#39;DA5&#39;), (&#39;VD7&#39;, &#39;DB4&#39;), (&#39;VD7&#39;, &#39;DB5&#39;), (&#39;VD7&#39;, &#39;DB6&#39;), (&#39;VD7&#39;, &#39;DD4&#39;), (&#39;VD7&#39;, &#39;VA7&#39;), (&#39;VD7&#39;, &#39;VC3&#39;), (&#39;VD7&#39;, &#39;VC6&#39;), (&#39;VD8&#39;, &#39;AS8&#39;), (&#39;VD8&#39;, &#39;AS9&#39;), (&#39;VD8&#39;, &#39;DA6&#39;), (&#39;VD8&#39;, &#39;DB5&#39;), (&#39;VD8&#39;, &#39;DB6&#39;), (&#39;VD8&#39;, &#39;DB7&#39;), (&#39;VD8&#39;, &#39;DD4&#39;), (&#39;VD8&#39;, &#39;VA9&#39;), (&#39;VD8&#39;, &#39;VC6&#39;), (&#39;VD9&#39;, &#39;AS10&#39;), (&#39;VD9&#39;, &#39;AS9&#39;), (&#39;VD9&#39;, &#39;DA6&#39;), (&#39;VD9&#39;, &#39;DB6&#39;), (&#39;VD9&#39;, &#39;DB7&#39;), (&#39;VD9&#39;, &#39;DD5&#39;), (&#39;VD9&#39;, &#39;VA9&#39;), (&#39;VD9&#39;, &#39;VC6&#39;)])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">g2</span><span class="o">.</span><span class="n">neighbors</span><span class="p">(</span><span class="s2">&quot;ADAL&quot;</span><span class="p">))</span> <span class="c1">#neigbors of a given node</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;ADEL&#39;, &#39;ADFL&#39;, &#39;AIAL&#39;, &#39;AWAL&#39;, &#39;PVPL&#39;, &#39;RMGL&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">g2</span><span class="o">.</span><span class="n">get_edge_data</span><span class="p">(</span><span class="s2">&quot;ADAL&quot;</span><span class="p">,</span> <span class="s2">&quot;ADFL&quot;</span><span class="p">)</span> <span class="c1">#edges weight between two given nodes</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;weight&#39;: 3.0}
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="network-motifs">
+<h1>Network motifs<a class="headerlink" href="#network-motifs" title="Permalink to this heading">#</a></h1>
+<section id="definition">
+<h2>Definition<a class="headerlink" href="#definition" title="Permalink to this heading">#</a></h2>
+<p>A network motif can be defined as a subgraph (ie. small patterns of interconnections) that repeat itself in a given graph.
+They are occurring in complex networks at numbers that are significantly higher than those in randomized networks.</p>
+</section>
+<section id="most-important-motifs-in-this-dataset">
+<h2>Most important motifs in this dataset<a class="headerlink" href="#most-important-motifs-in-this-dataset" title="Permalink to this heading">#</a></h2>
+<p>feed forward loop, bi-fan, bi-parallel</p>
+</section>
+<section id="roles">
+<h2>Roles<a class="headerlink" href="#roles" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="algorithms">
+<h2>Algorithms<a class="headerlink" href="#algorithms" title="Permalink to this heading">#</a></h2>
+<p>Feed forward loop</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">feed_forward</span><span class="p">(</span><span class="n">g</span><span class="p">):</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">g</span><span class="o">.</span><span class="n">nodes</span><span class="p">():</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">g</span><span class="o">.</span><span class="n">neighbors</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">g</span><span class="o">.</span><span class="n">neighbors</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
+                <span class="k">if</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">g</span><span class="o">.</span><span class="n">neighbors</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+                    <span class="n">res</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">res</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">feed_forward</span><span class="p">(</span><span class="n">g</span><span class="p">):</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">g</span><span class="o">.</span><span class="n">nodes</span><span class="p">():</span>
+        <span class="n">n1</span> <span class="o">=</span>  <span class="nb">list</span><span class="p">(</span><span class="n">g</span><span class="o">.</span><span class="n">neighbors</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">n1</span><span class="p">:</span>
+            <span class="n">n2</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">g</span><span class="o">.</span><span class="n">neighbors</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+            <span class="n">res</span> <span class="o">+=</span> <span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">n2</span><span class="p">)</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">n1</span><span class="p">)))</span>
+    <span class="k">return</span> <span class="n">res</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">feed_forward</span><span class="p">(</span><span class="n">g2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3776
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ici, on recherche le pattern mais pas de manière exclusive, ie on ne se préoccupe pas du fait que les noeuds du pattern peuvent être connectés à d autre noeuds</p>
+<p>Bi-fan loop</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.special</span> <span class="kn">import</span> <span class="n">binom</span>
+<span class="k">def</span> <span class="nf">bi_fan</span><span class="p">(</span><span class="n">g</span><span class="p">):</span>
+    <span class="n">counts</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">nodes</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">g</span><span class="o">.</span><span class="n">nodes</span><span class="p">())</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">n1</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">nodes</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">n2</span> <span class="ow">in</span> <span class="n">nodes</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">:]:</span>
+            <span class="n">neighbors_n1</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">g</span><span class="o">.</span><span class="n">neighbors</span><span class="p">(</span><span class="n">n1</span><span class="p">)))</span><span class="o">.</span><span class="n">difference</span><span class="p">([</span><span class="n">n1</span><span class="p">,</span><span class="n">n2</span><span class="p">])</span>
+            <span class="n">neighbors_n2</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">g</span><span class="o">.</span><span class="n">neighbors</span><span class="p">(</span><span class="n">n2</span><span class="p">)))</span><span class="o">.</span><span class="n">difference</span><span class="p">([</span><span class="n">n1</span><span class="p">,</span><span class="n">n2</span><span class="p">])</span>
+            <span class="n">nb_common_neighbors</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">neighbors_n1</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">neighbors_n2</span><span class="p">))</span>
+            <span class="n">counts</span> <span class="o">+=</span> <span class="n">binom</span><span class="p">(</span><span class="n">nb_common_neighbors</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">counts</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">bi_fan</span><span class="p">(</span><span class="n">g</span><span class="p">):</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">nodes</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">g</span><span class="o">.</span><span class="n">nodes</span><span class="p">())</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">n1</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">nodes</span><span class="p">):</span> <span class="c1">#(ie a on figure 6)</span>
+        <span class="n">neighbors_n1</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">g</span><span class="o">.</span><span class="n">neighbors</span><span class="p">(</span><span class="n">n1</span><span class="p">))</span>
+        <span class="k">for</span> <span class="n">n2</span> <span class="ow">in</span> <span class="n">nodes</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">:]:</span> <span class="c1">#(ie c on figure 6)</span>
+            <span class="n">neighbors_n2</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">g</span><span class="o">.</span><span class="n">neighbors</span><span class="p">(</span><span class="n">n2</span><span class="p">))</span>
+            <span class="k">for</span> <span class="n">j</span><span class="p">,</span><span class="n">v1</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">neighbors_n1</span><span class="p">):</span> <span class="c1">#(ie b on figure 6)</span>
+                <span class="k">for</span> <span class="n">v2</span> <span class="ow">in</span> <span class="n">neighbors_n1</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">:]:</span> <span class="c1">#(ie d on figure 6)</span>
+                    <span class="k">if</span> <span class="p">((</span><span class="n">v1</span> <span class="ow">in</span> <span class="n">neighbors_n2</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">v2</span> <span class="ow">in</span> <span class="n">neighbors_n2</span><span class="p">)):</span>
+                        <span class="n">res</span> <span class="o">+=</span> <span class="mi">1</span>
+            
+    <span class="k">return</span> <span class="n">res</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bi_fan</span><span class="p">(</span><span class="n">g2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>14232.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">bi_parallel</span><span class="p">(</span><span class="n">g</span><span class="p">):</span>
+    <span class="n">counts</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">nodes</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">g</span><span class="o">.</span><span class="n">nodes</span><span class="p">())</span>
+    <span class="k">for</span> <span class="n">n1</span> <span class="ow">in</span> <span class="n">nodes</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">n2</span> <span class="ow">in</span> <span class="n">nodes</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">n1</span> <span class="o">!=</span> <span class="n">n2</span><span class="p">:</span>
+                <span class="n">children_n1</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">g</span><span class="o">.</span><span class="n">successors</span><span class="p">(</span><span class="n">n1</span><span class="p">))</span><span class="o">.</span><span class="n">difference</span><span class="p">([</span><span class="n">n1</span><span class="p">,</span><span class="n">n2</span><span class="p">])</span>
+                <span class="n">parents_n2</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">g</span><span class="o">.</span><span class="n">predecessors</span><span class="p">(</span><span class="n">n2</span><span class="p">))</span><span class="o">.</span><span class="n">difference</span><span class="p">([</span><span class="n">n1</span><span class="p">,</span><span class="n">n2</span><span class="p">])</span>
+                <span class="n">nb_common_parents_children</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">children_n1</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">parents_n2</span><span class="p">))</span>
+                <span class="n">counts</span> <span class="o">+=</span> <span class="n">binom</span><span class="p">(</span><span class="n">nb_common_parents_children</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">counts</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">bi_parallel</span><span class="p">(</span><span class="n">g</span><span class="p">):</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">g</span><span class="o">.</span><span class="n">nodes</span><span class="p">():</span> <span class="c1"># (ie a on figure 6)</span>
+        <span class="n">neighbors_n</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">g</span><span class="o">.</span><span class="n">neighbors</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">v1</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">neighbors_n</span><span class="p">):</span> <span class="c1">#(ie b on figure 6)</span>
+            <span class="k">for</span> <span class="n">v2</span> <span class="ow">in</span> <span class="n">neighbors_n</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">:]:</span> <span class="c1">#(ie c on figure 6)</span>
+                <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">g</span><span class="o">.</span><span class="n">neighbors</span><span class="p">(</span><span class="n">v1</span><span class="p">)):</span>
+                    <span class="k">if</span> <span class="n">w</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">g</span><span class="o">.</span><span class="n">neighbors</span><span class="p">(</span><span class="n">v2</span><span class="p">)):</span>
+                        <span class="k">if</span> <span class="n">w</span> <span class="o">!=</span> <span class="n">v1</span> <span class="ow">and</span> <span class="n">w</span> <span class="o">!=</span> <span class="n">v2</span> <span class="ow">and</span> <span class="n">w</span> <span class="o">!=</span> <span class="n">n</span><span class="p">:</span>
+                            <span class="n">res</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">res</span>             
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bi_parallel</span><span class="p">(</span><span class="n">g2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>17827.0
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="rich-club-neurons">
+<h1>Rich Club Neurons<a class="headerlink" href="#rich-club-neurons" title="Permalink to this heading">#</a></h1>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./content\notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">References</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#load-global-network-of-277-neurons-zip-dataset-from-kraiser-et-al-2006">Load Global network of 277 neurons (zip) dataset from [kraiser et al. 2006]</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-network">Plot network</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#networkx">Networkx</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#network-motifs">Network motifs</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition">Definition</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#most-important-motifs-in-this-dataset">Most important motifs in this dataset</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#roles">Roles</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#algorithms">Algorithms</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#rich-club-neurons">Rich Club Neurons</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Jonathan J Crofts
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2021.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

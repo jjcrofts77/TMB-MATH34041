@@ -1,0 +1,1219 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>0.3 Introduction to the NetworkX Package &#8212; Topics in Mathematical Biology MATH34041</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/myfonts.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../../../_static/tabs.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"HTML-CSS": {"matchFontHeight": true, "scale": 110}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'content/notebooks/Chapter0/PythonNetworkX';</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="0.4 Python Network Example" href="PythonNetworkExample.html" />
+    <link rel="prev" title="0.2 Introduction to the NumPy and Matplotlib libraries" href="NumpyAndMatplotlib.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/FoldedBrainHeatDist.png" class="logo__image only-light" alt="Topics in Mathematical Biology MATH34041 - Home"/>
+    <script>document.write(`<img src="../../../_static/FoldedBrainHeatDist.png" class="logo__image only-dark" alt="Topics in Mathematical Biology MATH34041 - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../../intro.html">
+                    Topics in Mathematical Biology MATH34041
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Part II - Network Science</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="Chapter0Intro.html">Chapter 0 Network analysis in Python</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="PythonBasics.html">0.1 Basics in Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="NumpyAndMatplotlib.html">0.2 Introduction to the NumPy and Matplotlib libraries</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">0.3 Introduction to the NetworkX Package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PythonNetworkExample.html">0.4 Python Network Example</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter1/Chapter1Intro.html">Chapter 1 Introduction and Basic Concepts</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter1/Network.html">1.1 What are Networks?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter1/BasicStats.html">1.2 Basic Statistics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter1/SpectralProperties.html">1.3 Spectral Properties of Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter1/FurtherReading.html">1.4 Further Reading</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter2/Chapter2Intro.html">Chapter 2 Network Models</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter2/RandomGraphs.html">2.1 Random Graphs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter2/SmallWorlds.html">2.2 Small-Worlds</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter2/NetworkGrowth.html">2.3 Modelling Network Growth</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter2/FurtherReading.html">2.4 Further Reading</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter3/Chapter3Intro.html">Chapter 3 Additional Summary Statistics and Useful Concepts</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter3/CentralityMeasures.html">3.1 Centrality Measures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter3/CommunityDetection.html">3.2 Community Detection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter3/FurtherReading.html">3.3 Further Reading</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter4/Chapter4Intro.html">Chapter 4 Complex Networks in Biology</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter4/NetworkNeuro.html">4.1 Network Neuroscience</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter4/MolecularNetworks.html">4.2 Molecular Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter4/DiseaseNetworks.html">4.3 Disease Networks</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../_sources/content/notebooks/Chapter0/PythonNetworkX.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>0.3 Introduction to the NetworkX Package</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-networks">Creating networks</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-nodes-and-edges-manually">Adding nodes and edges manually</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#graph-generators">Graph generators</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reading-graphs-from-data">Reading graphs from data</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#drawing-basics">Drawing basics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions">Functions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#network-functions">Network functions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#node-functions">Node functions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#edge-functions">Edge functions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-algebra">Linear algebra</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-algorithms">Common Algorithms</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#centrality-measures">Centrality measures</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#communities">Communities</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <p><a href="https://colab.research.google.com/github/jjcrofts77/TMB-MATH34041/blob/main/content/notebooks/Chapter0/PythonNetworkX.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
+<section class="tex2jax_ignore mathjax_ignore" id="introduction-to-the-networkx-package">
+<h1>0.3 Introduction to the NetworkX Package<a class="headerlink" href="#introduction-to-the-networkx-package" title="Permalink to this heading">#</a></h1>
+<p>This tutorial will cover the basics of networks, using Python and NetworkX, on Jupyter Notebooks. Students are requested to download the <a class="reference external" href="https://docs.anaconda.com/anaconda/install/">Anaconda distribution</a> of Python (which bundles together many Python libraries and packages) prior to the course beginning. Alternatively, a <a class="reference external" href="https://colab.research.google.com/notebooks/intro.ipynb">Google Colab Notebook</a> can be used.</p>
+<section id="creating-networks">
+<h2>Creating networks<a class="headerlink" href="#creating-networks" title="Permalink to this heading">#</a></h2>
+<p>There are three main ways of creating a network in <em>networkx</em>:</p>
+<ul class="simple">
+<li><p>Adding nodes and edges manually</p></li>
+<li><p>Graph generators</p></li>
+<li><p>Reading graphs</p></li>
+</ul>
+<section id="adding-nodes-and-edges-manually">
+<h3>Adding nodes and edges manually<a class="headerlink" href="#adding-nodes-and-edges-manually" title="Permalink to this heading">#</a></h3>
+<p>Perhaps the easiest (and most boring!) way to construct a network is to build it from scratch, adding nodes and edges manually.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># import packages</span>
+<span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># building a network from scratch</span>
+
+<span class="c1"># define an empty network structure</span>
+<span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>
+
+<span class="c1"># add some nodes</span>
+<span class="n">G</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="s2">&quot;1&quot;</span><span class="p">)</span>
+<span class="n">G</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="s2">&quot;2&quot;</span><span class="p">)</span>
+<span class="n">G</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="s2">&quot;3&quot;</span><span class="p">)</span>
+<span class="n">G</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="s2">&quot;4&quot;</span><span class="p">)</span>
+<span class="n">G</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="s2">&quot;5&quot;</span><span class="p">)</span>
+
+<span class="c1"># add some edges</span>
+<span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="s2">&quot;1&quot;</span><span class="p">,</span><span class="s2">&quot;2&quot;</span><span class="p">),</span> <span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="s2">&quot;1&quot;</span><span class="p">,</span><span class="s2">&quot;3&quot;</span><span class="p">),</span> <span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="s2">&quot;2&quot;</span><span class="p">,</span><span class="s2">&quot;3&quot;</span><span class="p">)</span>
+<span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="s2">&quot;4&quot;</span><span class="p">,</span><span class="s2">&quot;1&quot;</span><span class="p">),</span><span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="s2">&quot;4&quot;</span><span class="p">,</span><span class="s2">&quot;5&quot;</span><span class="p">)</span>
+
+<span class="c1"># plot network (see below for more details on drawing networks)</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/89418242e5b02e6467432a596832953f4924b6c58b6fd280fa87ccaf5a295e6e.png" src="../../../_images/89418242e5b02e6467432a596832953f4924b6c58b6fd280fa87ccaf5a295e6e.png" />
+</div>
+</div>
+</section>
+<section id="graph-generators">
+<h3>Graph generators<a class="headerlink" href="#graph-generators" title="Permalink to this heading">#</a></h3>
+<p>There are many types of graph generators inside <em>networkx</em>. They create predefined network structures, so that you can continue on exploring it and learning more about graph algorithms. Some of the most commonly used generators in this course are:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://networkx.org/documentation/stable/reference/generated/networkx.generators.classic.complete_graph.html">complete_graph()</a></p></li>
+<li><p><a class="reference external" href="https://networkx.org/documentation/stable/reference/generated/networkx.generators.classic.cycle_graph.html">cycle_graph()</a></p></li>
+<li><p><a class="reference external" href="https://networkx.org/documentation/stable/reference/generated/networkx.generators.classic.star_graph.html">star_graph()</a></p></li>
+</ul>
+<p>Not to mention the famous <a class="reference external" href="https://networkx.org/documentation/networkx-1.10/reference/generated/networkx.generators.social.karate_club_graph.html">karate_club_graph()</a>!</p>
+<p>Below we plot three examples of graphs generated using built-in <em>networkx</em> functions.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># generating networks example</span>
+<span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span> <span class="c1"># our blank canvas (a figure class object)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">set_figwidth</span><span class="p">(</span><span class="mi">18</span><span class="p">)</span> <span class="c1"># set the figure width</span>
+
+<span class="c1"># complete graph on 10 nodes</span>
+<span class="n">G0</span> <span class="o">=</span> <span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">complete_graph</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">pos0</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">circular_layout</span><span class="p">(</span><span class="n">G0</span><span class="p">)</span>
+
+<span class="c1"># cycle shortcuts</span>
+<span class="n">G1</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">cycle_graph</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">pos1</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">circular_layout</span><span class="p">(</span><span class="n">G1</span><span class="p">)</span>
+
+<span class="c1"># star shortcuts</span>
+<span class="n">G2</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">star_graph</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span>
+<span class="n">pos2</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">fruchterman_reingold_layout</span><span class="p">(</span><span class="n">G2</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Complete network&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx</span><span class="p">(</span><span class="n">G0</span><span class="p">,</span> <span class="n">pos0</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Cycle network&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx</span><span class="p">(</span><span class="n">G1</span><span class="p">,</span> <span class="n">pos1</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+
+
+<span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Star network&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx</span><span class="p">(</span><span class="n">G2</span><span class="p">,</span> <span class="n">pos2</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/2e8ca8393ab2e7a0d64113ffd55633fa40726175de39c2a6a92cfffef4508060.png" src="../../../_images/2e8ca8393ab2e7a0d64113ffd55633fa40726175de39c2a6a92cfffef4508060.png" />
+</div>
+</div>
+<p>Another famous class of graphs which are of great historical importance in the study of biological networks are the <em>small-world networks</em> of Watts and Strogatz which can be called using the <a class="reference external" href="https://networkx.org/documentation/stable/reference/generated/networkx.generators.random_graphs.watts_strogatz_graph.html">watts_stogatz_graph()</a> command.</p>
+<p>See the online notes to better understand how these networks are formed.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># example of a Watts-Strogatz network</span>
+<span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># our blank canvas (a figure class object)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">set_figwidth</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span> <span class="c1"># set the figure width</span>
+
+<span class="c1"># rewiring</span>
+<span class="n">G0</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">watts_strogatz_graph</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="n">k</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span><span class="n">p</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">pos</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">circular_layout</span><span class="p">(</span><span class="n">G0</span><span class="p">)</span>
+
+<span class="c1"># adding shortcuts</span>
+<span class="n">G1</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">newman_watts_strogatz_graph</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="n">k</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span><span class="n">p</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">pos</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">circular_layout</span><span class="p">(</span><span class="n">G1</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;rewiring algorithm&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx</span><span class="p">(</span><span class="n">G0</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Adding shortcuts algorithm&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx</span><span class="p">(</span><span class="n">G1</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/55f55671fecaa8a35b05f2f1dbb45b7611a30c88e9d9c8f91926ece96136d524.png" src="../../../_images/55f55671fecaa8a35b05f2f1dbb45b7611a30c88e9d9c8f91926ece96136d524.png" />
+</div>
+</div>
+<p>As we shall learn as we go through the course, this type of network has the desirable property of simultaneously displaying both a short average path length and high levels of clustering. Such a network is said to be a <em>small-world network</em>; such structures are prevalent in real-world networks, yet before the seminal work of <a class="reference external" href="https://www.nature.com/articles/30918">Watts and Strogatz</a> network models did a poor job of replicating these features.</p>
+<p>There are many, many more <a class="reference external" href="https://networkx.org/documentation/stable/reference/generators.html">graph generators</a>… (Click the link to explore.)</p>
+</section>
+<section id="reading-graphs-from-data">
+<h3>Reading graphs from data<a class="headerlink" href="#reading-graphs-from-data" title="Permalink to this heading">#</a></h3>
+<p>In this course we shall generally construct networks by reading (or importing) files containing the network data. Such data typically comes in one of two forms:</p>
+<ol class="arabic simple">
+<li><p>Edgelist</p></li>
+<li><p>Adjacency matrix</p></li>
+</ol>
+<p>Data can be imported from many different sources using a variety of formats including: adjacency lists, edge lists, <a class="reference external" href="https://gephi.org/users/supported-graph-formats/gml-format/">GML format</a>, and <a class="reference external" href="https://gephi.org/users/supported-graph-formats/pajek-net-format/">Pajek format</a> to name some of the most popular. It is also possible to import MATLAB .mat files as <em>numpy</em> arrays and then read these directly into <em>networkx</em>.</p>
+<p>An edgelist is a list of source nodes and target nodes that are connected in the network.</p>
+<p>They typically come in .csv file (as do adjacency matrices). Below is an example of an edgelist for a small network on 6 nodes</p>
+<div class="highlight-csv notranslate"><div class="highlight"><pre><span></span>source, target
+1,2
+1,3
+2,3
+1,4
+2,4
+3,4
+1,5
+1,6
+</pre></div>
+</div>
+<p>Assuming that the file is saved in the current directory as network.csv then the following code can be used to load the data and plot the network.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span> <span class="c1"># the pandas packages is useful for reading in datasets such as csv files and excel spreadsheets</span>
+
+<span class="c1"># read in the data and construct a graph object</span>
+<span class="n">network_type</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://raw.githubusercontent.com/jjcrofts77/TMB-MATH34041/main/content/notebooks/Chapter0/Data/network.txt&#39;</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">url</span><span class="p">,</span><span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>
+<span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">from_pandas_edgelist</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">n</span> <span class="o">=</span> <span class="n">G</span><span class="o">.</span><span class="n">number_of_nodes</span><span class="p">()</span>
+
+<span class="c1"># Definenode colors, node layout etc. (see &#39;Drawing basics&#39; section below for further details)</span>
+<span class="n">colors</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">))</span> <span class="c1"># each node is given a different colour</span>
+<span class="n">pos</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">circular_layout</span><span class="p">(</span><span class="n">G</span><span class="p">)</span> <span class="c1"># lay nodes out on a circle</span>
+
+<span class="c1"># draw</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">node_size</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">node_color</span><span class="o">=</span><span class="n">colors</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Simple network on n = </span><span class="si">%i</span><span class="s1"> nodes&#39;</span> <span class="o">%</span><span class="n">n</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/d732c88993ca6237e1f8df06324753e875bba01dff141af78a1dd125ba8ae2f0.png" src="../../../_images/d732c88993ca6237e1f8df06324753e875bba01dff141af78a1dd125ba8ae2f0.png" />
+</div>
+</div>
+<p>Note that this code uses the <em>pandas</em> package which allows us to read in tabulated data - like excel spreadsheets or csv files. (See the <a class="reference external" href="https://github.com/jjcrofts77/TMB-MATH34041/blob/2bd4b3af9ee58a7d52504288af55cc34ee2d3831/content/CheatSheets/Pandas_Cheat_Sheet.pdf"><em>pandas</em></a> cheat sheet!) We shall see further examples of how to load data into <em>networkx</em> in the next section when we work through an example network analysis for a real-world biological network.</p>
+</section>
+</section>
+<section id="drawing-basics">
+<h2>Drawing basics<a class="headerlink" href="#drawing-basics" title="Permalink to this heading">#</a></h2>
+<p>In this section we shall provide some additional details on the network plotting capabilities of <em>networkx</em>, building on the previous examples.</p>
+<p>Drawing of networks in <em>networkx</em> is done using either the draw() function or the draw_networkx() function. In this tutorial we shall focus on the draw_networkx() function but almost everything we do would work if we replaced that command with the simpler draw() function.</p>
+<p>Let us see how this works in practice.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># nx.dodecahedral_graph? # uncomment to see what a dodecahedral network is ...</span>
+
+<span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">dodecahedral_graph</span><span class="p">()</span> <span class="c1"># generate a built-in network</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx</span><span class="p">(</span><span class="n">G</span><span class="p">)</span> <span class="c1"># plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/ff7641fd257aa389ecf89ae9aeacc3c977d1fc8a306da8927dc3af74310aff6f.png" src="../../../_images/ff7641fd257aa389ecf89ae9aeacc3c977d1fc8a306da8927dc3af74310aff6f.png" />
+</div>
+</div>
+<p>We can use <em>network layouts</em> in order to position the nodes differently. This will make a big difference when trying to visualise large networks later on in the course.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># different node positionings of the dodecahedral network shown above</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">ion</span><span class="p">()</span> <span class="c1"># view plot</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span> <span class="c1"># our blank canvas (a figure class object)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">set_figwidth</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span> <span class="c1"># set the figure width</span>
+
+<span class="c1"># plot three different layouts</span>
+
+<span class="c1"># spring layout</span>
+<span class="n">options0</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;node_size&quot;</span><span class="p">:</span><span class="mi">150</span><span class="p">,</span><span class="s2">&quot;node_color&quot;</span><span class="p">:</span> <span class="s2">&quot;red&quot;</span><span class="p">}</span> <span class="c1"># options for figure 1</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="o">=</span><span class="n">nx</span><span class="o">.</span><span class="n">spring_layout</span><span class="p">(</span><span class="n">G</span><span class="p">),</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="o">**</span><span class="n">options0</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;spring layout&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+
+<span class="c1"># shell layout</span>
+<span class="n">options1</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;node_size&quot;</span><span class="p">:</span><span class="mi">150</span><span class="p">}</span> <span class="c1"># options for figure 2</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="o">=</span><span class="n">nx</span><span class="o">.</span><span class="n">shell_layout</span><span class="p">(</span><span class="n">G</span><span class="p">),</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="o">**</span><span class="n">options1</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;shell layout&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+
+<span class="c1"># spiral layout</span>
+<span class="n">options2</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;node_size&quot;</span><span class="p">:</span><span class="mi">150</span><span class="p">,</span><span class="s2">&quot;node_color&quot;</span><span class="p">:</span> <span class="s2">&quot;green&quot;</span><span class="p">}</span> <span class="c1"># options for figure 3</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="o">=</span><span class="n">nx</span><span class="o">.</span><span class="n">spiral_layout</span><span class="p">(</span><span class="n">G</span><span class="p">),</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span><span class="o">**</span><span class="n">options2</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;spiral layout&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/05bbe501b454d032c307252b411206bd60b4c9fe511f8b1e98d5618e24602f62.png" src="../../../_images/05bbe501b454d032c307252b411206bd60b4c9fe511f8b1e98d5618e24602f62.png" />
+</div>
+</div>
+<p>We can also provide node positions as <span class="math notranslate nohighlight">\((x,y)\)</span> coordinates as the following example shows.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># a complete bipartite network on 5 nodes</span>
+<span class="n">K23</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">complete_bipartite_graph</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+
+<span class="n">positions</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">:</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="mi">1</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="mi">2</span><span class="p">:</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="mi">3</span><span class="p">:</span> <span class="p">[</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="mi">4</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]}</span> <span class="c1"># (x,y) coordinates of the nodes</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_axis_off</span><span class="p">()</span>
+<span class="n">options</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;node_size&quot;</span><span class="p">:</span> <span class="mi">300</span><span class="p">,</span> <span class="s2">&quot;node_color&quot;</span><span class="p">:</span> <span class="s2">&quot;green&quot;</span><span class="p">}</span> <span class="c1"># input additional options to the draw_networkx() function</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx</span><span class="p">(</span><span class="n">K23</span><span class="p">,</span> <span class="n">positions</span><span class="p">,</span> <span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">options</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/6f28482c80e9fbd202abfd919cf0de7bd43036c004463306a128678485b7ba2a.png" src="../../../_images/6f28482c80e9fbd202abfd919cf0de7bd43036c004463306a128678485b7ba2a.png" />
+</div>
+</div>
+<p>Some other drawing options include</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+
+<span class="n">options</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;node_color&#39;</span><span class="p">:</span> <span class="s1">&#39;magenta&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;node_size&#39;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+    <span class="s1">&#39;width&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">petersen_graph</span><span class="p">()</span> <span class="c1"># you might recognise this graph if you&#39;ve studied the third year graph theory module</span>
+
+<span class="n">ax1</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">221</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Random layout&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw_random</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="o">**</span><span class="n">options</span><span class="p">)</span>
+
+<span class="n">ax2</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">222</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Circular layout&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw_circular</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="o">**</span><span class="n">options</span><span class="p">)</span>
+
+<span class="n">ax3</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">223</span><span class="p">)</span>
+<span class="n">ax3</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Spectral layout&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw_spectral</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="o">**</span><span class="n">options</span><span class="p">)</span>
+
+<span class="n">ax4</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">224</span><span class="p">)</span>
+<span class="n">ax4</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Shell layout&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw_shell</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">nlist</span><span class="o">=</span><span class="p">[</span><span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">10</span><span class="p">),</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)],</span> <span class="o">**</span><span class="n">options</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/11ddd2f1401507dfaba185c841fd68cf42def082db94e26078a9371a7de99a84.png" src="../../../_images/11ddd2f1401507dfaba185c841fd68cf42def082db94e26078a9371a7de99a84.png" />
+</div>
+</div>
+<p>If you wish to learn more about plotting then see the <a class="reference external" href="https://networkx.org/documentation/stable/reference/generated/networkx.drawing.nx_pylab.draw_networkx.html#networkx.drawing.nx_pylab.draw_networkx">draw_networkx()</a> help page.</p>
+<p>Note that there are some other really cool visualisation packages in Python (especially for larger networks when the built-in <em>networkx</em> plotters can be a bit limited) that you might like to look at, for examples see the list below:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://pyvis.readthedocs.io/en/latest/">pyvis</a> provides interactive network visulisations, which can be great for presentations</p></li>
+<li><p>Visdcc in dash provides additional interaction features (adding buttons and radio select options), but it comes at a cost since it is significantly more complicated to setup.</p></li>
+</ul>
+<p>See the following <a class="reference external" href="https://towardsdatascience.com/visualizing-networks-in-python-d70f4cbeb259">blog post</a> for an example of how to visualise network data using the above packages.</p>
+</section>
+<section id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this heading">#</a></h2>
+<p><a class="reference external" href="https://networkx.org/documentation/stable/reference/functions.html">Functions</a> provide an interface to network science methods that can be used to analyse your network data. Below we list some of the most useful ones available in <em>networkX</em>.</p>
+<section id="network-functions">
+<h3>Network functions<a class="headerlink" href="#network-functions" title="Permalink to this heading">#</a></h3>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Function</p></th>
+<th class="head text-left"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><a class="reference external" href="https://networkx.org/documentation/stable/reference/generated/networkx.classes.function.degree.html">degree(G, nbunch, weight)</a></p></td>
+<td class="text-left"><p>Returns a degree view of single node or of nbunch of nodes</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><a class="reference external" href="https://networkx.org/documentation/stable/reference/generated/networkx.classes.function.degree_histogram.html">degree_histogram(G)</a></p></td>
+<td class="text-left"><p>Returns a list of the frequency of each degree value</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><a class="reference external" href="https://networkx.org/documentation/stable/reference/generated/networkx.classes.function.density.html">density(G)</a></p></td>
+<td class="text-left"><p>Returns the density of a graph</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><a class="reference external" href="https://networkx.org/documentation/stable/reference/generated/networkx.classes.function.create_empty_copy.html">create_empty_copy(G, with_data)</a></p></td>
+<td class="text-left"><p>Returns a copy of the graph G with all of the edges removed</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><a class="reference external" href="https://networkx.org/documentation/stable/reference/generated/networkx.classes.function.is_directed.html">is_directed(G)</a></p></td>
+<td class="text-left"><p>Return True if graph is directed</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><a class="reference external" href="https://networkx.org/documentation/stable/reference/generated/networkx.classes.function.to_directed.html">to_directed(G)</a></p></td>
+<td class="text-left"><p>Returns a directed view of the graph G</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><a class="reference external" href="https://networkx.org/documentation/stable/reference/generated/networkx.classes.function.to_undirected.html">to_undirected(graph)</a></p></td>
+<td class="text-left"><p>Returns an undirected view of the graph graph</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><a class="reference external" href="https://networkx.org/documentation/stable/reference/generated/networkx.classes.function.is_empty.html">is_empty(G)</a></p></td>
+<td class="text-left"><p>Returns True if G has no edges</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><a class="reference external" href="https://networkx.org/documentation/stable/reference/generated/networkx.classes.function.subgraph.html">subgraph(G, nbunch)</a></p></td>
+<td class="text-left"><p>Returns the subgraph induced on nodes in nbunch</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><a class="reference external" href="https://networkx.org/documentation/stable/reference/generated/networkx.classes.function.induced_subgraph.html">induced_subgraph(G, nbunch)</a></p></td>
+<td class="text-left"><p>Returns a SubGraph view of G showing only nodes in nbunch</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="node-functions">
+<h3>Node functions<a class="headerlink" href="#node-functions" title="Permalink to this heading">#</a></h3>
+<p>The table below provides a description of some of the most common node functions available in networkX.</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Function</p></th>
+<th class="head text-left"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><a class="reference external" href="https://networkx.org/documentation/stable/reference/generated/networkx.classes.function.nodes.html#networkx.classes.function.nodes">nodes(G)</a></p></td>
+<td class="text-left"><p>Returns an iterator over the graph nodes</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><a class="reference external" href="https://networkx.org/documentation/stable/reference/generated/networkx.classes.function.number_of_nodes.html#networkx.classes.function.number_of_nodes">number_of_nodes(G)</a></p></td>
+<td class="text-left"><p>Returns the number of nodes in the graph</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><a class="reference external" href="https://networkx.org/documentation/stable/reference/generated/networkx.classes.function.neighbors.html#networkx.classes.function.neighbors">neighbors(G, n)</a></p></td>
+<td class="text-left"><p>Returns a list of nodes connected to node n</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><a class="reference external" href="https://networkx.org/documentation/stable/reference/generated/networkx.classes.function.all_neighbors.html#networkx.classes.function.all_neighbors">all_neighbors(graph, node)</a></p></td>
+<td class="text-left"><p>Returns all of the neighbors of a node in the graph.</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><a class="reference external" href="https://networkx.org/documentation/stable/reference/generated/networkx.classes.function.common_neighbors.html#networkx.classes.function.common_neighbors">common_neighbors(G, u, v)</a></p></td>
+<td class="text-left"><p>Returns the common neighbors of two nodes in a graph</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="edge-functions">
+<h3>Edge functions<a class="headerlink" href="#edge-functions" title="Permalink to this heading">#</a></h3>
+<p>The table below provides a description of some of the most common edge functions available in networkX.</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Function</p></th>
+<th class="head text-left"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><a class="reference external" href="https://networkx.org/documentation/stable/reference/generated/networkx.classes.function.edges.html#networkx.classes.function.edges">edges(G, nbunch)</a></p></td>
+<td class="text-left"><p>Returns an edge view of edges incident to nodes in nbunch</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><a class="reference external" href="https://networkx.org/documentation/stable/reference/generated/networkx.classes.function.number_of_edges.html#networkx.classes.function.number_of_edges">number_of_edges(G)</a></p></td>
+<td class="text-left"><p>Returns the number of edges in the graph</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><a class="reference external" href="https://networkx.org/documentation/stable/reference/generated/networkx.classes.function.density.html#networkx.classes.function.density">density(G)</a></p></td>
+<td class="text-left"><p>Returns the density of a graph</p></td>
+</tr>
+</tbody>
+</table>
+<p>Below we explore some of the above functions using a network representation of the human brain.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># manipulating networks with functions example</span>
+<span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># load some data (an adjacency matrix for a structural human brain)</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://raw.githubusercontent.com/jjcrofts77/TMB-MATH34041/main/content/Data/HumanBin.txt&#39;</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">url</span><span class="p">,</span><span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span> <span class="c1"># create a numpy array object</span>
+<span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">from_pandas_adjacency</span><span class="p">(</span><span class="n">df</span><span class="p">)</span> <span class="c1"># create graph object</span>
+
+<span class="c1"># number of nodes</span>
+<span class="n">n</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">number_of_nodes</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;n = &#39;</span><span class="p">,</span><span class="n">n</span><span class="p">)</span>
+
+<span class="c1"># density of G (is it a sparse network?)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The network density is &#39;</span><span class="p">,</span><span class="n">nx</span><span class="o">.</span><span class="n">density</span><span class="p">(</span><span class="n">G</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>n =  78
+The network density is  0.2644022644022644
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># spy plot of the network confirms its sparsity</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">spy</span><span class="p">(</span><span class="n">A</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Adjacency matrix of a human brain&#39;</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/fac53ac9ae8f845a107e9ad889ec63dc2eeab2b394abfb0dbbfa37db633b27a5.png" src="../../../_images/fac53ac9ae8f845a107e9ad889ec63dc2eeab2b394abfb0dbbfa37db633b27a5.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="linear-algebra">
+<h2>Linear algebra<a class="headerlink" href="#linear-algebra" title="Permalink to this heading">#</a></h2>
+<p>One of the most powerful mathematical tools at the network scientists disposal is linear algebra. <em>NetworkX</em> has a variety of <a class="reference external" href="https://networkx.org/documentation/stable/reference/linalg.html">linear algebra</a> tools that can be used to analyse a network.</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Function</p></th>
+<th class="head text-left"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><a class="reference external" href="https://networkx.org/documentation/stable/reference/generated/networkx.linalg.graphmatrix.adjacency_matrix.html#networkx.linalg.graphmatrix.adjacency_matrix">adjacency_matrix(G[, nodelist, dtype, weight])</a></p></td>
+<td class="text-left"><p>Returns adjacency matrix of G</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><a class="reference external" href="https://networkx.org/documentation/stable/reference/generated/networkx.linalg.laplacianmatrix.laplacian_matrix.html#networkx.linalg.laplacianmatrix.laplacian_matrix">laplacian_matrix(G[, nodelist, weight])</a></p></td>
+<td class="text-left"><p>Returns the Laplacian matrix of G</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><a class="reference external" href="https://networkx.org/documentation/stable/reference/generated/networkx.linalg.spectrum.adjacency_spectrum.html#networkx.linalg.spectrum.adjacency_spectrum">adjacency_spectrum(G[, weight])</a></p></td>
+<td class="text-left"><p>Returns eigenvalues of the adjacency matrix of G</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><a class="reference external" href="https://networkx.org/documentation/stable/reference/generated/networkx.linalg.spectrum.laplacian_spectrum.html#networkx.linalg.spectrum.laplacian_spectrum">laplacian_spectrum(G[, weight])</a></p></td>
+<td class="text-left"><p>Returns eigenvalues of the Laplacian of G</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><a class="reference external" href="https://networkx.org/documentation/stable/reference/generated/networkx.linalg.algebraicconnectivity.algebraic_connectivity.html">algebraic_connectivity(G[, weight, …])</a></p></td>
+<td class="text-left"><p>Returns the algebraic connectivity of an undirected graph</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><a class="reference external" href="https://networkx.org/documentation/stable/reference/generated/networkx.linalg.algebraicconnectivity.fiedler_vector.html">fiedler_vector(G[, weight, normalized, tol, …])</a></p></td>
+<td class="text-left"><p>Returns the Fiedler vector of a connected undirected graph</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><a class="reference external" href="https://networkx.org/documentation/stable/reference/generated/networkx.linalg.algebraicconnectivity.spectral_ordering.html">spectral_ordering(G[, weight, normalized, …])</a></p></td>
+<td class="text-left"><p>Compute the spectral_ordering of a graph</p></td>
+</tr>
+</tbody>
+</table>
+<br>
+<p>Let us consider the following example of a <em>cycle network</em> on <span class="math notranslate nohighlight">\(n\)</span> nodes, which we denote by <span class="math notranslate nohighlight">\(C_n\)</span>. Such a network has adjacency matrix given by</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+A = \begin{pmatrix}0&amp;1&amp;0&amp;\cdots&amp;0&amp;1\\
+1&amp;0&amp;1&amp;0&amp;\cdots&amp;0\\0&amp;1&amp;0&amp;1&amp;&amp;0\\\vdots&amp;0&amp;1&amp;\ddots&amp;\ddots&amp;\vdots\\
+0&amp;\vdots&amp;&amp;\ddots&amp;0&amp;1\\1&amp;0&amp;\cdots&amp;0&amp;1&amp;0
+\end{pmatrix}.
+\end{split}\]</div>
+<p>It can be shown that the eigenvalues of A are given by</p>
+<div class="math notranslate nohighlight">
+\[
+\left\{2\cos\left(\frac{2\pi j}{n}\right), ~j=1,\ldots, n\right\}
+\]</div>
+<p>The above eigenvalues are related to the <em>roots of unity</em> (<em>i.e.</em> <span class="math notranslate nohighlight">\(\omega_j^n=1\)</span>) as follows
+$<span class="math notranslate nohighlight">\(
+\omega_j+\omega_j^{-1} = 2\mathrm{Re}(\omega_j) = 2\cos\left(\frac{2\pi j}{n}\right).
+\)</span>$</p>
+<p>This follows trivially from Euler’s formula.</p>
+<p>The eigenvector <span class="math notranslate nohighlight">\(\mathbf{v}\)</span> corresponding to the eigenvalue <span class="math notranslate nohighlight">\(\omega_j\)</span> is given by</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\mathbf{v} = \begin{pmatrix}1\\\omega_j\\\omega_j^2\\\vdots\\\omega_j^{n-1}\end{pmatrix}
+\end{split}\]</div>
+<p>The code below confirms these observations.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># spectral properties of a network example</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+
+<span class="c1"># cycle network on N nodes</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">diagflat</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">diagflat</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">A</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">A</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span>
+
+<span class="c1"># compute the eigenvalues of A</span>
+<span class="n">eigenvalues</span><span class="p">,</span> <span class="n">eigenvectors</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eig</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Eigenvalues: </span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">eigenvalues</span><span class="p">))</span>
+
+<span class="c1"># compare against the roots of unity</span>
+<span class="n">coeffs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">coeffs</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">coeffs</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span>
+<span class="n">rootsunity</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">roots</span><span class="p">(</span><span class="n">coeffs</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Twice the real part of the nth roots of unity: </span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">rootsunity</span><span class="o">.</span><span class="n">real</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Eigenvalues: 
+ [-2.         -1.61803399 -1.61803399 -0.61803399 -0.61803399  0.61803399
+  0.61803399  1.61803399  1.61803399  2.        ]
+
+Twice the real part of the nth roots of unity: 
+ [-2. -1. -1.  1.  1.  2.]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># spy plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">spy</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Spy plot of the cycle network on n=</span><span class="si">%i</span><span class="s1"> nodes</span><span class="se">\n</span><span class="s1">&#39;</span> <span class="o">%</span><span class="n">n</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/4d714565da09d50cba2a7fd3e2bc07b5f94eb8c6be4a2381832208b18ef52bf2.png" src="../../../_images/4d714565da09d50cba2a7fd3e2bc07b5f94eb8c6be4a2381832208b18ef52bf2.png" />
+</div>
+</div>
+</section>
+<section id="common-algorithms">
+<h2>Common Algorithms<a class="headerlink" href="#common-algorithms" title="Permalink to this heading">#</a></h2>
+<p>The network measures that we learn about in this course can be obtained using a range of approximations and heuristics, particularly on larger networks. <em>NetworkX</em> provides a range of algorithms for computing these measures/statistics some of the most important of which we list below.</p>
+<section id="centrality-measures">
+<h3>Centrality measures<a class="headerlink" href="#centrality-measures" title="Permalink to this heading">#</a></h3>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Function</p></th>
+<th class="head text-left"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><a class="reference external" href="https://networkx.org/documentation/stable/reference/algorithms/generated/networkx.algorithms.centrality.degree_centrality.html#networkx.algorithms.centrality.degree_centrality">degree_centrality(G)</a></p></td>
+<td class="text-left"><p>Compute the degree centrality for nodes</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><a class="reference external" href="https://networkx.org/documentation/stable/reference/algorithms/generated/networkx.algorithms.centrality.eigenvector_centrality.html#networkx.algorithms.centrality.eigenvector_centrality">eigenvector_centrality(G[, max_iter, tol, …])</a></p></td>
+<td class="text-left"><p>Compute the eigenvector centrality for the graph G</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><a class="reference external" href="https://networkx.org/documentation/stable/reference/algorithms/generated/networkx.algorithms.centrality.katz_centrality.html#networkx.algorithms.centrality.katz_centrality">katz_centrality(G[, alpha, beta, max_iter, …])</a></p></td>
+<td class="text-left"><p>Compute the Katz centrality for the nodes of the graph G</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><a class="reference external" href="https://networkx.org/documentation/stable/reference/algorithms/generated/networkx.algorithms.centrality.betweenness_centrality.html#networkx.algorithms.centrality.betweenness_centrality">betweenness_centrality(G[, k, normalized, …])</a></p></td>
+<td class="text-left"><p>Compute the shortest-path betweenness centrality for nodes</p></td>
+</tr>
+</tbody>
+</table>
+<p>To use these algorithms we append the function name with the networkx.centrality tag so as to access the <em>centrality</em> subpackage.</p>
+<p>We provide an example below in which we compute a range of centrality measures for … network.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># centrality measures</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+
+<span class="c1"># compute the eigenvector centrality</span>
+<span class="n">eigcen</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">eigenvector_centrality</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+
+<span class="c1"># compute the betweenness centrality</span>
+<span class="n">betcen</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">betweenness_centrality</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+
+<span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">eigcen</span><span class="o">.</span><span class="n">items</span><span class="p">()))[:,</span><span class="mi">1</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">betcen</span><span class="o">.</span><span class="n">items</span><span class="p">()))[:,</span><span class="mi">1</span><span class="p">]</span> <span class="c1"># turn dictionaries into numpy arrays</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;According to the eigenvector centrality the </span><span class="si">%i</span><span class="s1">th node is the most important</span><span class="se">\n</span><span class="s1">&#39;</span> <span class="o">%</span><span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;And according to the betweenness centrality the </span><span class="si">%i</span><span class="s1">th node is the most important&#39;</span> <span class="o">%</span><span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>According to the eigenvector centrality the 20th node is the most important
+
+And according to the betweenness centrality the 20th node is the most important
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="c1"># scatter plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;scatter plot of the two centrality measures&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/d9d810aaf730650f3d87cc2007047ff53662fcfec9d3827f9014f64ef0bec6a5.png" src="../../../_images/d9d810aaf730650f3d87cc2007047ff53662fcfec9d3827f9014f64ef0bec6a5.png" />
+</div>
+</div>
+</section>
+<section id="communities">
+<h3>Communities<a class="headerlink" href="#communities" title="Permalink to this heading">#</a></h3>
+<p>Below are some of the most common methods for computing communities in a network.</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Function</p></th>
+<th class="head text-left"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><a class="reference external" href="https://networkx.org/documentation/stable/reference/algorithms/generated/networkx.algorithms.community.centrality.girvan_newman.html#networkx.algorithms.community.centrality.girvan_newman">girvan_newman(G, most_valuable_edge=None)</a></p></td>
+<td class="text-left"><p>Finds communities in a graph using the Girvan–Newman method</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><a class="reference external" href="https://networkx.org/documentation/stable/reference/algorithms/generated/networkx.algorithms.community.louvain.louvain_communities.html#networkx.algorithms.community.louvain.louvain_communities">louvain_communities(G[, weight, resolution, …])</a></p></td>
+<td class="text-left"><p>Find the best partition of a graph using the Louvain Community Detection Algorithm</p></td>
+</tr>
+</tbody>
+</table>
+<p>To use these algorithms we append the function name with the networkx.community tag so as to access the <em>community</em> subpackage.</p>
+<p>We provide an example below in which we compute the Newman-Girvan communities (see <span class="xref std std-ref">community</span>) for a toy network on 21 nodes. The Newman-Girvan modularity score is given by</p>
+<div class="math notranslate nohighlight">
+\[
+Q = \sum_{k=1}^{n_p}\left[\frac{|E_k|}{m}-\frac{1}{4m^2}\left(\sum_{j\in V_k}k_j\right)^2\right]
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(|E_k|\)</span> is the number of links between nodes in the <span class="math notranslate nohighlight">\(k\)</span>th partition of the network, <span class="math notranslate nohighlight">\(V_k\)</span>.</p>
+<p>The modularity (or community detection) algorithms in <em>networkx</em> find ‘optimal’ partitions in a hierarchical manner. (An optimal partition is one that maximises <span class="math notranslate nohighlight">\(Q\)</span>.) At the first stage they look for the best partitioning into two groups, then three groups <em>etc.</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># community detection example</span>
+
+<span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+<span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">barbell_graph</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="n">comm</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">community</span><span class="o">.</span><span class="n">girvan_newman</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+
+<span class="c1"># comm is an iterator over tuples of sets of nodes in G.</span>
+<span class="c1"># Each set of nodes is a community, each tuple is a sequence of communities at</span>
+<span class="c1"># a particular level of the algorithm.</span>
+<span class="nb">tuple</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">next</span><span class="p">(</span><span class="n">comm</span><span class="p">))</span> <span class="c1"># first level</span>
+<span class="n">a</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">next</span><span class="p">(</span><span class="n">comm</span><span class="p">))</span> <span class="c1"># second level</span>
+
+<span class="c1"># define a colormap - since we have three sets (I checked!) three colours suffice</span>
+<span class="n">color_map</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">G</span><span class="p">:</span>
+  <span class="k">if</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+    <span class="n">color_map</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+  <span class="k">elif</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span>
+    <span class="n">color_map</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+  <span class="k">else</span><span class="p">:</span>
+    <span class="n">color_map</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;green&#39;</span><span class="p">)</span>
+
+<span class="c1"># draw network</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx</span><span class="p">(</span><span class="n">G</span><span class="p">,</span><span class="n">node_color</span><span class="o">=</span><span class="n">color_map</span><span class="p">,</span><span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">node_size</span><span class="o">=</span><span class="mi">500</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/22970ca06eb415a086588182fd6459d6710b284172ad9c8aa954467929e6a821.png" src="../../../_images/22970ca06eb415a086588182fd6459d6710b284172ad9c8aa954467929e6a821.png" />
+</div>
+</div>
+<p>This network is called a <em>bar bell</em> network for what hopefully are rather obvious reasons! There are clearly three communities as can be seen from the coloured plot, the Newman-Girvan algorithm picks them out perfectly, although this is not a particularly challenging example!</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./content\notebooks\Chapter0"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="NumpyAndMatplotlib.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">0.2 Introduction to the NumPy and Matplotlib libraries</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="PythonNetworkExample.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">0.4 Python Network Example</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-networks">Creating networks</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-nodes-and-edges-manually">Adding nodes and edges manually</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#graph-generators">Graph generators</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reading-graphs-from-data">Reading graphs from data</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#drawing-basics">Drawing basics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions">Functions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#network-functions">Network functions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#node-functions">Node functions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#edge-functions">Edge functions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-algebra">Linear algebra</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-algorithms">Common Algorithms</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#centrality-measures">Centrality measures</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#communities">Communities</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Jonathan J Crofts
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2021.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

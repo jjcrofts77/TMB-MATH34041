@@ -1,311 +1,621 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" data-content_root="" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
     <title>1.2 Basic Statistics &#8212; Topics in Mathematical Biology MATH34041</title>
-    
-  <link href="../../../_static/css/theme.css" rel="stylesheet" />
-  <link href="../../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    
-      
-
-    
-    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
-    
-  <link rel="preload" as="script" href="../../../_static/js/index.1c5a1a01449ed65a7b51.js">
+    <link rel="stylesheet" type="text/css" href="../../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/myfonts.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
-    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/togglebutton.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../../../_static/tabs.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"HTML-CSS": {"matchFontHeight": true, "scale": 110}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'content/notebooks/Chapter1/BasicStats';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="1.3 Spectral Properties of Networks" href="SpectralProperties.html" />
     <link rel="prev" title="1.1 What are Networks?" href="Network.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
 
-    <div class="container-xl">
-      <div class="row">
-          
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
     
-        <div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../../../index.html">
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../../intro.html">
+  
+  
+  
+  
+  
+    
+    
       
-      
-      <h1 class="site-logo" id="site-title">Topics in Mathematical Biology MATH34041</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../../../intro.html">
-   Topics in Mathematical Biology MATH34041
-  </a>
- </li>
-</ul>
-<p class="caption">
- <span class="caption-text">
-  Part II - Network Science
- </span>
-</p>
+    
+    
+    <img src="../../../_static/FoldedBrainHeatDist.png" class="logo__image only-light" alt="Topics in Mathematical Biology MATH34041 - Home"/>
+    <script>document.write(`<img src="../../../_static/FoldedBrainHeatDist.png" class="logo__image only-dark" alt="Topics in Mathematical Biology MATH34041 - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../../intro.html">
+                    Topics in Mathematical Biology MATH34041
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Part II - Network Science</span></p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="Chapter1Intro.html">
-   Chapter 1 Introduction and Basic Concepts
-  </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul class="current">
-   <li class="toctree-l2">
-    <a class="reference internal" href="Network.html">
-     1.1 What are Networks?
-    </a>
-   </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     1.2 Basic Statistics
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="SpectralProperties.html">
-     1.3 Spectral Properties of Networks
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="FurtherReading.html">
-     1.4 Further Reading
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../Chapter2/Chapter2Intro.html">
-   Chapter 2 Network Models
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Chapter2/RandomGraphs.html">
-     2.1 Random Graphs
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Chapter2/SmallWorlds.html">
-     2.2 Small-Worlds
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Chapter2/NetworkGrowth.html">
-     2.3 Modelling Network Growth
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Chapter2/FurtherReading.html">
-     2.4 Further Reading
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../Chapter3/Chapter3Intro.html">
-   Chapter 3 Additional Summary Statistics and Useful Concepts
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Chapter3/CentralityMeasures.html">
-     3.1 Centrality Measures
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Chapter3/CommunityDetection.html">
-     3.2 Community Detection
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Chapter3/FurtherReading.html">
-     3.3 Further Reading
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../Chapter4/Chapter4Intro.html">
-   Chapter 4 Complex Networks in Biology
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Chapter4/NetworkNeuro.html">
-     4.1 Network Neuroscience
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Chapter4/MolecularNetworks.html">
-     4.2 Molecular Networks
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Chapter4/DiseaseNetworks.html">
-     4.3 Disease Networks
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter0/Chapter0Intro.html">Chapter 0 Network analysis in Python</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter0/PythonBasics.html">0.1 Basics in Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter0/NumpyAndMatplotlib.html">0.2 Introduction to the NumPy and Matplotlib libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter0/PythonNetworkX.html">0.3 Introduction to the NetworkX Package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter0/PythonNetworkExample.html">0.4 Python Network Example</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="Chapter1Intro.html">Chapter 1 Introduction and Basic Concepts</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Network.html">1.1 What are Networks?</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">1.2 Basic Statistics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SpectralProperties.html">1.3 Spectral Properties of Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="FurtherReading.html">1.4 Further Reading</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter2/Chapter2Intro.html">Chapter 2 Network Models</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter2/RandomGraphs.html">2.1 Random Graphs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter2/SmallWorlds.html">2.2 Small-Worlds</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter2/NetworkGrowth.html">2.3 Modelling Network Growth</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter2/FurtherReading.html">2.4 Further Reading</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter3/Chapter3Intro.html">Chapter 3 Additional Summary Statistics and Useful Concepts</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter3/CentralityMeasures.html">3.1 Centrality Measures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter3/CommunityDetection.html">3.2 Community Detection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter3/FurtherReading.html">3.3 Further Reading</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter4/Chapter4Intro.html">Chapter 4 Complex Networks in Biology</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter4/NetworkNeuro.html">4.1 Network Neuroscience</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter4/MolecularNetworks.html">4.2 Molecular Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter4/DiseaseNetworks.html">4.3 Disease Networks</a></li>
+</ul>
+</li>
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
-            
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../../_sources/content/notebooks/Chapter1/BasicStats.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+</nav></div>
     </div>
-</div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
 
-            <!-- Source interaction buttons -->
 
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/content/notebooks/Chapter1/BasicStats.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../../../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
+      </div>
+      
+      <main id="main-content" class="bd-main">
         
         
-        
-        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
     </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../_sources/content/notebooks/Chapter1/BasicStats.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
 </div>
 
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>1.2 Basic Statistics</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#degree-strength-and-their-distributions">Degree, strength and their distributions</a></li>
+</ul>
+            </nav>
         </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
-            
-        </div>
     </div>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
-              <div>
+
+              
                 
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
   <p><a href="https://colab.research.google.com/github/jjcrofts77/TMB-MATH34041/blob/main/content/notebooks/Chapter1/BasicStats.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
-<div class="section" id="basic-statistics">
-<h1>1.2 Basic Statistics<a class="headerlink" href="#basic-statistics" title="Permalink to this headline">¶</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="basic-statistics">
+<h1>1.2 Basic Statistics<a class="headerlink" href="#basic-statistics" title="Permalink to this heading">#</a></h1>
+<p>In this section we shall describe a number of basic network measures that allow us to characterize one or several aspects of <em>local</em> and/or <em>global</em> network architecture.</p>
+<p>To illustrate the the main concepts we shall use the undirected network shown in <a class="reference internal" href="#figexample121"><span class="std std-numref">Fig. 4</span></a> below.</p>
+<figure class="align-default" id="figexample121">
+<a class="reference internal image-reference" href="../../../_images/SimpleNetwork8Nodes.png"><img alt="../../../_images/SimpleNetwork8Nodes.png" src="../../../_images/SimpleNetwork8Nodes.png" style="height: 350px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 4 </span><span class="caption-text">Example network on 8 nodes</span><a class="headerlink" href="#figexample121" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<section id="degree-strength-and-their-distributions">
+<h2>Degree, strength and their distributions<a class="headerlink" href="#degree-strength-and-their-distributions" title="Permalink to this heading">#</a></h2>
+<p>Given an undirected network the <em>degree</em> of a node is simply the number of edges incident to it. For example, nodes 1 and 4 in the network of <a class="reference internal" href="#figexample121"><span class="std std-numref">Fig. 4</span></a> have degree 4 and 3, respectively. This idea naturally generalises to the degree sequence of a network, which is simply the vector of degrees</p>
+<div class="math notranslate nohighlight">
+\[
+ \mathbf{k} = [k_1, k_2,\ldots,k_n].
+\]</div>
+<p>Here, <span class="math notranslate nohighlight">\(k_i\)</span> gives the degree of node <span class="math notranslate nohighlight">\(i\)</span> and so for the example network of <a class="reference internal" href="#figexample121"><span class="std std-numref">Fig. 4</span></a> we have that the degree sequence is given by</p>
+<div class="math notranslate nohighlight">
+\[
+\mathbf{k} = [4, 3, 4, 3, 1, 1, 1, 1].
+\]</div>
+<p>In terms of the adjacency matrix the degree of a node is simply</p>
+<div class="math notranslate nohighlight" id="equation-degree">
+<span class="eqno">(3)<a class="headerlink" href="#equation-degree" title="Permalink to this equation">#</a></span>\[
+ k_i = \sum_{j=1}^n a_{ij}.
+\]</div>
+<p>Using the result in Equation <a class="reference internal" href="#equation-degree">(3)</a> we can work out the <em>mean degree</em> of a network as follows:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+ \langle k\rangle &amp;= \frac{1}{n}\sum_{i=1}^n k_i\\
+ &amp;=  \frac{1}{n}\sum_{i=1}^n\sum_{j=1}^n a_{ij}\\
+ &amp;= \frac{2m}{n}.
+\end{split}\]</div>
+<p>The last line follows by noting that the sum over all entries of the adjacency matrix is equal to twice the number of edges (here we assume our network is undirected and unweighted).</p>
+<p>A related and useful quantity is the <em>density</em> of a network. The density tells us what proportion of a networks edges are present and is given by</p>
+<div class="math notranslate nohighlight" id="equation-densitydenom">
+<span class="eqno">(4)<a class="headerlink" href="#equation-densitydenom" title="Permalink to this equation">#</a></span>\[\begin{split}
+ \rho &amp;= \frac{\text{Number of edges}}{\text{Possible number of edges}}\\
+ &amp;= \frac{m}{n(n-1)/2} = \frac{2m}{n(n-1)}\\ &amp;= \frac{\langle k\rangle}{n-1}.
+\end{split}\]</div>
+<p>The denominator in Equation <a class="reference internal" href="#equation-densitydenom">(4)</a> is obtained by comparing against the <em>complete graph</em>, or network, i.e. a network for which all edges are present. Such a network has a degree sequence given by <span class="math notranslate nohighlight">\([n-1,n-1,\ldots,n-1]\)</span> and so has <span class="math notranslate nohighlight">\(n(n-1)/2\)</span> edges in total (<strong>Qn:</strong> where does the factor of two come from in the above calculations?).  Most real-world networks, and particularly biological ones, have `low’ density scores; we call such networks <em>sparse</em>. Alternatively, we say that a network is <em>dense</em> if it is not sparse.</p>
+<p>All of the above can be naturally extended when considering either directed and/or weighted networks. For example, in the case of a directed network we consider an in- and out-degree for each node, such that the in-degree counts the number of incoming edges and the out-degree the number of out-going edges:</p>
+<div class="math notranslate nohighlight">
+\[
+ k_j^\mathrm{in} = \sum_{i=1}^n a_{ij} \quad \text{and} \quad k_i^\mathrm{out} = \sum_{j=1}^n a_{ij}.
+\]</div>
+<p>In- and out-degree sequences are then defined as above. Note that in this case the mean degrees are equal, differing from the undirected case by a factor of two:</p>
+<div class="math notranslate nohighlight">
+\[
+\langle k^\mathrm{in}\rangle = \frac{1}{n}\sum_{i=1}^n k_i^\mathrm{in} = \frac{1}{n}\sum_{i=1}^n k_i^\mathrm{out} = \langle k^\mathrm{out}\rangle = \frac{m}{n}.
+\]</div>
+<p>For a weighted network the <em>strength</em> of a node replaces the idea of degree, and is simply the sum of the weights of all incident edges</p>
+<div class="math notranslate nohighlight">
+\[
+ s_i = \sum_{j=1}^n w_{ij}.
+\]</div>
+<p>Again, we could have an in- and out-strength if we were to consider a directed, weighted network.</p>
+<p>A related quantity to the degree sequence of a network is the <em>degree distribution</em>, <span class="math notranslate nohighlight">\(\{p_k\}\)</span>. Given a network, <span class="math notranslate nohighlight">\(p_k\)</span> is defined as the probability that a randomly selected node has degree <span class="math notranslate nohighlight">\(k\)</span>. For the example network in <a class="reference internal" href="#figexample121"><span class="std std-numref">Fig. 4</span></a>, the degree distribution is given by</p>
+<div class="math notranslate nohighlight">
+\[
+p_0 = 0,~ p_1 = \frac{4}{8},~ p_2 = 0,~ p_3 = \frac{2}{8},~ p_4 = \frac{2}{8},~ p_k = 0, \text{ for } k\geq 5.
+\]</div>
+<p>Note that since <span class="math notranslate nohighlight">\(\{p_k\}\)</span> represents a probability distribution <span class="math notranslate nohighlight">\(\displaystyle\sum_{k=0}^\infty p_k = 1\)</span>. The degree distribution for the network in <a class="reference internal" href="#figexample121"><span class="std std-numref">Fig. 4</span></a> is shown below along with the python code used to create it.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># degree distribution</span>
+<span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># construct network</span>
+<span class="n">N</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>
+<span class="n">edges</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">),(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">),(</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">),(</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">),(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">),(</span><span class="mi">2</span><span class="p">,</span><span class="mi">6</span><span class="p">),(</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">),(</span><span class="mi">3</span><span class="p">,</span><span class="mi">7</span><span class="p">),(</span><span class="mi">4</span><span class="p">,</span><span class="mi">8</span><span class="p">)]</span>
+<span class="n">N</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">(</span><span class="n">edges</span><span class="p">)</span>
+
+<span class="c1"># degree sequence</span>
+<span class="n">degree_sequence</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">((</span><span class="n">d</span> <span class="k">for</span> <span class="n">n</span><span class="p">,</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">N</span><span class="o">.</span><span class="n">degree</span><span class="p">()),</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># maximal degree</span>
+<span class="n">dmax</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">degree_sequence</span><span class="p">)</span>
+
+<span class="c1"># set up plot</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="s2">&quot;Degree of a the undirected network in Figure 1&quot;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+<span class="n">axgrid</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_gridspec</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+
+<span class="c1"># plot the node ranking</span>
+<span class="n">ax2</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="n">axgrid</span><span class="p">[</span><span class="mi">3</span><span class="p">:,</span> <span class="p">:</span><span class="mi">2</span><span class="p">])</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">degree_sequence</span><span class="p">,</span> <span class="s2">&quot;b-&quot;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;o&quot;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Degree Rank Plot&quot;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Degree&quot;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Rank&quot;</span><span class="p">)</span>
+
+<span class="c1"># plot the degree distribution</span>
+<span class="n">ax1</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="n">axgrid</span><span class="p">[</span><span class="mi">3</span><span class="p">:,</span> <span class="mi">2</span><span class="p">:])</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">degree_sequence</span><span class="p">,</span> <span class="n">return_counts</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Degree histogram&quot;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Degree&quot;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;# of Nodes&quot;</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/66e3aba56bfdc726a3ae297a2d8a653383193d61fd5ca01088b0c3843989ef49.png" src="../../../_images/66e3aba56bfdc726a3ae297a2d8a653383193d61fd5ca01088b0c3843989ef49.png" />
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ol class="arabic simple">
+<li><p>The plots above show a ranking of the nodes (LHS) and the degree disribution (RHS) for the network in <a class="reference internal" href="#figexample121"><span class="std std-numref">Fig. 4</span></a></p></li>
+<li><p>We should divide each bar by <span class="math notranslate nohighlight">\(|V| = n\)</span> to obtain a probability distribution</p></li>
+</ol>
+</div>
+<p>The above example is useful for gaining intuition and understanding but is hardly typical of the types of networks observed in reality.</p>
+<p>Below we perform a similar analysis to that above but for the network describing the neuronal connections of the <em>C. elegan</em> round worm, which is the only organism to-date for which the enitre nervous system has been mapped out.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># C. elegans</span>
+
+<span class="c1"># add necessary packages</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics.pairwise</span> <span class="kn">import</span> <span class="n">pairwise_distances</span>
+
+<span class="c1"># load data</span>
+<span class="n">nodes_labels</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/jjcrofts77/TMB-MATH34041/main/content/coursework/celegans/data/N131/celegans131labels.csv&#39;</span><span class="p">,</span><span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="n">adjacency</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/jjcrofts77/TMB-MATH34041/main/content/coursework/celegans/data/N131/celegans131matrix.csv&#39;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="n">locations</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/jjcrofts77/TMB-MATH34041/main/content/coursework/celegans/data/N131/celegans131positions.csv&#39;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="n">adjacency</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">nodes_labels</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">adjacency</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">nodes_labels</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">locations</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">nodes_labels</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">inter_neuron_dist</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">pairwise_distances</span><span class="p">(</span><span class="n">locations</span><span class="p">))</span>
+<span class="n">inter_neuron_dist</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">nodes_labels</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">inter_neuron_dist</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">nodes_labels</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="c1"># plot network</span>
+<span class="k">def</span> <span class="nf">plot_connectome_scale</span><span class="p">():</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">locations</span><span class="o">.</span><span class="n">values</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span><span class="n">locations</span><span class="o">.</span><span class="n">values</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span><span class="s2">&quot;o&quot;</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.4</span><span class="p">)</span>
+    <span class="c1">#plt.savefig(&quot;connectome_scale.pdf&quot;)</span>
+
+<span class="k">def</span> <span class="nf">plot_connectome</span><span class="p">():</span>
+    <span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s2">&quot;whitegrid&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">12</span><span class="p">))</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">row</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">adjacency</span><span class="o">.</span><span class="n">values</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">j</span><span class="p">,</span><span class="n">columns</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">row</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">columns</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="n">xs</span> <span class="o">=</span> <span class="p">[</span><span class="n">locations</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span><span class="n">locations</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">j</span><span class="p">,</span><span class="mi">0</span><span class="p">]]</span>
+                <span class="n">ys</span> <span class="o">=</span> <span class="p">[</span><span class="n">locations</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span><span class="n">locations</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">j</span><span class="p">,</span><span class="mi">1</span><span class="p">]]</span>
+                <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span><span class="n">ys</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.03</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">locations</span><span class="o">.</span><span class="n">values</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span><span class="n">locations</span><span class="o">.</span><span class="n">values</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span><span class="s2">&quot;o&quot;</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.4</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Posterior - Anterior(mm)&quot;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Dorsal - Ventral(mm)&quot;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+
+<span class="c1"># display</span>
+<span class="n">plot_connectome</span><span class="p">()</span>
+<span class="n">plot_connectome_scale</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/1a52bacece2900ef0cdeb87143c7470232e2a6200e5cb31cdc868b5513fe49e1.png" src="../../../_images/1a52bacece2900ef0cdeb87143c7470232e2a6200e5cb31cdc868b5513fe49e1.png" />
+<img alt="../../../_images/4c200729b9bdfe997d0bf90f0bf63bb8749b0daeda61406f68a8ad7eebcb2354.png" src="../../../_images/4c200729b9bdfe997d0bf90f0bf63bb8749b0daeda61406f68a8ad7eebcb2354.png" />
+</div>
+</div>
+<br>
+<p>Next we plot the adjacency matrix for the <em>C. elegans</em> connectome.</p>
+<br><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># adjacency matrix</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">adjacency</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/010e569ae39e48fc56682e08b49fb8e79d85ffda5d0a85ca2cd869083704467b.png" src="../../../_images/010e569ae39e48fc56682e08b49fb8e79d85ffda5d0a85ca2cd869083704467b.png" />
+</div>
+</div>
+<p>And finally the degree distribution</p>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Since the network is directed we have plotted the in- and out-degree distributions.</p>
+</div>
+</aside>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># degree distributions</span>
+
+<span class="c1"># in and out degrees</span>
+<span class="n">in_degree</span> <span class="o">=</span> <span class="n">adjacency</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">out_degree</span> <span class="o">=</span> <span class="n">adjacency</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># plot distributions (unnormalised)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">in_degree</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.4</span><span class="p">,</span><span class="n">bins</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span> <span class="c1">#blue</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">out_degree</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.4</span><span class="p">,</span><span class="n">bins</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span> <span class="c1">#orange</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;degree&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;frequency&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/3ef876a552cfccec874ac9eca8ada8319142c501e7b3db6ff82f007dc7a00724.png" src="../../../_images/3ef876a552cfccec874ac9eca8ada8319142c501e7b3db6ff82f007dc7a00724.png" />
+</div>
+</div>
+<p>In the above examples the distribution is obtained via empirical data, however, a degree distribution can also be given directly by a formula, that is by a probability distribution such as the binomial or Poisson distribution.</p>
+<p>Many real-world networks have so-called <em>heavy-tailed degree distributions</em> which are skewed such that extreme events become more likely. Distributions such as that in for the <em>C. elegans</em> connectome shown above are often termed <em>power-law distributions</em> since they approximately follow a power law of the form</p>
+<div class="math notranslate nohighlight">
+\[
+ p_k = Ck^{-\alpha},
+\]</div>
+<p>with <span class="math notranslate nohighlight">\(C\)</span> a normalising constant and <span class="math notranslate nohighlight">\(\alpha\)</span> the exponent of the power law.</p>
+<p>For us, the most important properties of power law distributions are the following:</p>
+<ol class="arabic simple">
+<li><p>if you plot <span class="math notranslate nohighlight">\(p_k = Ck^{-\alpha}\)</span> on a doubly logarithmic scale then the result is a straight line with slope <span class="math notranslate nohighlight">\(\alpha\)</span> (this is a useful, but non-rigorous, way of spotting a power law distribution);</p></li>
+<li><p>in the network literature power law distributions are frequently referred to as being <em>scale-free</em>; this is due to the fact the effect of scaling the degree by a constant factor <span class="math notranslate nohighlight">\(b\)</span> produces only a proportionate scaling of the function, i.e.</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[
+C\left(bk\right)^{-\alpha} = Cb^{-\alpha} k^{-\alpha};
+\]</div>
+<ol class="arabic simple" start="3">
+<li><p>it is often convenient to consider the <em>cumulative degree distribution</em></p></li>
+</ol>
+<div class="math notranslate nohighlight" id="equation-cumpl">
+<span class="eqno">(5)<a class="headerlink" href="#equation-cumpl" title="Permalink to this equation">#</a></span>\[
+  P_k = \sum_{k'=k}^\infty p_{k'} ,  
+ \]</div>
+<p>that is the fraction of nodes with degree greater than or equal to <span class="math notranslate nohighlight">\(k\)</span>. Suppose that <span class="math notranslate nohighlight">\(p_k = Ck^{-\alpha}\)</span> then we can formulate an analytic approximation of Equation <a class="reference internal" href="#equation-cumpl">(5)</a> as follows:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+  P_k &amp;= C\sum_{k'=k}^\infty \left(k'\right)^{-\alpha} \approx C\int_k^\infty \left(k'\right)^{-\alpha}dk' \\
+         &amp;= \frac{-C}{1-\alpha}k^{1-\alpha};
+ \end{split}\]</div>
+<p><span class="math notranslate nohighlight">\(\alpha\)</span> determines which moments of the distribution converge (i.e. how heavy the tail is).</p>
+<p>We shall consider a number of real-world networks that display power law distributions later on in the course.</p>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -319,7 +629,7 @@
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./content\notebooks\Chapter1"
         },
         predefinedOutput: true
@@ -327,56 +637,102 @@
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-        
-            
 
-
-
-<div class='prev-next-bottom'>
-    
-    <div id="prev">
-        <a class="left-prev" href="Network.html" title="previous page">
-            <i class="prevnext-label fas fa-angle-left"></i>
-            <div class="prevnext-info">
-                <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">1.1 What are Networks?</p>
-            </div>
-        </a>
-    </div>
-     <div id="next">
-        <a class="right-next" href="SpectralProperties.html" title="next page">
-            <div class="prevnext-info">
-                <p class="prevnext-label">next</p>
-                <p class="prevnext-title">1.3 Spectral Properties of Networks</p>
-            </div>
-            <i class="prevnext-label fas fa-angle-right"></i>
-        </a>
-     </div>
-
-</div>
-        
-        </div>
-    </div>
-    <footer class="footer mt-5 mt-md-0">
-    <div class="container">
-      <p>
-        
-          By Jonathan J Crofts<br/>
-        
-            &copy; Copyright 2021.<br/>
-      </p>
-    </div>
-  </footer>
-</main>
-
-
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Network.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">1.1 What are Networks?</p>
       </div>
-    </div>
-  
-  <script src="../../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+    </a>
+    <a class="right-next"
+       href="SpectralProperties.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">1.3 Spectral Properties of Networks</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#degree-strength-and-their-distributions">Degree, strength and their distributions</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
   
+  <div class="footer-item">
+    
+<p class="component-author">
+By Jonathan J Crofts
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2021.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>

@@ -1,311 +1,531 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" data-content_root="" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
     <title>1.1 What are Networks? &#8212; Topics in Mathematical Biology MATH34041</title>
-    
-  <link href="../../../_static/css/theme.css" rel="stylesheet" />
-  <link href="../../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    
-      
-
-    
-    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
-    
-  <link rel="preload" as="script" href="../../../_static/js/index.1c5a1a01449ed65a7b51.js">
+    <link rel="stylesheet" type="text/css" href="../../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/myfonts.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
-    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/togglebutton.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../../../_static/tabs.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"HTML-CSS": {"matchFontHeight": true, "scale": 110}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'content/notebooks/Chapter1/Network';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="1.2 Basic Statistics" href="BasicStats.html" />
     <link rel="prev" title="Chapter 1 Introduction and Basic Concepts" href="Chapter1Intro.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
 
-    <div class="container-xl">
-      <div class="row">
-          
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
     
-        <div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../../../index.html">
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../../intro.html">
+  
+  
+  
+  
+  
+    
+    
       
-      
-      <h1 class="site-logo" id="site-title">Topics in Mathematical Biology MATH34041</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../../../intro.html">
-   Topics in Mathematical Biology MATH34041
-  </a>
- </li>
-</ul>
-<p class="caption">
- <span class="caption-text">
-  Part II - Network Science
- </span>
-</p>
+    
+    
+    <img src="../../../_static/FoldedBrainHeatDist.png" class="logo__image only-light" alt="Topics in Mathematical Biology MATH34041 - Home"/>
+    <script>document.write(`<img src="../../../_static/FoldedBrainHeatDist.png" class="logo__image only-dark" alt="Topics in Mathematical Biology MATH34041 - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../../intro.html">
+                    Topics in Mathematical Biology MATH34041
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Part II - Network Science</span></p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="Chapter1Intro.html">
-   Chapter 1 Introduction and Basic Concepts
-  </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul class="current">
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     1.1 What are Networks?
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="BasicStats.html">
-     1.2 Basic Statistics
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="SpectralProperties.html">
-     1.3 Spectral Properties of Networks
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="FurtherReading.html">
-     1.4 Further Reading
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../Chapter2/Chapter2Intro.html">
-   Chapter 2 Network Models
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Chapter2/RandomGraphs.html">
-     2.1 Random Graphs
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Chapter2/SmallWorlds.html">
-     2.2 Small-Worlds
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Chapter2/NetworkGrowth.html">
-     2.3 Modelling Network Growth
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Chapter2/FurtherReading.html">
-     2.4 Further Reading
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../Chapter3/Chapter3Intro.html">
-   Chapter 3 Additional Summary Statistics and Useful Concepts
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Chapter3/CentralityMeasures.html">
-     3.1 Centrality Measures
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Chapter3/CommunityDetection.html">
-     3.2 Community Detection
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Chapter3/FurtherReading.html">
-     3.3 Further Reading
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../Chapter4/Chapter4Intro.html">
-   Chapter 4 Complex Networks in Biology
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Chapter4/NetworkNeuro.html">
-     4.1 Network Neuroscience
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Chapter4/MolecularNetworks.html">
-     4.2 Molecular Networks
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Chapter4/DiseaseNetworks.html">
-     4.3 Disease Networks
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter0/Chapter0Intro.html">Chapter 0 Network analysis in Python</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter0/PythonBasics.html">0.1 Basics in Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter0/NumpyAndMatplotlib.html">0.2 Introduction to the NumPy and Matplotlib libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter0/PythonNetworkX.html">0.3 Introduction to the NetworkX Package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter0/PythonNetworkExample.html">0.4 Python Network Example</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="Chapter1Intro.html">Chapter 1 Introduction and Basic Concepts</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">1.1 What are Networks?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BasicStats.html">1.2 Basic Statistics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SpectralProperties.html">1.3 Spectral Properties of Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="FurtherReading.html">1.4 Further Reading</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter2/Chapter2Intro.html">Chapter 2 Network Models</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter2/RandomGraphs.html">2.1 Random Graphs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter2/SmallWorlds.html">2.2 Small-Worlds</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter2/NetworkGrowth.html">2.3 Modelling Network Growth</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter2/FurtherReading.html">2.4 Further Reading</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter3/Chapter3Intro.html">Chapter 3 Additional Summary Statistics and Useful Concepts</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter3/CentralityMeasures.html">3.1 Centrality Measures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter3/CommunityDetection.html">3.2 Community Detection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter3/FurtherReading.html">3.3 Further Reading</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter4/Chapter4Intro.html">Chapter 4 Complex Networks in Biology</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter4/NetworkNeuro.html">4.1 Network Neuroscience</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter4/MolecularNetworks.html">4.2 Molecular Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter4/DiseaseNetworks.html">4.3 Disease Networks</a></li>
+</ul>
+</li>
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
-            
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../../_sources/content/notebooks/Chapter1/Network.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+</nav></div>
     </div>
-</div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
 
-            <!-- Source interaction buttons -->
 
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/content/notebooks/Chapter1/Network.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../../../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
+      </div>
+      
+      <main id="main-content" class="bd-main">
         
         
-        
-        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
     </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../_sources/content/notebooks/Chapter1/Network.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
 </div>
 
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>1.1 What are Networks?</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
         </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
-            
-        </div>
     </div>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
-              <div>
+
+              
                 
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
   <p><a href="https://colab.research.google.com/github/jjcrofts77/TMB-MATH34041/blob/main/content/notebooks/Chapter1/Network.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
-<div class="section" id="what-are-networks">
-<h1>1.1 What are Networks?<a class="headerlink" href="#what-are-networks" title="Permalink to this headline">¶</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="what-are-networks">
+<h1>1.1 What are Networks?<a class="headerlink" href="#what-are-networks" title="Permalink to this heading">#</a></h1>
+<p>A network (or graph) is a set of nodes connected by links. Mathematically a network is represented by a pair <span class="math notranslate nohighlight">\(N = (V,E)\)</span>, such that <span class="math notranslate nohighlight">\(V = \{v_1,v_2,\ldots v_n\}\)</span> is a finite set of <span class="math notranslate nohighlight">\(n\)</span> nodes and <span class="math notranslate nohighlight">\(E = \{e_1,e_2,\ldots e_m\}\)</span> the set of  <span class="math notranslate nohighlight">\(m\)</span> edges representing links between node pairs.</p>
+<p>Given a network one may represent it in matrix form in a number of ways, the most popular of which is the <em>adjacency matrix</em> <span class="math notranslate nohighlight">\(A\in\mathbb{R}^{n\times n}\)</span> which is defined as</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+a_{ij} = \begin{cases}
+1&amp; i\sim j,\\
+0&amp; \text{otherwise.}
+\end{cases}
+\end{split}\]</div>
+<p>Here <span class="math notranslate nohighlight">\(i\sim j\)</span> denotes that nodes <span class="math notranslate nohighlight">\(i\)</span> and <span class="math notranslate nohighlight">\(j\)</span> are adjacent to each other (i.e. they are connected).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The above describes an undirected network containing no self-loops (i.e. a node cannot be adjacent to itself) or multiple loops (i.e. at most one link exists between each pair of nodes). Such a network is termed a <strong>simple network</strong> and much of what we cover in this course is for this case – see below for a few exceptions!</p>
 </div>
+<p>The size, or <em>order</em>, of the network is given by <span class="math notranslate nohighlight">\(|V| = n\)</span>.</p>
+<br>
+<p><strong>Example 1.1.1</strong>  Consider the following network <span class="math notranslate nohighlight">\(N_1 = (V_1,E_1)\)</span> where</p>
+<div class="math notranslate nohighlight">
+\[
+ V_1 = \{v_1,\ldots, v_5\} \quad\text{ and }\quad E_1 = \{(1,2),(1,4),(2,4),(3,4),(3,5),(4,5)\}.
+\]</div>
+<p>The adjacency matrix of this network (see <a class="reference internal" href="#figexample111"><span class="std std-numref">Fig. 3</span></a>a) is given below:</p>
+<div class="math notranslate nohighlight" id="equation-undir">
+<span class="eqno">(1)<a class="headerlink" href="#equation-undir" title="Permalink to this equation">#</a></span>\[\begin{split}
+A = \left(
+      \begin{array}{ccccc}
+      0 &amp; 1 &amp; 0 &amp;1 &amp; 0\\
+      1 &amp; 0 &amp; 0 &amp; 1 &amp; 0\\
+      0 &amp; 0 &amp; 0 &amp; 1 &amp; 1\\
+      1 &amp; 1 &amp; 1 &amp; 0 &amp; 1\\
+      0 &amp; 0 &amp; 1 &amp; 1 &amp; 0
+      \end{array}
+      \right).
+\end{split}\]</div>
+<p>Note that unless told otherwise it is assumed that <span class="math notranslate nohighlight">\((i,j)\in E\)</span> implies <span class="math notranslate nohighlight">\((j,i)\in E\)</span>, that is we assume the network to be undirected.  An example of a directed network is shown in <a class="reference internal" href="#figexample111"><span class="std std-numref">Fig. 3</span></a>b; its adjacency matrix is given below</p>
+<div class="math notranslate nohighlight" id="equation-dir">
+<span class="eqno">(2)<a class="headerlink" href="#equation-dir" title="Permalink to this equation">#</a></span>\[\begin{split}
+A &amp;= \left(
+      \begin{array}{ccccc}
+      0 &amp; 1 &amp; 0 &amp;1 &amp; 0\\
+      0 &amp; 0 &amp; 1 &amp; 1 &amp; 0\\
+      0 &amp; 1 &amp; 0 &amp; 1 &amp; 0\\
+      1 &amp; 1 &amp; 1 &amp; 0 &amp; 0\\
+      0 &amp; 0 &amp; 0 &amp; 1 &amp; 0
+      \end{array}
+      \right),\\ \nonumber &amp;\neq A^T.
+\end{split}\]</div>
+<p>In addition to undirected networks a number of other variants are possible. For example, the interaction might be weighted, i.e. interactions are not binary (0 or 1) but take values from the real number line. For example, an interaction might occur with a certain probability, or we might consider certain interactions to be more or less important than others, thus, it makes sense to attribute a `weight’ to such connections. The result of which is a <em>weighted network</em>.  Note that other more complicated cases can occur but we are unlikely to come across them in this course.</p>
+<figure class="align-default" id="figexample111">
+<a class="reference internal image-reference" href="../../../_images/NetworkExamples111.png"><img alt="../../../_images/NetworkExamples111.png" src="../../../_images/NetworkExamples111.png" style="height: 350px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 3 </span><span class="caption-text">Representations of the undirected and directed networks given by the adjacency matrices of equations <a class="reference internal" href="#equation-undir">(1)</a> and <a class="reference internal" href="#equation-dir">(2)</a>, respectively.</span><a class="headerlink" href="#figexample111" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<br>
+<p>Another useful, but less popular matrix representation, is given by the so-called <em>incidence matrix</em>. The incidence matrix provides a more edge-centric view of a network  <span class="math notranslate nohighlight">\(N = \{V, E\}\)</span>, where as before,</p>
+<div class="math notranslate nohighlight">
+\[V=\{v_1,v_2,\ldots,v_n\},~~ E=\{e_1,e_2,\ldots, e_m\} ~\text{ and }~ e_j=(v_{j_1},v_{j_2}) ~\text{ with }~ 1\leq j_1, j_2\leq n,\]</div>
+<p>and is given by the rectangular matrix <span class="math notranslate nohighlight">\(B=(b_{ij})\)</span> whose <span class="math notranslate nohighlight">\(ij\)</span>th position is defined as</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+b_{ij} = \begin{cases}
+1 &amp; j_1 = i \text{ or }j_2=i,\\
+0&amp; \text{otherwise.}
+\end{cases}
+\end{split}\]</div>
+<p>Here, <span class="math notranslate nohighlight">\(1\leq i\leq m\)</span> and <span class="math notranslate nohighlight">\(1\leq j\leq n\)</span> .</p>
+<p>If the edge <span class="math notranslate nohighlight">\((v_i, v_j)\)</span> is present for a simple network then so is <span class="math notranslate nohighlight">\((v_j, v_i)\)</span>, and so we only include one of each of these pairs in the incidence matrix (it doesn’t matter which). The incidence matrix for the network in <a class="reference internal" href="#figexample111"><span class="std std-numref">Fig. 3</span></a>(a) is given by</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+B = \left(
+      \begin{array}{rrrrrr}
+      1 &amp; 1 &amp; 0 &amp;0 &amp; 0 &amp; 0\\
+      1 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0\\
+      0 &amp; 0 &amp; 0 &amp; 1 &amp; 1 &amp; 0\\
+      0 &amp; 1 &amp; 1 &amp; 1 &amp; 0 &amp; 1\\
+      0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 1
+      \end{array}
+      \right).
+\end{split}\]</div>
+<br>
+<p><strong>Exercise</strong> Write down the incidence matrix of the network given in <a class="reference internal" href="#figexample111"><span class="std std-numref">Fig. 3</span></a>(b). Note that you will need to distinguish between uni- and bi-directional edges.</p>
+<br>
+<p><strong>Computational Exercise</strong> The Python code below uses the NetworkX package to create the undirected network from Example 1.1.1 and then uses the pyvis package to plot the network. See if you can adapt the code so as to display the directed version of the network (<strong>Hint:</strong> see <a class="reference external" href="https://networkx.org/documentation/stable/reference/classes/digraph.html#networkx.DiGraph">here</a>)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># plotting small networks using the NetworkX and pyvis</span>
+
+<span class="c1"># 1. import the NetworkX package</span>
+<span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+<span class="n">N</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>
+
+<span class="c1"># construct network by adding edges</span>
+<span class="n">edges</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">),(</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">),(</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">),(</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">),(</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">),(</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">)]</span>
+<span class="n">N</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">(</span><span class="n">edges</span><span class="p">)</span>
+
+<span class="c1"># check basic properties of N</span>
+<span class="n">V</span> <span class="o">=</span> <span class="n">N</span><span class="o">.</span><span class="n">number_of_nodes</span><span class="p">()</span>
+<span class="n">m</span> <span class="o">=</span> <span class="n">N</span><span class="o">.</span><span class="n">number_of_edges</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The network N has&quot;</span><span class="p">,</span> <span class="n">V</span><span class="p">,</span> <span class="s2">&quot;nodes and&quot;</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="s2">&quot;edges&quot;</span><span class="p">)</span>
+
+<span class="c1"># 2. import pyvis - visualisation package (!pip install pyvis)</span>
+<span class="c1">#from pyvis.network import Network</span>
+
+<span class="c1"># create vis network</span>
+<span class="c1">#net = Network(notebook=True,heading=&#39;Network on 5 nodes&#39;)</span>
+
+<span class="c1"># load the networkx graph</span>
+<span class="c1">#net.from_nx(N)</span>
+
+<span class="c1">#  draw network</span>
+<span class="c1">#net.show(&quot;example111.html&quot;)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The network N has 5 nodes and 6 edges
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="ch">#!pip install pyvis</span>
+<span class="c1">#from pyvis.network import Network</span>
+
+<span class="c1"># use this to read in .csv file</span>
+<span class="c1">#import pandas as pd</span>
+
+<span class="c1">#got_net = Network(notebook=True,height=&#39;750px&#39;, width=&#39;100%&#39;, bgcolor=&#39;#222222&#39;, font_color=&#39;white&#39;)</span>
+
+<span class="c1"># set the physics layout of the network</span>
+<span class="c1">#got_net.barnes_hut()</span>
+<span class="c1">#got_data = pd.read_csv(&#39;https://raw.githubusercontent.com/mathbeveridge/asoiaf/master/data/asoiaf-book1-edges.csv&#39;)</span>
+
+<span class="c1">#sources = got_data[&#39;Source&#39;]</span>
+<span class="c1">#targets = got_data[&#39;Target&#39;]</span>
+<span class="c1">#weights = got_data[&#39;weight&#39;]</span>
+
+<span class="c1">#edge_data = zip(sources, targets, weights)</span>
+
+<span class="c1">#for e in edge_data:</span>
+<span class="c1">#    src = e[0]</span>
+<span class="c1">#    dst = e[1]</span>
+<span class="c1">#    w = e[2]</span>
+
+    <span class="c1">#got_net.add_node(src, src, title=src)</span>
+    <span class="c1">#got_net.add_node(dst, dst, title=dst)</span>
+    <span class="c1">#got_net.add_edge(src, dst, value=w)</span>
+
+<span class="c1">#neighbor_map = got_net.get_adj_list()</span>
+
+<span class="c1"># add neighbor data to node hover data</span>
+<span class="c1">#for node in got_net.nodes:</span>
+<span class="c1">#    node[&#39;title&#39;] += &#39; Neighbors:&lt;br&gt;&#39; + &#39;&lt;br&gt;&#39;.join(neighbor_map[node[&#39;id&#39;]])</span>
+<span class="c1">#    node[&#39;value&#39;] = len(neighbor_map[node[&#39;id&#39;]])</span>
+
+<span class="c1">#got_net.show_buttons(filter_=[&#39;physics&#39;])</span>
+<span class="c1">#got_net.show(&#39;gameofthrones.html&#39;)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -319,7 +539,7 @@
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./content\notebooks\Chapter1"
         },
         predefinedOutput: true
@@ -327,56 +547,88 @@
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-        
-            
 
-
-
-<div class='prev-next-bottom'>
-    
-    <div id="prev">
-        <a class="left-prev" href="Chapter1Intro.html" title="previous page">
-            <i class="prevnext-label fas fa-angle-left"></i>
-            <div class="prevnext-info">
-                <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Chapter 1 Introduction and Basic Concepts</p>
-            </div>
-        </a>
-    </div>
-     <div id="next">
-        <a class="right-next" href="BasicStats.html" title="next page">
-            <div class="prevnext-info">
-                <p class="prevnext-label">next</p>
-                <p class="prevnext-title">1.2 Basic Statistics</p>
-            </div>
-            <i class="prevnext-label fas fa-angle-right"></i>
-        </a>
-     </div>
-
-</div>
-        
-        </div>
-    </div>
-    <footer class="footer mt-5 mt-md-0">
-    <div class="container">
-      <p>
-        
-          By Jonathan J Crofts<br/>
-        
-            &copy; Copyright 2021.<br/>
-      </p>
-    </div>
-  </footer>
-</main>
-
-
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Chapter1Intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Chapter 1 Introduction and Basic Concepts</p>
       </div>
-    </div>
+    </a>
+    <a class="right-next"
+       href="BasicStats.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">1.2 Basic Statistics</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
   
-  <script src="../../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  <div class="footer-item">
+    
+<p class="component-author">
+By Jonathan J Crofts
+</p>
 
+  </div>
   
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2021.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>

@@ -5,11 +5,20 @@
 
 # Course Overview
 
-This Jupyterbook provides the course notes for the second half of Topics in Mathematical Biology
+This Jupyterbook provides the course notes for the second half of Topics in Mathematical Biology (MATH34041)
 
+### Chapter 0 Network analysis in Python
+   - Python basics
+   - Introduction to the NumPy and Matplotlib libraries
+   - Introduction to the NetworkX package
+   - Example network analysis
+     
 ### Chapter 1 Introduction and basic concepts
    - What are networks?
-   - Basic Statistics   
+   - Basic statistics 
+      - Degree, strength and their distributions
+      - Traversing a network: walks and paths
+      - Network clustering  
    - Spectral properties of networks
    - Further reading
 
@@ -28,6 +37,7 @@ This Jupyterbook provides the course notes for the second half of Topics in Math
    - Network neuroscience
    - Molecular networks
    - Disease networks
+     
 <br>
 
 ## References
@@ -35,14 +45,17 @@ This Jupyterbook provides the course notes for the second half of Topics in Math
 
 [2] Newman M., Networks: an introduction (2010)
 
-[3] Buchanan M. Networks in cell biology (2010)
+[3] Buchanan M., Networks in cell biology (2010)
 
+[4] Zinoviev D., Complex Network Analysis in Python: Recognise-Construct-Visualise-Interpret (2018)
 
 ------
 ## Supplementary Video Lectures
 Steven Strogatz: How things tend to synch up. YouTube. https://www.youtube.com/watch?v=aSNrKS-sCE0
 
+K Jarrod Millman - Complex network analysis with NetworkX. YouTube. https://www.youtube.com/watch?v=ezL7j4nSXpQ
 
 ------
 ## Popular Press Reading
 Watts, D., 2003. SIX DEGREES The Science of a Connected Age. Vintage.
+
