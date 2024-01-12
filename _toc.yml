@@ -44,4 +44,4 @@ parts:
         title: Problem Sheet 4
       - file: content/ProblemSheets/ProblemSheet5      
         title: Problem Sheet 5
-    - file: content/ProblemSheets/CourseworkTemplate
+    - file: content/coursework/CourseworkTemplate
