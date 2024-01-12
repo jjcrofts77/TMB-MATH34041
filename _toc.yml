@@ -45,3 +45,4 @@ parts:
       - file: content/ProblemSheets/ProblemSheet5      
         title: Problem Sheet 5
     - file: content/coursework/CourseworkTemplate
+      title: Coursework
