@@ -32,4 +32,6 @@ parts:
     - file: content/notebooks/Chapter4/NetworkNeuro
     - file: content/notebooks/Chapter4/MolecularNetworks
     - file: content/notebooks/Chapter4/DiseaseNetworks     
-- caption: Problem Sheets
+- caption: Part II - Network Science
+  chapters:
+  - file: content/notebooks/Chapter0/Chapter0Intro  
