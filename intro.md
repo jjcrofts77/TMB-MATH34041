@@ -47,7 +47,8 @@ This Jupyterbook provides the course notes for the second half of Topics in Math
    - Problem sheet 5: Revealing network structure: centrality and modularity
 
 ------
-## Coursework template and description
+## Coursework 
+   - Template and description
         
 ------
 ## References
