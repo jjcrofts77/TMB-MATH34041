@@ -433,10 +433,11 @@ document.write(`
 \[
 p_0 = 0,~ p_1 = \frac{4}{8},~ p_2 = 0,~ p_3 = \frac{2}{8},~ p_4 = \frac{2}{8},~ p_k = 0, \text{ for } k\geq 5.
 \]</div>
-<p>Note that since <span class="math notranslate nohighlight">\(\{p_k\}\)</span> represents a probability distribution <span class="math notranslate nohighlight">\(\displaystyle\sum_{k=0}^\infty p_k = 1\)</span>. The degree distribution for the network in <a class="reference internal" href="#figexample121"><span class="std std-numref">Fig. 4</span></a> is shown below along with the python code used to create it.</p>
+<p>Note that since <span class="math notranslate nohighlight">\(\{p_k\}\)</span> represents a probability distribution <span class="math notranslate nohighlight">\(\displaystyle\sum_{k=0}^\infty p_k = 1\)</span>.</p>
+<p>The degree distribution for the network in <a class="reference internal" href="#figexample121"><span class="std std-numref">Fig. 4</span></a> is shown below along with the python code used to create it.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># degree distribution</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># degree distribution</span>
 <span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -453,7 +454,7 @@ p_0 = 0,~ p_1 = \frac{4}{8},~ p_2 = 0,~ p_3 = \frac{2}{8},~ p_4 = \frac{2}{8},~ 
 <span class="n">dmax</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">degree_sequence</span><span class="p">)</span>
 
 <span class="c1"># set up plot</span>
-<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="s2">&quot;Degree of a the undirected network in Figure 1&quot;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="s2">&quot;Degree of the undirected network in Figure 1&quot;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
 <span class="n">axgrid</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_gridspec</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
 
 <span class="c1"># plot the node ranking</span>
@@ -476,7 +477,7 @@ p_0 = 0,~ p_1 = \frac{4}{8},~ p_2 = 0,~ p_3 = \frac{2}{8},~ p_4 = \frac{2}{8},~ 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/66e3aba56bfdc726a3ae297a2d8a653383193d61fd5ca01088b0c3843989ef49.png" src="../../../_images/66e3aba56bfdc726a3ae297a2d8a653383193d61fd5ca01088b0c3843989ef49.png" />
+<img alt="../../../_images/dc4cd23ab5816a47c3c735953fd1c22e85698f738e15ff917f417c9d9cafbe9d.png" src="../../../_images/dc4cd23ab5816a47c3c735953fd1c22e85698f738e15ff917f417c9d9cafbe9d.png" />
 </div>
 </div>
 <div class="admonition note">
@@ -488,16 +489,16 @@ p_0 = 0,~ p_1 = \frac{4}{8},~ p_2 = 0,~ p_3 = \frac{2}{8},~ p_4 = \frac{2}{8},~ 
 </div>
 <p>The above example is useful for gaining intuition and understanding but is hardly typical of the types of networks observed in reality.</p>
 <p>Below we perform a similar analysis to that above but for the network describing the neuronal connections of the <em>C. elegan</em> round worm, which is the only organism to-date for which the enitre nervous system has been mapped out.</p>
+<p>We start by loading the data from my github repository.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># C. elegans</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># C. elegans</span>
 
 <span class="c1"># add necessary packages</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
-<span class="kn">from</span> <span class="nn">sklearn.metrics.pairwise</span> <span class="kn">import</span> <span class="n">pairwise_distances</span>
 
 <span class="c1"># load data</span>
 <span class="n">nodes_labels</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/jjcrofts77/TMB-MATH34041/main/content/coursework/celegans/data/N131/celegans131labels.csv&#39;</span><span class="p">,</span><span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
@@ -505,54 +506,20 @@ p_0 = 0,~ p_1 = \frac{4}{8},~ p_2 = 0,~ p_3 = \frac{2}{8},~ p_4 = \frac{2}{8},~ 
 <span class="n">locations</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/jjcrofts77/TMB-MATH34041/main/content/coursework/celegans/data/N131/celegans131positions.csv&#39;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 <span class="n">adjacency</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">nodes_labels</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 <span class="n">adjacency</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">nodes_labels</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<span class="n">locations</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">nodes_labels</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<span class="n">inter_neuron_dist</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">pairwise_distances</span><span class="p">(</span><span class="n">locations</span><span class="p">))</span>
-<span class="n">inter_neuron_dist</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">nodes_labels</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<span class="n">inter_neuron_dist</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">nodes_labels</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-
-<span class="c1"># plot network</span>
-<span class="k">def</span> <span class="nf">plot_connectome_scale</span><span class="p">():</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">locations</span><span class="o">.</span><span class="n">values</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span><span class="n">locations</span><span class="o">.</span><span class="n">values</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span><span class="s2">&quot;o&quot;</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.4</span><span class="p">)</span>
-    <span class="c1">#plt.savefig(&quot;connectome_scale.pdf&quot;)</span>
-
-<span class="k">def</span> <span class="nf">plot_connectome</span><span class="p">():</span>
-    <span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s2">&quot;whitegrid&quot;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">12</span><span class="p">))</span>
-    <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">row</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">adjacency</span><span class="o">.</span><span class="n">values</span><span class="p">):</span>
-        <span class="k">for</span> <span class="n">j</span><span class="p">,</span><span class="n">columns</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">row</span><span class="p">):</span>
-            <span class="k">if</span> <span class="n">columns</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-                <span class="n">xs</span> <span class="o">=</span> <span class="p">[</span><span class="n">locations</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span><span class="n">locations</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">j</span><span class="p">,</span><span class="mi">0</span><span class="p">]]</span>
-                <span class="n">ys</span> <span class="o">=</span> <span class="p">[</span><span class="n">locations</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span><span class="n">locations</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">j</span><span class="p">,</span><span class="mi">1</span><span class="p">]]</span>
-                <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span><span class="n">ys</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.03</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">locations</span><span class="o">.</span><span class="n">values</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span><span class="n">locations</span><span class="o">.</span><span class="n">values</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span><span class="s2">&quot;o&quot;</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.4</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Posterior - Anterior(mm)&quot;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Dorsal - Ventral(mm)&quot;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
-
-<span class="c1"># display</span>
-<span class="n">plot_connectome</span><span class="p">()</span>
-<span class="n">plot_connectome_scale</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="../../../_images/1a52bacece2900ef0cdeb87143c7470232e2a6200e5cb31cdc868b5513fe49e1.png" src="../../../_images/1a52bacece2900ef0cdeb87143c7470232e2a6200e5cb31cdc868b5513fe49e1.png" />
-<img alt="../../../_images/4c200729b9bdfe997d0bf90f0bf63bb8749b0daeda61406f68a8ad7eebcb2354.png" src="../../../_images/4c200729b9bdfe997d0bf90f0bf63bb8749b0daeda61406f68a8ad7eebcb2354.png" />
 </div>
-</div>
-<br>
 <p>Next we plot the adjacency matrix for the <em>C. elegans</em> connectome.</p>
-<br><div class="cell docutils container">
+<div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># adjacency matrix</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># adjacency matrix</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">adjacency</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/010e569ae39e48fc56682e08b49fb8e79d85ffda5d0a85ca2cd869083704467b.png" src="../../../_images/010e569ae39e48fc56682e08b49fb8e79d85ffda5d0a85ca2cd869083704467b.png" />
+<img alt="../../../_images/c23e45cbdc4d3747cc844f92944ecb8151fa37f3fcfbf597d0079a979b969201.png" src="../../../_images/c23e45cbdc4d3747cc844f92944ecb8151fa37f3fcfbf597d0079a979b969201.png" />
 </div>
 </div>
 <p>And finally the degree distribution</p>
@@ -565,7 +532,7 @@ p_0 = 0,~ p_1 = \frac{4}{8},~ p_2 = 0,~ p_3 = \frac{2}{8},~ p_4 = \frac{2}{8},~ 
 </aside>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># degree distributions</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># degree distributions</span>
 
 <span class="c1"># in and out degrees</span>
 <span class="n">in_degree</span> <span class="o">=</span> <span class="n">adjacency</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
@@ -580,7 +547,7 @@ p_0 = 0,~ p_1 = \frac{4}{8},~ p_2 = 0,~ p_3 = \frac{2}{8},~ p_4 = \frac{2}{8},~ 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/3ef876a552cfccec874ac9eca8ada8319142c501e7b3db6ff82f007dc7a00724.png" src="../../../_images/3ef876a552cfccec874ac9eca8ada8319142c501e7b3db6ff82f007dc7a00724.png" />
+<img alt="../../../_images/31d288e1273855b06f69327722cde7929aa50b2787b0a31700c2c44f6000a906.png" src="../../../_images/31d288e1273855b06f69327722cde7929aa50b2787b0a31700c2c44f6000a906.png" />
 </div>
 </div>
 <p>In the above examples the distribution is obtained via empirical data, however, a degree distribution can also be given directly by a formula, that is by a probability distribution such as the binomial or Poisson distribution.</p>
