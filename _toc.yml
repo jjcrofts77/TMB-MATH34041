@@ -35,7 +35,12 @@ parts:
     - file: content/ProblemSheets/ProblemSheets
       sections:  
       - file: content/ProblemSheets/ProblemSheet1
+        title: Problem Sheet 1
       - file: content/ProblemSheets/ProblemSheet2
+        title: Problem Sheet 2
       - file: content/ProblemSheets/ProblemSheet3
+        title: Problem Sheet 3
       - file: content/ProblemSheets/ProblemSheet4
+        title: Problem Sheet 4
       - file: content/ProblemSheets/ProblemSheet5      
+        title: Problem Sheet 5
