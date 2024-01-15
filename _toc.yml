@@ -14,7 +14,8 @@ parts:
       sections:
       - file: content/notebooks/Chapter1/Network
       - file: content/notebooks/Chapter1/BasicStats
-      - file: content/notebooks/Chapter1/BSWalksAndPaths
+        - file: content/notebooks/Chapter1/BSWalksAndPaths
+        - file: content/notebooks/Chapter1/BSNetworkClustering
       - file: content/notebooks/Chapter1/SpectralProperties
       - file: content/notebooks/Chapter1/FurtherReading
     - file: content/notebooks/Chapter2/Chapter2Intro
