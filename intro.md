@@ -16,9 +16,9 @@ This Jupyterbook provides the course notes for the second half of Topics in Math
 ### Chapter 1 Introduction and basic concepts
    - What are networks?
    - Basic statistics 
-      - Degree, strength and their distributions
-      - Traversing a network: walks and paths
-      - Network clustering  
+   - Degree, strength and their distributions
+   - Traversing a network: walks and paths
+   - Network clustering  
    - Spectral properties of networks
    - Further reading
 
