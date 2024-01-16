@@ -7,3 +7,5 @@ Network models play an important role in network analysis for a number of reason
 3. We can employ them as `substrates' on which to run dynamical systems in order to model phenomena such as synchrony in a controlled environment.
 
 In the following we  restrict ourselves to some of the most important network models to date - of which  there are many!
+
+----
