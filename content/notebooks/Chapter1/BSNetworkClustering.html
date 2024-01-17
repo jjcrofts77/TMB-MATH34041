@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>1.2 Basic Statistics (Ctd) &#8212; Topics in Mathematical Biology MATH34041</title>
+    <title>1.4 Network clustering &#8212; Topics in Mathematical Biology MATH34041</title>
   
   
   
@@ -71,6 +71,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/notebooks/Chapter1/BSNetworkClustering';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="1.5 Spectral Properties of Networks" href="SpectralProperties.html" />
+    <link rel="prev" title="1.3 Traversing a network: walks and paths" href="BSWalksAndPaths.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -173,7 +175,7 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Part II - Network Science</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter0/Chapter0Intro.html">Chapter 0 Network analysis in Python</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter0/PythonBasics.html">0.1 Basics in Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter0/NumpyAndMatplotlib.html">0.2 Introduction to the NumPy and Matplotlib libraries</a></li>
@@ -181,11 +183,13 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Chapter0/PythonNetworkExample.html">0.4 Python Network Example</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="Chapter1Intro.html">Chapter 1 Introduction and Basic Concepts</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="Chapter1Intro.html">Chapter 1 Introduction and Basic Concepts</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="Network.html">1.1 What are Networks?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="BasicStats.html">1.2 Basic Statistics</a></li>
-<li class="toctree-l2"><a class="reference internal" href="SpectralProperties.html">1.3 Spectral Properties of Networks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="FurtherReading.html">1.4 Further Reading</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BSWalksAndPaths.html">1.3 Traversing a network: walks and paths</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">1.4 Network clustering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SpectralProperties.html">1.5 Spectral Properties of Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="FurtherReading.html">1.6 Further Reading</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter2/Chapter2Intro.html">Chapter 2 Network Models</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -207,6 +211,17 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Chapter4/DiseaseNetworks.html">4.3 Disease Networks</a></li>
 </ul>
 </li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../ProblemSheets/ProblemSheets.html">Problem Sheets</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../ProblemSheets/ProblemSheet1.html">Problem Sheet 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ProblemSheets/ProblemSheet2.html">Problem Sheet 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ProblemSheets/ProblemSheet3.html">Problem Sheet 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ProblemSheets/ProblemSheet4.html">Problem Sheet 4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ProblemSheets/ProblemSheet5.html">Problem Sheet 5</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../coursework/CourseworkTemplate.html">Coursework Assessment and Specification</a></li>
+
+
 </ul>
 
     </div>
@@ -345,7 +360,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>1.2 Basic Statistics (Ctd)</h1>
+    <h1>1.4 Network clustering</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -355,7 +370,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#network-clustering">1.2.3 Network clustering</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#watts-strogatz-clustering">Watts-Strogatz clustering</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transitivity-index">Transitivity index</a></li>
 </ul>
             </nav>
         </div>
@@ -368,76 +384,79 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <p><a href="https://colab.research.google.com/github/jjcrofts77/TMB-MATH34041/blob/main/content/notebooks/Chapter1/BSNetworkClustering.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
-<section class="tex2jax_ignore mathjax_ignore" id="basic-statistics-ctd">
-<h1>1.2 Basic Statistics (Ctd)<a class="headerlink" href="#basic-statistics-ctd" title="Permalink to this heading">#</a></h1>
-<section id="network-clustering">
-<h2>1.2.3 Network clustering<a class="headerlink" href="#network-clustering" title="Permalink to this heading">#</a></h2>
-<p>Alongside the characteristic path-length perhaps the most important network metric is that of clustering, which measures the extent to which a nodes neighbours are connected. A feature of highly clustered networks is the presence of a large number of triangles. For instance, in a friendship network it is highly likely that if Bob and Phil are both friends of Joe then they will eventually meet each other via their relation with Joe, thus forming a triangle. Mathematically, a highly clustered network, i.e. one in which  <span class="math notranslate nohighlight">\(i\sim j\)</span> and <span class="math notranslate nohighlight">\(i\sim k\)</span> implies a high probability that <span class="math notranslate nohighlight">\(j\sim k\)</span> is said to be \emph{highly transitive}.</p>
-<p>\begin{figure}[t]
-\centering
-\includegraphics[scale=0.6]{Figures/Clustering}
-\caption{Simple illustration of the Watts-Strogatz clustering coefficient: (LHS) <span class="math notranslate nohighlight">\(C(i) = \{0,0,0,0\}\)</span> and <span class="math notranslate nohighlight">\(\langle C\rangle = 0\)</span>; (Middle) <span class="math notranslate nohighlight">\(C(i) = \{1,1,1,1\}\)</span> and <span class="math notranslate nohighlight">\(\langle C\rangle = 1\)</span>; and (RHS) <span class="math notranslate nohighlight">\(C(i) = \{1,\frac{1}{3},0,1\}\)</span> and <span class="math notranslate nohighlight">\(\langle C\rangle = \frac{7}{12}\)</span>.}\label{fig4:ClusteringExample}
-\end{figure}</p>
-<p>\bigskip</p>
-<p>\noindent\textbf{Watts-Strogatz clustering}\
-The first proposal for a \emph{clustering coefficient} was given by Watts and Strogatz in their seminal paper on `small-world’ networks in 1998. Given a node, <span class="math notranslate nohighlight">\(i\)</span> say, the local clustering coefficient measures the proportion of triangles amongst its neighbours:
-[
-C(i) = \frac{\text{number of triangles centred on node <span class="math notranslate nohighlight">\(i\)</span>}}{\text{total number of possible triangles centred on node <span class="math notranslate nohighlight">\(i\)</span>}}.
-]
-Mathematically, we can write the above equation as
-\begin{equation}\label{eqn:WSClusteringCoeficient}
-C(i) = \frac{t_i}{k_i(k_i-1)/2} = \frac{2t_i}{k_i(k_i-1)},
-\end{equation}
-where <span class="math notranslate nohighlight">\(k_i\)</span> gives the degree of the <span class="math notranslate nohighlight">\(i\)</span>th node and we define <span class="math notranslate nohighlight">\(t_i\)</span> to be the total number of triangles centred on node <span class="math notranslate nohighlight">\(i\)</span>. Given Equation (\ref{eqn:WSClusteringCoeficient}) it is straightforward to construct a global clustering coefficient by averaging the local clustering coefficient over all network nodes:
-\begin{equation}
-\langle C\rangle = \frac{1}{n}\sum_i C(i).
-\end{equation}
-Figure \ref{fig4:ClusteringExample} illustrates the above ideas for 3 toy networks models.</p>
-<p>\bigskip
-\noindent\textbf{Exercise:} Compute the WS clustering coefficient (both local and global) for the three toy models in Figure \ref{fig:WSexamples}.</p>
-<p>\bigskip
-\noindent\textbf{Exercise:} Compute <span class="math notranslate nohighlight">\(t_i\)</span> from Equation (\ref{eqn:WSClusteringCoeficient}) in terms of the network adjacency matrix.</p>
-<p>\bigskip</p>
-<p>\noindent\textbf{Transitivity index}\
-Another way of quantifying global clustering within a network is by means of the so-called \emph{transitivity index}. Let <span class="math notranslate nohighlight">\(|C_3|\)</span> denote the total number of triangles present within the network, and <span class="math notranslate nohighlight">\(|P_2|\)</span> the total number of paths of length 2 in the network - note that a path of length two represents a potential triangle. Then we define the transitivity index as
-\begin{equation}\label{eqn:GlobalClusteringCoefficient}
-T = \frac{3|C_3|}{|P_2|}.
-\end{equation}
-The factor of 3 is due to the fact that each triangle contributes 3 2-paths, i.e. paths of length 2.</p>
-<p>\begin{figure}[t]
-\centering
-\includegraphics[scale=0.4]{Figures/NetworkExample}
-\caption{Simple network on 8 nodes.}\label{fig:SimpleNetworkExample}
-\end{figure}</p>
-<p>Let us consider the simple network given in Figure \ref{fig:SimpleNetworkExample} whose adjacency matrix is shown below.
-\begin{align*}
-A &amp;= \left(
-\begin{tabular}{cccccccc}
-0 &amp; 1 &amp; 1 &amp;1 &amp; 1 &amp; 1&amp; 0 &amp; 0\
-1 &amp; 0 &amp; 1 &amp;0 &amp; 0 &amp; 1&amp; 0 &amp; 0\
-1 &amp; 1 &amp; 0 &amp;1 &amp; 0 &amp; 0&amp; 1 &amp; 0\
-1 &amp; 0 &amp; 1 &amp;0 &amp; 0 &amp; 0&amp; 0 &amp; 1\
-1 &amp; 0 &amp; 0 &amp;0 &amp; 0 &amp; 0&amp; 0 &amp; 0\
-0 &amp; 1 &amp; 0 &amp;0 &amp; 0 &amp; 0&amp; 0 &amp; 0\
-0 &amp; 0 &amp; 1 &amp;0 &amp; 0 &amp; 0&amp; 0 &amp; 0\
-0 &amp; 0 &amp; 0 &amp;1 &amp; 0 &amp; 0&amp; 0 &amp; 0
-\end{tabular}
-\right)
-\end{align*}
-We can compute the number of triangles in this network by considering the above matrix. In fact, recalling Theorem \ref{Theorem:Walks} we see that
-[
-|C_3| = \frac{1}{6}\Tr\left(A^3\right) = 2.
-]
-The number of paths of length two in the network can be obtained using the following formula (which you are asked to justify in the problem sheets)
-[
+<section class="tex2jax_ignore mathjax_ignore" id="network-clustering">
+<h1>1.4 Network clustering<a class="headerlink" href="#network-clustering" title="Permalink to this heading">#</a></h1>
+<p>Alongside the characteristic path-length perhaps the most important network metric is that of clustering, which measures the extent to which a nodes neighbours are connected. A feature of highly clustered networks is the presence of a large number of triangles. For instance, in a friendship network it is highly likely that if Bob and Phil are both friends of Joe then they will eventually meet each other via their relation with Joe, thus forming a triangle. Mathematically, a highly clustered network, i.e. one in which  <span class="math notranslate nohighlight">\(i\sim j\)</span> and <span class="math notranslate nohighlight">\(i\sim k\)</span> implies a high probability that <span class="math notranslate nohighlight">\(j\sim k\)</span> is said to be <em>highly transitive</em>.</p>
+<section id="watts-strogatz-clustering">
+<h2>Watts-Strogatz clustering<a class="headerlink" href="#watts-strogatz-clustering" title="Permalink to this heading">#</a></h2>
+<p>The first proposal for a <em>clustering coefficient</em> was given by Watts and Strogatz in their seminal paper on `small-world’ networks in 1998. Given a node, <span class="math notranslate nohighlight">\(i\)</span> say, the local clustering coefficient measures the proportion of triangles amongst its neighbours:</p>
+<div class="math notranslate nohighlight">
+\[
+ C(i) = \frac{\text{number of triangles centred on node $i$}}{\text{total number of possible triangles centred on node $i$}}.
+\]</div>
+<p>Mathematically, we can write the above equation as</p>
+<div class="math notranslate nohighlight" id="equation-wsclusteringcoeficient">
+<span class="eqno">(6)<a class="headerlink" href="#equation-wsclusteringcoeficient" title="Permalink to this equation">#</a></span>\[
+ C(i) = \frac{t_i}{k_i(k_i-1)/2} = \frac{2t_i}{k_i(k_i-1)},
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(k_i\)</span> gives the degree of the <span class="math notranslate nohighlight">\(i\)</span>th node and we define <span class="math notranslate nohighlight">\(t_i\)</span> to be the total number of triangles centred on node <span class="math notranslate nohighlight">\(i\)</span>. Given Equation <a class="reference internal" href="#equation-wsclusteringcoeficient">(6)</a> it is straightforward to construct a global clustering coefficient by averaging the local clustering coefficient over all network nodes:</p>
+<div class="math notranslate nohighlight">
+\[
+ \langle C\rangle = \frac{1}{n}\sum_i C(i).
+\]</div>
+<p><a class="reference internal" href="#clusteringexample1p4"><span class="std std-numref">Fig. 7</span></a> illustrates the above ideas for 3 toy networks models.</p>
+<figure class="align-default" id="clusteringexample1p4">
+<a class="reference internal image-reference" href="../../../_images/Clustering.png"><img alt="../../../_images/Clustering.png" src="../../../_images/Clustering.png" style="height: 150px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 7 </span><span class="caption-text">Simple illustration of the Watts-Strogatz clustering coefficient: (LHS) <span class="math notranslate nohighlight">\(C(i) = \{0,0,0,0\}\)</span> and <span class="math notranslate nohighlight">\(\langle C\rangle = 0\)</span>; (Middle) <span class="math notranslate nohighlight">\(C(i) = \{1,1,1,1\}\)</span> and <span class="math notranslate nohighlight">\(\langle C\rangle = 1\)</span>; and (RHS) <span class="math notranslate nohighlight">\(C(i) = \{1,\frac{1}{3},0,1\}\)</span> and <span class="math notranslate nohighlight">\(\langle C\rangle = \frac{7}{12}\)</span>.</span><a class="headerlink" href="#clusteringexample1p4" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p><strong>Exercise</strong>: Compute <span class="math notranslate nohighlight">\(t_i\)</span> from Equation <a class="reference internal" href="#equation-wsclusteringcoeficient">(6)</a> in terms of the network adjacency matrix.</p>
+</section>
+<section id="transitivity-index">
+<h2>Transitivity index<a class="headerlink" href="#transitivity-index" title="Permalink to this heading">#</a></h2>
+<p>Another way of quantifying global clustering within a network is by means of the so-called <em>transitivity index</em>. Let <span class="math notranslate nohighlight">\(|C_3|\)</span> denote the total number of triangles present within the network, and <span class="math notranslate nohighlight">\(|P_2|\)</span> the total number of paths of length 2 in the network - note that a path of length two represents a potential triangle. Then we define the transitivity index as</p>
+<div class="math notranslate nohighlight" id="equation-globalclusteringcoefficient">
+<span class="eqno">(7)<a class="headerlink" href="#equation-globalclusteringcoefficient" title="Permalink to this equation">#</a></span>\[
+ T = \frac{3|C_3|}{|P_2|}.
+\]</div>
+<p>The factor of 3 is due to the fact that each triangle contributes 3 2-paths, i.e. paths of length 2.</p>
+<figure class="align-default" id="simpnetex">
+<a class="reference internal image-reference" href="../../../_images/NetworkExample1p4.png"><img alt="../../../_images/NetworkExample1p4.png" src="../../../_images/NetworkExample1p4.png" style="height: 350px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 8 </span><span class="caption-text">Simple network on 8 nodes.</span><a class="headerlink" href="#simpnetex" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Let us consider the simple network given in <a class="reference internal" href="#simpnetex"><span class="std std-numref">Fig. 8</span></a> whose adjacency matrix is shown below.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+A = \begin{bmatrix}
+      0 &amp; 1 &amp; 1 &amp;1 &amp; 1 &amp; 1&amp; 0 &amp; 0\\
+      1 &amp; 0 &amp; 1 &amp;0 &amp; 0 &amp; 1&amp; 0 &amp; 0\\
+      1 &amp; 1 &amp; 0 &amp;1 &amp; 0 &amp; 0&amp; 1 &amp; 0\\
+      1 &amp; 0 &amp; 1 &amp;0 &amp; 0 &amp; 0&amp; 0 &amp; 1\\
+      1 &amp; 0 &amp; 0 &amp;0 &amp; 0 &amp; 0&amp; 0 &amp; 0\\
+      0 &amp; 1 &amp; 0 &amp;0 &amp; 0 &amp; 0&amp; 0 &amp; 0\\
+      0 &amp; 0 &amp; 1 &amp;0 &amp; 0 &amp; 0&amp; 0 &amp; 0\\
+      0 &amp; 0 &amp; 0 &amp;1 &amp; 0 &amp; 0&amp; 0 &amp; 0
+      \end{bmatrix}      
+\end{split}\]</div>
+<p>We can compute the number of triangles in this network by considering the above matrix. In fact, recalling <a class="reference internal" href="BSWalksAndPaths.html#Walks">Theorem 1</a> we see that</p>
+<div class="math notranslate nohighlight">
+\[
+|C_3| = \frac{1}{6}\mathrm{Tr}\left(A^3\right) = 2.
+\]</div>
+<p>The number of paths of length two in the network can be obtained using the following formula (which you are asked to justify in the problem sheets)</p>
+<div class="math notranslate nohighlight">
+\[
 |P_2| = \sum_{i=1}^n{k_i\choose 2} = \sum_{i=1}^n\frac{k_i(k_i-1)}{2} = 18.
-]
-Thus,
-[
+\]</div>
+<p>Thus,</p>
+<div class="math notranslate nohighlight">
+\[
 T = \frac{3\times 2}{18} = \frac{1}{3}.
-]</p>
-<p>\bigskip
-\noindent\textbf{Exercise:} Use Figure \ref{fig:SimpleNetworkExample} to confirm the above calculations. (Hint: the amount of work is greatly reduced by noting that several of the nodes in this network are `equivalent’.)</p>
+\]</div>
+<p><strong>Exercise</strong>: Use <a class="reference internal" href="#simpnetex"><span class="std std-numref">Fig. 8</span></a> to confirm the above calculations. (Hint: the amount of work is greatly reduced by noting that several of the nodes in this network are `equivalent’.)</p>
 </section>
 </section>
 
@@ -471,6 +490,24 @@ T = \frac{3\times 2}{18} = \frac{1}{3}.
                 <footer class="prev-next-footer">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="BSWalksAndPaths.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">1.3 Traversing a network: walks and paths</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="SpectralProperties.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">1.5 Spectral Properties of Networks</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -486,7 +523,8 @@ T = \frac{3\times 2}{18} = \frac{1}{3}.
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#network-clustering">1.2.3 Network clustering</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#watts-strogatz-clustering">Watts-Strogatz clustering</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transitivity-index">Transitivity index</a></li>
 </ul>
   </nav></div>
 

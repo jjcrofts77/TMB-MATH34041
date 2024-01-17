@@ -186,8 +186,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter1/Chapter1Intro.html">Chapter 1 Introduction and Basic Concepts</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter1/Network.html">1.1 What are Networks?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter1/BasicStats.html">1.2 Basic Statistics</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter1/SpectralProperties.html">1.3 Spectral Properties of Networks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter1/FurtherReading.html">1.4 Further Reading</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter1/BSWalksAndPaths.html">1.3 Traversing a network: walks and paths</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter1/BSNetworkClustering.html">1.4 Network clustering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter1/SpectralProperties.html">1.5 Spectral Properties of Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter1/FurtherReading.html">1.6 Further Reading</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="Chapter2Intro.html">Chapter 2 Network Models</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
@@ -209,6 +211,17 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Chapter4/DiseaseNetworks.html">4.3 Disease Networks</a></li>
 </ul>
 </li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../ProblemSheets/ProblemSheets.html">Problem Sheets</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../ProblemSheets/ProblemSheet1.html">Problem Sheet 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ProblemSheets/ProblemSheet2.html">Problem Sheet 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ProblemSheets/ProblemSheet3.html">Problem Sheet 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ProblemSheets/ProblemSheet4.html">Problem Sheet 4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ProblemSheets/ProblemSheet5.html">Problem Sheet 5</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../coursework/CourseworkTemplate.html">Coursework Assessment and Specification</a></li>
+
+
 </ul>
 
     </div>
@@ -380,11 +393,11 @@ document.write(`
 <p>Determining the mechanisms underlying observed topological structures in biology is of great importance since they provide clues regarding the evolutionary processes that helped shape them. Next, we study one of the first such models: the <em>Barabasi-Albert (BA) model</em>.</p>
 <section id="barabasi-albert-model">
 <h3>Barabasi-Albert model<a class="headerlink" href="#barabasi-albert-model" title="Permalink to this heading">#</a></h3>
-<p>Unlike the WS model that generates small-world networks, the BA model was developed to generate networks with power law degree distributions. To initiate the BA algorithm we start with a small network containing <span class="math notranslate nohighlight">\(n_0\)</span> nodes and <span class="math notranslate nohighlight">\(m_0\)</span> edges. At each iterate of the algorithm we add a new node <span class="math notranslate nohighlight">\(u\)</span> and connect it to existing nodes with a probability proportional to their degrees. Thus we are more likely to attach new nodes to existing nodes of high degree. For this reason the model is often referred to as the <em>preferential attachment model</em>. <a class="reference internal" href="#bamodel"><span class="std std-numref">Fig. 8</span></a> illustrates the process starting from a simple network on 3 nodes.</p>
+<p>Unlike the WS model that generates small-world networks, the BA model was developed to generate networks with power law degree distributions. To initiate the BA algorithm we start with a small network containing <span class="math notranslate nohighlight">\(n_0\)</span> nodes and <span class="math notranslate nohighlight">\(m_0\)</span> edges. At each iterate of the algorithm we add a new node <span class="math notranslate nohighlight">\(u\)</span> and connect it to existing nodes with a probability proportional to their degrees. Thus we are more likely to attach new nodes to existing nodes of high degree. For this reason the model is often referred to as the <em>preferential attachment model</em>. <a class="reference internal" href="#bamodel"><span class="std std-numref">Fig. 12</span></a> illustrates the process starting from a simple network on 3 nodes.</p>
 <figure class="align-default" id="bamodel">
 <a class="reference internal image-reference" href="../../../_images/BAModel.png"><img alt="../../../_images/BAModel.png" src="../../../_images/BAModel.png" style="height: 350px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 8 </span><span class="caption-text">4 steps of the BA model starting from <span class="math notranslate nohighlight">\(n_0=3\)</span> and <span class="math notranslate nohighlight">\(m_0=2\)</span>.</span><a class="headerlink" href="#bamodel" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 12 </span><span class="caption-text">4 steps of the BA model starting from <span class="math notranslate nohighlight">\(n_0=3\)</span> and <span class="math notranslate nohighlight">\(m_0=2\)</span>.</span><a class="headerlink" href="#bamodel" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Such models share a number of features the most important of which we outline below.</p>

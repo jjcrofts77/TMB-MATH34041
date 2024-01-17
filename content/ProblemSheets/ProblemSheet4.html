@@ -1,0 +1,569 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Problem Sheet 4: Network models &#8212; Topics in Mathematical Biology MATH34041</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/myfonts.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../../_static/tabs.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"HTML-CSS": {"matchFontHeight": true, "scale": 110}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'content/ProblemSheets/ProblemSheet4';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Problem Sheet 5: Revealing network structure - centrality and modularity" href="ProblemSheet5.html" />
+    <link rel="prev" title="Problem Sheet 3: Basic network measures" href="ProblemSheet3.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/FoldedBrainHeatDist.png" class="logo__image only-light" alt="Topics in Mathematical Biology MATH34041 - Home"/>
+    <script>document.write(`<img src="../../_static/FoldedBrainHeatDist.png" class="logo__image only-dark" alt="Topics in Mathematical Biology MATH34041 - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Topics in Mathematical Biology MATH34041
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Part II - Network Science</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../notebooks/Chapter0/Chapter0Intro.html">Chapter 0 Network analysis in Python</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/Chapter0/PythonBasics.html">0.1 Basics in Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/Chapter0/NumpyAndMatplotlib.html">0.2 Introduction to the NumPy and Matplotlib libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/Chapter0/PythonNetworkX.html">0.3 Introduction to the NetworkX Package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/Chapter0/PythonNetworkExample.html">0.4 Python Network Example</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../notebooks/Chapter1/Chapter1Intro.html">Chapter 1 Introduction and Basic Concepts</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/Chapter1/Network.html">1.1 What are Networks?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/Chapter1/BasicStats.html">1.2 Basic Statistics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/Chapter1/BSWalksAndPaths.html">1.3 Traversing a network: walks and paths</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/Chapter1/BSNetworkClustering.html">1.4 Network clustering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/Chapter1/SpectralProperties.html">1.5 Spectral Properties of Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/Chapter1/FurtherReading.html">1.6 Further Reading</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../notebooks/Chapter2/Chapter2Intro.html">Chapter 2 Network Models</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/Chapter2/RandomGraphs.html">2.1 Random Graphs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/Chapter2/SmallWorlds.html">2.2 Small-Worlds</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/Chapter2/NetworkGrowth.html">2.3 Modelling Network Growth</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/Chapter2/FurtherReading.html">2.4 Further Reading</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../notebooks/Chapter3/Chapter3Intro.html">Chapter 3 Additional Summary Statistics and Useful Concepts</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/Chapter3/CentralityMeasures.html">3.1 Centrality Measures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/Chapter3/CommunityDetection.html">3.2 Community Detection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/Chapter3/FurtherReading.html">3.3 Further Reading</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../notebooks/Chapter4/Chapter4Intro.html">Chapter 4 Complex Networks in Biology</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/Chapter4/NetworkNeuro.html">4.1 Network Neuroscience</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/Chapter4/MolecularNetworks.html">4.2 Molecular Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/Chapter4/DiseaseNetworks.html">4.3 Disease Networks</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="ProblemSheets.html">Problem Sheets</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="ProblemSheet1.html">Problem Sheet 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ProblemSheet2.html">Problem Sheet 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ProblemSheet3.html">Problem Sheet 3</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Problem Sheet 4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ProblemSheet5.html">Problem Sheet 5</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../coursework/CourseworkTemplate.html">Coursework Assessment and Specification</a></li>
+
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/content/ProblemSheets/ProblemSheet4.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Problem Sheet 4: Network models</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <p><a href="https://colab.research.google.com/github/jjcrofts77/TMB-MATH34041/blob/main/content/ProblemSheets/ProblemSheet4.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
+<section class="tex2jax_ignore mathjax_ignore" id="problem-sheet-4-network-models">
+<h1>Problem Sheet 4: Network models<a class="headerlink" href="#problem-sheet-4-network-models" title="Permalink to this heading">#</a></h1>
+<ol class="arabic simple">
+<li><p>A random graph ensemble <span class="math notranslate nohighlight">\(G(n,p)\)</span> with <span class="math notranslate nohighlight">\(p = \frac{\langle k \rangle}{n-1}\)</span> has a binomial degree distribution</p></li>
+</ol>
+<div class="math notranslate nohighlight" id="equation-eqn1">
+<span class="eqno">(12)<a class="headerlink" href="#equation-eqn1" title="Permalink to this equation">#</a></span>\[
+  P_\mathrm{B}(k) = {{n-1}\choose{k}}p^k(1-p)^{n-1-k},
+  \]</div>
+<p>that in the limit of large <span class="math notranslate nohighlight">\(n\)</span> can be approximated by a Poisson distribution</p>
+<div class="math notranslate nohighlight" id="equation-eqn2">
+<span class="eqno">(13)<a class="headerlink" href="#equation-eqn2" title="Permalink to this equation">#</a></span>\[
+  P_\mathrm{P}(k) = \frac{1}{k!}\langle k\rangle^ke^{-\langle k\rangle}.
+  \]</div>
+<p>(a) Write the generating function (a.k.a. the z-transform)</p>
+<div class="math notranslate nohighlight">
+\[\displaystyle g_B(x) = \sum_{k=0}^{\infty}P_\mathrm{B}(k)x^k\]</div>
+<p>for the binomial degree distribution <span class="math notranslate nohighlight">\(P_\mathrm{B}(k)\)</span> given by Equation <a class="reference internal" href="#equation-eqn1">(12)</a>.</p>
+<p>(b) Repeat the above, but for the Poisson degree distribution <span class="math notranslate nohighlight">\(P_\mathrm{P}(k)\)</span> given by Equation <a class="reference internal" href="#equation-eqn2">(13)</a>.</p>
+<p>(c) Using the following properties of generating functions:</p>
+<div class="math notranslate nohighlight">
+\[
+    \langle k\rangle = g'(1) \quad \text{and}\quad \langle (k-\langle k\rangle)^2\rangle = g''(1) + g'(1)(1-g'(1))
+  \]</div>
+<p>evaluate the mean and variance of the degree distribution for both the exact binomial and approximate Poisson distributions.</p>
+<p>(d) Hence show that the mean and variance of the binomial distribution, <span class="math notranslate nohighlight">\(P_\mathrm{B}(k)\)</span>, are the same as those derived for the Poisson distribution, <span class="math notranslate nohighlight">\(P_\mathrm{P}(k)\)</span>, in the large <span class="math notranslate nohighlight">\(n\)</span> limit, providing that <span class="math notranslate nohighlight">\(p=\langle k\rangle/(n-1)\)</span> with <span class="math notranslate nohighlight">\(\langle k\rangle\)</span> constant.</p>
+<p>(e) In the code box below, write a Python script that plots the degree distribution for an ER random graph on <span class="math notranslate nohighlight">\(n=1000\)</span> nodes with <span class="math notranslate nohighlight">\(p=0.05\)</span>. On the same graph plot the Poisson distribution with parameter <span class="math notranslate nohighlight">\(\langle k\rangle = p(n-1)\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Q1(e)</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">1000</span>
+
+<span class="c1"># create ER network</span>
+
+<span class="c1"># plot the empirical degree distribution</span>
+
+<span class="c1"># add the corresponding Poisson distribution (&lt;k&gt; = p(n-1))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Consider a random network in the ensemble <span class="math notranslate nohighlight">\(G(n,p)\)</span> with <span class="math notranslate nohighlight">\(n=2000\)</span> and linking probability <span class="math notranslate nohighlight">\(p = 10^{-3}\)</span>.</p></li>
+</ol>
+<p>(a) Calculate the average degree <span class="math notranslate nohighlight">\(\langle k\rangle\)</span> and standard deviation <span class="math notranslate nohighlight">\(\sigma\)</span> of this network using the fact that it follows a binomial distribution.</p>
+<p>(b)  Calculate the average degree <span class="math notranslate nohighlight">\(\langle k\rangle\)</span> and standard deviation <span class="math notranslate nohighlight">\(\sigma\)</span> of this network using the fact that for large <span class="math notranslate nohighlight">\(n\)</span> and fixed mean degree it follows a Poisson distribution.</p>
+<p>(c) Calculate the relative error made in calculating <span class="math notranslate nohighlight">\(\langle k\rangle\)</span> and <span class="math notranslate nohighlight">\(\sigma\)</span> when using the approximation in (b).</p>
+<p>(d) Check your calculations using Python in the code box below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Q2</span>
+
+<span class="c1"># exact degree and s.d.</span>
+
+<span class="c1"># large limit appoximations</span>
+
+<span class="c1"># relative error</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Show that the generating function of a network, <span class="math notranslate nohighlight">\(N\)</span>, whose degree distribution follows an exponential distribution of the form <span class="math notranslate nohighlight">\(P_k = Ce^{-\lambda k}\)</span>, is given by</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[
+  g(x) = \frac{e^\lambda-1}{e^\lambda - x}.
+  \]</div>
+<figure class="align-default" id="fig1">
+<a class="reference internal image-reference" href="../../_images/PS4Q4.png"><img alt="../../_images/PS4Q4.png" src="../../_images/PS4Q4.png" style="height: 350px;" /></a>
+</figure>
+<ol class="arabic simple" start="4">
+<li><p>Show that the global clustering clustering (or transitivity) of a k-regular ring lattice, such as that shown in <code class="xref std std-numref docutils literal notranslate"><span class="pre">fig1</span></code> for <span class="math notranslate nohighlight">\(k=4\)</span>, is given by</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[
+  T = \frac{3(k-2)}{4(k-1)}.
+  \]</div>
+<ol class="arabic simple" start="5">
+<li><p>Suppose that the network <span class="math notranslate nohighlight">\(N = (V, E)\)</span> has adjacency matrix <span class="math notranslate nohighlight">\(A\)</span> with characteristic polynomial given by</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[
+  \chi_A(t) = t^7-13t^5-12t^4+19t^3+16t^2-4t
+  \]</div>
+<p>Determine both the number of edges, <span class="math notranslate nohighlight">\(m\)</span>, and the number of triangles, <span class="math notranslate nohighlight">\(t\)</span>, in the network.</p>
+<hr class="docutils" />
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./content\ProblemSheets"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="ProblemSheet3.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Problem Sheet 3: Basic network measures</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="ProblemSheet5.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Problem Sheet 5: Revealing network structure - centrality and modularity</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Jonathan J Crofts
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2021.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -184,8 +184,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Chapter 1 Introduction and Basic Concepts</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="Network.html">1.1 What are Networks?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="BasicStats.html">1.2 Basic Statistics</a></li>
-<li class="toctree-l2"><a class="reference internal" href="SpectralProperties.html">1.3 Spectral Properties of Networks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="FurtherReading.html">1.4 Further Reading</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BSWalksAndPaths.html">1.3 Traversing a network: walks and paths</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BSNetworkClustering.html">1.4 Network clustering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SpectralProperties.html">1.5 Spectral Properties of Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="FurtherReading.html">1.6 Further Reading</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter2/Chapter2Intro.html">Chapter 2 Network Models</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -207,6 +209,17 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Chapter4/DiseaseNetworks.html">4.3 Disease Networks</a></li>
 </ul>
 </li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../ProblemSheets/ProblemSheets.html">Problem Sheets</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../ProblemSheets/ProblemSheet1.html">Problem Sheet 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ProblemSheets/ProblemSheet2.html">Problem Sheet 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ProblemSheets/ProblemSheet3.html">Problem Sheet 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ProblemSheets/ProblemSheet4.html">Problem Sheet 4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ProblemSheets/ProblemSheet5.html">Problem Sheet 5</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../coursework/CourseworkTemplate.html">Coursework Assessment and Specification</a></li>
+
+
 </ul>
 
     </div>
@@ -360,7 +373,7 @@ document.write(`
   <p><a href="https://colab.research.google.com/github/jjcrofts77/TMB-MATH34041/blob/main/content/notebooks/Chapter1/Chapter1Intro.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
 <section class="tex2jax_ignore mathjax_ignore" id="chapter-1-introduction-and-basic-concepts">
 <h1>Chapter 1 Introduction and Basic Concepts<a class="headerlink" href="#chapter-1-introduction-and-basic-concepts" title="Permalink to this heading">#</a></h1>
-<p>Many systems in biology consist of a large number of similar entities (or units) that interact, or connect/communicate, in some way. These interactions can take a very general form, for example, they might describe a physical connection, such as an axonal connection between two neurons in the brain (see Figure <a class="reference internal" href="#celegans"><span class="std std-numref">Fig. 2</span></a> for an example of a ‘structural’ neural network in the case of the round worm <em>Caenorhabditis elegans</em>), or they could equally describe a similarity in behaviour between different units. Sticking with our example from neuroscience, we might consider neurons that ‘behave’ in a similar way to be connected; neurons communicate by firing electrical signals, if two such neurons fire signals at the same time, rate <em>etc</em>., then it is likely that they are involved in similar neural processes. The resulting  network is called a `functional’ brain network. Whilst related to the idea of structural connectivity described above this functional network clearly describes something very different. We shall consider these differences in more detail later on in  the course.</p>
+<p>Many systems in biology consist of a large number of similar entities (or units) that interact, or connect/communicate, in some way. These interactions can take a very general form, for example, they might describe a physical connection, such as an axonal connection between two neurons in the brain (see <a class="reference internal" href="#celegans"><span class="std std-numref">Fig. 2</span></a> for an example of a ‘structural’ neural network in the case of the round worm <em>Caenorhabditis elegans</em>), or they could equally describe a similarity in behaviour between different units. Sticking with our example from neuroscience, we might consider neurons that ‘behave’ in a similar way to be connected; neurons communicate by firing electrical signals, if two such neurons fire signals at the same time, rate <em>etc</em>., then it is likely that they are involved in similar neural processes. The resulting  network is called a `functional’ brain network. Whilst related to the idea of structural connectivity described above this functional network clearly describes something very different. We shall consider these differences in more detail later on in  the course.</p>
 <figure class="align-default" id="celegans">
 <a class="reference internal image-reference" href="../../../_images/Celegans.png"><img alt="../../../_images/Celegans.png" src="../../../_images/Celegans.png" style="height: 450px;" /></a>
 <figcaption>
@@ -369,6 +382,7 @@ document.write(`
 </figure>
 <p>Other important examples of biological networks include cellular networks, such as protein-protein interaction networks, metabolic networks and gene regulatory networks, all of which consist of a large number of interacting molecules. Metabolic networks are closely related to the chemical reaction networks that were studied in the first half of the course. Here, nodes represent molecules and we connect two molecules if they are present within the same chemical reaction.  Protien-protein interaction networks consist of large numbers of proteins, with a connection being placed between two proteins if they physically bind. Finally, gene regulatory networks consist of a set of genes, with `directed’ connectivity  between two genes if one gene regulates the production of the other. Importantly, by studying the structure of these networks we can gain a better understanding of the biological systems they represent, and in some cases even predict the behaviour of the underlying system. For example, chemists have employed graph theory to study the structural form of chemical compounds for many years now, and in fact, such techniques have crossed over to many areas of molecular sciences, including drug discovery.</p>
 <p>Network science describes the study of networks that occur across many different disciplines, not just biology. Historically, biologists have considered  organs and cells in isolation, but it is becoming increasingly evident that it is the interactions between these systems that defines their behaviour; a neuron in isolation is next to useless, however, couple together (<em>i.e</em>. connect) several million/billion of them and we obtain conciousness, action and cognition! One of the reasons biology has benefited so greatly from this new approach (the area is a little over 20 years old - consider this against most of the maths you are taught at undergraduate which is 100 years plus) is the recent advances in technology that enable us to measure in great detail a large range of sub-cellular processes. The result of this data deluge, is a `new biology’ that requires a more quantitative approach than has traditionally been the case, and thus mathematicians are ideally placed to take advantage of these opportunities and thus make significant contributions to the many outstanding challenges within the area. To quote the mathematician <span class="xref myst">Joel E. Cohen</span> ``Mathematics is biologies next microscope, only better’’.</p>
+<hr class="docutils" />
 <div class="toctree-wrapper compound">
 </div>
 </section>

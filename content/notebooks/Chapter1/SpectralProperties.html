@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>1.3 Spectral Properties of Networks &#8212; Topics in Mathematical Biology MATH34041</title>
+    <title>1.5 Spectral Properties of Networks &#8212; Topics in Mathematical Biology MATH34041</title>
   
   
   
@@ -71,8 +71,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/notebooks/Chapter1/SpectralProperties';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="1.4 Further Reading" href="FurtherReading.html" />
-    <link rel="prev" title="1.2 Basic Statistics" href="BasicStats.html" />
+    <link rel="next" title="1.6 Further Reading" href="FurtherReading.html" />
+    <link rel="prev" title="1.4 Network clustering" href="BSNetworkClustering.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -186,8 +186,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="Chapter1Intro.html">Chapter 1 Introduction and Basic Concepts</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="Network.html">1.1 What are Networks?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="BasicStats.html">1.2 Basic Statistics</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">1.3 Spectral Properties of Networks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="FurtherReading.html">1.4 Further Reading</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BSWalksAndPaths.html">1.3 Traversing a network: walks and paths</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BSNetworkClustering.html">1.4 Network clustering</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">1.5 Spectral Properties of Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="FurtherReading.html">1.6 Further Reading</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter2/Chapter2Intro.html">Chapter 2 Network Models</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -209,6 +211,17 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Chapter4/DiseaseNetworks.html">4.3 Disease Networks</a></li>
 </ul>
 </li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../ProblemSheets/ProblemSheets.html">Problem Sheets</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../ProblemSheets/ProblemSheet1.html">Problem Sheet 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ProblemSheets/ProblemSheet2.html">Problem Sheet 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ProblemSheets/ProblemSheet3.html">Problem Sheet 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ProblemSheets/ProblemSheet4.html">Problem Sheet 4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ProblemSheets/ProblemSheet5.html">Problem Sheet 5</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../coursework/CourseworkTemplate.html">Coursework Assessment and Specification</a></li>
+
+
 </ul>
 
     </div>
@@ -345,7 +358,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>1.3 Spectral Properties of Networks</h1>
+    <h1>1.5 Spectral Properties of Networks</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -361,7 +374,7 @@ document.write(`
                   
   <p><a href="https://colab.research.google.com/github/jjcrofts77/TMB-MATH34041/blob/main/content/notebooks/Chapter1/SpectralProperties.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
 <section class="tex2jax_ignore mathjax_ignore" id="spectral-properties-of-networks">
-<h1>1.3 Spectral Properties of Networks<a class="headerlink" href="#spectral-properties-of-networks" title="Permalink to this heading">#</a></h1>
+<h1>1.5 Spectral Properties of Networks<a class="headerlink" href="#spectral-properties-of-networks" title="Permalink to this heading">#</a></h1>
 <p>The spectrum of a network will refer to the spectrum of the adjacency matrix in this course. Importantly, the spectrum is what is known as a `graph invariant’, in that it does not depend upon how the network is labelled. To see this, let <span class="math notranslate nohighlight">\(P\)</span> denote a permutation matrix - relabelling the nodes is equivalent to permuting the rows and columns of the adjacency matrix - then we have that</p>
 <div class="math notranslate nohighlight">
 \[
@@ -385,7 +398,7 @@ document.write(`
 </section>
 </div><p>In terms of the network, the above definition says that if the network adjacency matrix is irreducible then at least one path of length <span class="math notranslate nohighlight">\(k(i,j)\)</span> exists between any node pair <span class="math notranslate nohighlight">\((i, j)\)</span>, and thus the network consists of a single, strongly connected component.</p>
 <div class="proof theorem admonition" id="theorem-1">
-<p class="admonition-title"><span class="caption-number">Theorem 1 </span> (Perron-Frobenius theorem)</p>
+<p class="admonition-title"><span class="caption-number">Theorem 2 </span> (Perron-Frobenius theorem)</p>
 <section class="theorem-content" id="proof-content">
 <p>Let <span class="math notranslate nohighlight">\(A\in\mathbb{R}^{n\times n}\)</span> be irreducible. Then the Perron-Frobenius theorem states that:</p>
 <ol class="arabic simple">
@@ -479,12 +492,12 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="BasicStats.html"
+       href="BSNetworkClustering.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">1.2 Basic Statistics</p>
+        <p class="prev-next-title">1.4 Network clustering</p>
       </div>
     </a>
     <a class="right-next"
@@ -492,7 +505,7 @@ document.write(`
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">1.4 Further Reading</p>
+        <p class="prev-next-title">1.6 Further Reading</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

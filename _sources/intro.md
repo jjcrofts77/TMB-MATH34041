@@ -16,9 +16,9 @@ This Jupyterbook provides the course notes for the second half of Topics in Math
 ### Chapter 1 Introduction and basic concepts
    - What are networks?
    - Basic statistics 
-      - Degree, strength and their distributions
-      - Traversing a network: walks and paths
-      - Network clustering  
+   - Degree, strength and their distributions
+   - Traversing a network: walks and paths
+   - Network clustering  
    - Spectral properties of networks
    - Further reading
 
@@ -37,9 +37,20 @@ This Jupyterbook provides the course notes for the second half of Topics in Math
    - Network neuroscience
    - Molecular networks
    - Disease networks
-     
-<br>
 
+------
+## Problem sheets and solutions
+   - Problem sheet 1: Introduction to networks
+   - Problem sheet 2: The mathematics of networks
+   - Problem sheet 3: Basic network measures
+   - Problem sheet 4: Network models
+   - Problem sheet 5: Revealing network structure: centrality and modularity
+
+------
+## Coursework 
+   - Template and description
+        
+------
 ## References
 [1] Estrada E., The structure of complex networks: theory and applications (2012)
 

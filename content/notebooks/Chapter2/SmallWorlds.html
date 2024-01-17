@@ -186,8 +186,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter1/Chapter1Intro.html">Chapter 1 Introduction and Basic Concepts</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter1/Network.html">1.1 What are Networks?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter1/BasicStats.html">1.2 Basic Statistics</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter1/SpectralProperties.html">1.3 Spectral Properties of Networks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter1/FurtherReading.html">1.4 Further Reading</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter1/BSWalksAndPaths.html">1.3 Traversing a network: walks and paths</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter1/BSNetworkClustering.html">1.4 Network clustering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter1/SpectralProperties.html">1.5 Spectral Properties of Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter1/FurtherReading.html">1.6 Further Reading</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="Chapter2Intro.html">Chapter 2 Network Models</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
@@ -209,6 +211,17 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Chapter4/DiseaseNetworks.html">4.3 Disease Networks</a></li>
 </ul>
 </li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../ProblemSheets/ProblemSheets.html">Problem Sheets</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../ProblemSheets/ProblemSheet1.html">Problem Sheet 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ProblemSheets/ProblemSheet2.html">Problem Sheet 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ProblemSheets/ProblemSheet3.html">Problem Sheet 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ProblemSheets/ProblemSheet4.html">Problem Sheet 4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ProblemSheets/ProblemSheet5.html">Problem Sheet 5</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../coursework/CourseworkTemplate.html">Coursework Assessment and Specification</a></li>
+
+
 </ul>
 
     </div>
@@ -394,14 +407,14 @@ document.write(`
 <figure class="align-default" id="wsexamples">
 <a class="reference internal image-reference" href="../../../_images/WSModel.png"><img alt="../../../_images/WSModel.png" src="../../../_images/WSModel.png" style="height: 250px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 7 </span><span class="caption-text">Example of the WS model for a network with <span class="math notranslate nohighlight">\(n=20\)</span>: (a) for <span class="math notranslate nohighlight">\(p=0\)</span> we obtain a 1-d ring lattice; (b) for intermediate <span class="math notranslate nohighlight">\(p\)</span> we obtain a “small-world” network high in clustering and with a low characteristic path-length; (c) For <span class="math notranslate nohighlight">\(p=1\)</span> we obtain an ER random network.</span><a class="headerlink" href="#wsexamples" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 11 </span><span class="caption-text">Example of the WS model for a network with <span class="math notranslate nohighlight">\(n=20\)</span>: (a) for <span class="math notranslate nohighlight">\(p=0\)</span> we obtain a 1-d ring lattice; (b) for intermediate <span class="math notranslate nohighlight">\(p\)</span> we obtain a “small-world” network high in clustering and with a low characteristic path-length; (c) For <span class="math notranslate nohighlight">\(p=1\)</span> we obtain an ER random network.</span><a class="headerlink" href="#wsexamples" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
 <section id="watts-strogatz-model">
 <h2>Watts-Strogatz model<a class="headerlink" href="#watts-strogatz-model" title="Permalink to this heading">#</a></h2>
 <p>The above discussion leads naturally to a certain group of real-world networks that are classifed by the presence of two important structural properties: (i) small average path-length and (ii) a large clustering coefficient. Classical random graphs display a very small average path-length, however, they exhibit extremely low levels of clustering, making them poor models of such systems. At the other extreme are regular, lattice like graphs, which display very high levels of clustering but relatively large average path-lengths.</p>
-<p>The idea behind the Wattts-Strogatz model was to introduce a new random network model that admits both of these two desired properties simultaneously. Starting with a <span class="math notranslate nohighlight">\(k\)</span>-regular lattice on <span class="math notranslate nohighlight">\(n\)</span> nodes (e.g. a ring in 1-d; see <a class="reference internal" href="#wsexamples"><span class="std std-numref">Fig. 7</span></a>(a)) each edge is rewired (or new edges added depending upon the algorithm) with probability <span class="math notranslate nohighlight">\(p\)</span> such that each node is reconnected with another randomly chosen node - see <a class="reference internal" href="#wsexamples"><span class="std std-numref">Fig. 7</span></a> for an illustration. For small values of <span class="math notranslate nohighlight">\(p\)</span> this process has very little effect on network clustering (recall we start off with a lattice (<span class="math notranslate nohighlight">\(p=0\)</span>)); however, the addition of these random `short-cuts’ has a non-linear effect on <span class="math notranslate nohighlight">\(\langle l\rangle\)</span> since it affects not only the nearest neighbour structure, but also the second neighbours, third neighbours and so on. The result is a random graph model with both the small-world property and a high clustering coefficient. For large values of <span class="math notranslate nohighlight">\(p\approx 1\)</span> we obtain a classical random graph.</p>
+<p>The idea behind the Wattts-Strogatz model was to introduce a new random network model that admits both of these two desired properties simultaneously. Starting with a <span class="math notranslate nohighlight">\(k\)</span>-regular lattice on <span class="math notranslate nohighlight">\(n\)</span> nodes (e.g. a ring in 1-d; see <a class="reference internal" href="#wsexamples"><span class="std std-numref">Fig. 11</span></a>(a)) each edge is rewired (or new edges added depending upon the algorithm) with probability <span class="math notranslate nohighlight">\(p\)</span> such that each node is reconnected with another randomly chosen node - see <a class="reference internal" href="#wsexamples"><span class="std std-numref">Fig. 11</span></a> for an illustration. For small values of <span class="math notranslate nohighlight">\(p\)</span> this process has very little effect on network clustering (recall we start off with a lattice (<span class="math notranslate nohighlight">\(p=0\)</span>)); however, the addition of these random `short-cuts’ has a non-linear effect on <span class="math notranslate nohighlight">\(\langle l\rangle\)</span> since it affects not only the nearest neighbour structure, but also the second neighbours, third neighbours and so on. The result is a random graph model with both the small-world property and a high clustering coefficient. For large values of <span class="math notranslate nohighlight">\(p\approx 1\)</span> we obtain a classical random graph.</p>
 <p>Important properties of the WS model include</p>
 <ol class="arabic simple">
 <li><p>The average clustering coefficient is given by</p></li>
@@ -417,6 +430,22 @@ document.write(`
   \langle l\rangle \approx \frac{(n-1)(n+k-1)}{2kn}
  \]</div>
 <p>approaching that of an ER random graph.</p>
+<p><strong>Computational Exercise</strong>: Using the code box below, write a Python script that recreates <a class="reference internal" href="#wsexamples"><span class="std std-numref">Fig. 11</span></a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># recreate Figure 11</span>
+
+<span class="c1"># p=0 initial 1D regular lattice (n = 20 and k = 4)</span>
+
+<span class="c1"># rewire with probability p=0.5</span>
+
+<span class="c1"># rewire with probability p=1.0</span>
+
+<span class="c1"># create a 1 by 3 subplot with each network instance</span>
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 </section>
 

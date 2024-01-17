@@ -1,0 +1,564 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Problem Sheet 5: Revealing network structure - centrality and modularity &#8212; Topics in Mathematical Biology MATH34041</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/myfonts.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../../_static/tabs.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"HTML-CSS": {"matchFontHeight": true, "scale": 110}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'content/ProblemSheets/ProblemSheet5';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Coursework Assessment and Specification" href="../coursework/CourseworkTemplate.html" />
+    <link rel="prev" title="Problem Sheet 4: Network models" href="ProblemSheet4.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/FoldedBrainHeatDist.png" class="logo__image only-light" alt="Topics in Mathematical Biology MATH34041 - Home"/>
+    <script>document.write(`<img src="../../_static/FoldedBrainHeatDist.png" class="logo__image only-dark" alt="Topics in Mathematical Biology MATH34041 - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Topics in Mathematical Biology MATH34041
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Part II - Network Science</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../notebooks/Chapter0/Chapter0Intro.html">Chapter 0 Network analysis in Python</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/Chapter0/PythonBasics.html">0.1 Basics in Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/Chapter0/NumpyAndMatplotlib.html">0.2 Introduction to the NumPy and Matplotlib libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/Chapter0/PythonNetworkX.html">0.3 Introduction to the NetworkX Package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/Chapter0/PythonNetworkExample.html">0.4 Python Network Example</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../notebooks/Chapter1/Chapter1Intro.html">Chapter 1 Introduction and Basic Concepts</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/Chapter1/Network.html">1.1 What are Networks?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/Chapter1/BasicStats.html">1.2 Basic Statistics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/Chapter1/BSWalksAndPaths.html">1.3 Traversing a network: walks and paths</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/Chapter1/BSNetworkClustering.html">1.4 Network clustering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/Chapter1/SpectralProperties.html">1.5 Spectral Properties of Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/Chapter1/FurtherReading.html">1.6 Further Reading</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../notebooks/Chapter2/Chapter2Intro.html">Chapter 2 Network Models</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/Chapter2/RandomGraphs.html">2.1 Random Graphs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/Chapter2/SmallWorlds.html">2.2 Small-Worlds</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/Chapter2/NetworkGrowth.html">2.3 Modelling Network Growth</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/Chapter2/FurtherReading.html">2.4 Further Reading</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../notebooks/Chapter3/Chapter3Intro.html">Chapter 3 Additional Summary Statistics and Useful Concepts</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/Chapter3/CentralityMeasures.html">3.1 Centrality Measures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/Chapter3/CommunityDetection.html">3.2 Community Detection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/Chapter3/FurtherReading.html">3.3 Further Reading</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../notebooks/Chapter4/Chapter4Intro.html">Chapter 4 Complex Networks in Biology</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/Chapter4/NetworkNeuro.html">4.1 Network Neuroscience</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/Chapter4/MolecularNetworks.html">4.2 Molecular Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/Chapter4/DiseaseNetworks.html">4.3 Disease Networks</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="ProblemSheets.html">Problem Sheets</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="ProblemSheet1.html">Problem Sheet 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ProblemSheet2.html">Problem Sheet 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ProblemSheet3.html">Problem Sheet 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ProblemSheet4.html">Problem Sheet 4</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Problem Sheet 5</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../coursework/CourseworkTemplate.html">Coursework Assessment and Specification</a></li>
+
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/content/ProblemSheets/ProblemSheet5.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Problem Sheet 5: Revealing network structure - centrality and modularity</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <p><a href="https://colab.research.google.com/github/jjcrofts77/TMB-MATH34041/blob/main/content/ProblemSheets/ProblemSheet5.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
+<section class="tex2jax_ignore mathjax_ignore" id="problem-sheet-5-revealing-network-structure-centrality-and-modularity">
+<h1>Problem Sheet 5: Revealing network structure - centrality and modularity<a class="headerlink" href="#problem-sheet-5-revealing-network-structure-centrality-and-modularity" title="Permalink to this heading">#</a></h1>
+<ol class="arabic simple">
+<li><p>Consider the adjacency matrix <span class="math notranslate nohighlight">\(A\)</span> of a directed network of size <span class="math notranslate nohighlight">\(n
+=4\)</span> given by</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+  A = \begin{bmatrix}
+      0 &amp; 1 &amp; 0 &amp; 0\\
+      1 &amp; 0 &amp; 1 &amp; 0\\
+      0 &amp; 0 &amp; 0 &amp; 0\\
+      0 &amp; 1 &amp; 0 &amp; 0\\
+      \end{bmatrix}.   
+  \end{split}\]</div>
+<p>Denote by <span class="math notranslate nohighlight">\(\mathbf{1}\)</span> the vector of all ones, i.e. <span class="math notranslate nohighlight">\(\mathbf{1}_i = 1\)</span> <span class="math notranslate nohighlight">\(\forall i\)</span> and by <span class="math notranslate nohighlight">\(I_n\)</span> the <span class="math notranslate nohighlight">\(n\times n\)</span> identity matrix.</p>
+<p>(a) Draw the network.</p>
+<p>(b) Calculate the eigenvector centrality using the eigenvector associated to the maximum eigenvalue. Is the result expected? (<em>Explain why</em>.)</p>
+<p>(c) Calculate by hand the Katz centrality</p>
+<div class="math notranslate nohighlight">
+\[
+   \mathbf{x} = (I_n-\alpha A)^{-1}\mathbf{1}.
+  \]</div>
+<p>(d) Write a Python code that calculates the Katz centrality of the above network using matrix algebra (i.e. avoid the use of built-in <em>NetworkX</em> functions).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1(d)</span>
+
+<span class="c1"># Enter the adjacency matrix A as a numpy array</span>
+
+<span class="c1"># use numpy to compute the Katz scores of A</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Consider an undirected network with adjacency matrix <span class="math notranslate nohighlight">\(A\)</span>. The degree centrality <span class="math notranslate nohighlight">\(x_i\)</span> of a node <span class="math notranslate nohighlight">\(i\)</span> is given by its degree <span class="math notranslate nohighlight">\(k_i\)</span>, i.e. <span class="math notranslate nohighlight">\(x_i = k_i\)</span>. Show that the degree centrality <span class="math notranslate nohighlight">\(\mathbf{x}\)</span> of an undirected network satisfies the following equation <span class="math notranslate nohighlight">\(\mathbf{x} = AD^{-1}\mathbf{x}\)</span>, where <span class="math notranslate nohighlight">\(D\)</span> is a diagonal matrix with non-zero elements <span class="math notranslate nohighlight">\(D_{ii} = \kappa_i = \max{(k_i,1)}\)</span>.</p></li>
+</ol>
+<ol class="arabic simple" start="3">
+<li><p>Consider a <span class="math notranslate nohighlight">\(k\)</span>-regular undirected network.</p></li>
+</ol>
+<p>(a) Show that the vector <span class="math notranslate nohighlight">\(\mathbf{1} = (1,1,1,\ldots)\)</span> is an  eigenvector of the adjacency matrix <span class="math notranslate nohighlight">\(A\)</span> with eigenvalue <span class="math notranslate nohighlight">\(k\)</span>.</p>
+<p>(b) By making use of the fact that eigenvectors are orthogonal, show that there is no other eigenvector that has all elements positive. Explain why this implies that the vector <span class="math notranslate nohighlight">\(\mathbf{1}\)</span> gives the eigenvector centrality of a <span class="math notranslate nohighlight">\(k\)</span>-regular network (<em>Hint: Use the Perron-Frobenius theorem</em>).</p>
+<p>(c) Find the Katz centralities of all vertices in a <span class="math notranslate nohighlight">\(k\)</span>-regular network.</p>
+<figure class="align-default" id="modularityexample">
+<a class="reference internal image-reference" href="../../_images/ModularityExample.png"><img alt="../../_images/ModularityExample.png" src="../../_images/ModularityExample.png" style="height: 250px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 21 </span><span class="caption-text">Undirected network on <span class="math notranslate nohighlight">\(n=12\)</span> nodes</span><a class="headerlink" href="#modularityexample" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<ol class="arabic simple" start="4">
+<li><p>Compute modularity scores <span class="math notranslate nohighlight">\(Q\)</span> for the network in <a class="reference internal" href="../notebooks/Chapter3/CommunityDetection.html#modularityexample"><span class="std std-numref">Fig. 18</span></a> for the following partitions</p></li>
+</ol>
+<p>(a) <span class="math notranslate nohighlight">\(V_1 = \{1,2,9,10,11,12\}, V_2 = \{3,4,5,6,7,8\}\)</span></p>
+<p>(b) <span class="math notranslate nohighlight">\(V = \{1,2,3,4,5,6,7,8,9,10,11,12\}\)</span></p>
+<p>(c) <span class="math notranslate nohighlight">\(V_1=\{1,2,9,10,11,12\}, V_2=\{3,4,5\}, V_3=\{5,6,7,8\}\)</span> (this partition is an example of an overlapping community structure - why?)</p>
+<p>(d) Confirm your results by computing the Newman-Girvan modularity scores for each of the above partitions using the <em>NetworkX</em> function <em>nx.community.girvan_newman()</em>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Q4</span>
+
+<span class="c1"># construct network object</span>
+
+<span class="c1"># compute modularity scores for each partition (nx.community.girvan_newman())</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="5">
+<li><p>The cortex of the cat can be parcelated into 53 areas which are linked by about 830 fiber connections thus forming a complex structural brain network. Within this structure there exist a small number of clusters that broadly agree with the four main functional cortical subdivisions, i.e. visual cortex (V), auditory (A), somato-motor (SM), and fronto-limbic (FL). The table below shows the fraction of connections that exist between these four communities.</p></li>
+</ol>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../../_images/TablePS5.png"><img alt="../../_images/TablePS5.png" src="../../_images/TablePS5.png" style="height: 250px;" /></a>
+</figure>
+<p>Treating the vertices of the cortical network of the cat as being of one of four types – visual, auditory, somato-motor and fronto-limbic – calculate the numbers <span class="math notranslate nohighlight">\(e_{rr} = |E_r|/m\)</span> and <span class="math notranslate nohighlight">\(a_r = (\sum k_i)^2/4m^2\)</span>
+that appear in the equation below.</p>
+<div class="math notranslate nohighlight">
+\[
+  Q = \sum_{r=1}^{n_p}\left[\frac{|E_r|}{m} - \frac{1}{4m^2}\left(\sum_{j\in V_r}k_j\right)^2\right]
+  \]</div>
+<p>Hence calculate the modularity of the network.</p>
+<hr class="docutils" />
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./content\ProblemSheets"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="ProblemSheet4.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Problem Sheet 4: Network models</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../coursework/CourseworkTemplate.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Coursework Assessment and Specification</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Jonathan J Crofts
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2021.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

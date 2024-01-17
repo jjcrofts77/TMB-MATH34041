@@ -186,8 +186,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter1/Chapter1Intro.html">Chapter 1 Introduction and Basic Concepts</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter1/Network.html">1.1 What are Networks?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter1/BasicStats.html">1.2 Basic Statistics</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter1/SpectralProperties.html">1.3 Spectral Properties of Networks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter1/FurtherReading.html">1.4 Further Reading</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter1/BSWalksAndPaths.html">1.3 Traversing a network: walks and paths</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter1/BSNetworkClustering.html">1.4 Network clustering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter1/SpectralProperties.html">1.5 Spectral Properties of Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter1/FurtherReading.html">1.6 Further Reading</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter2/Chapter2Intro.html">Chapter 2 Network Models</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -209,6 +211,17 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Chapter4/DiseaseNetworks.html">4.3 Disease Networks</a></li>
 </ul>
 </li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../ProblemSheets/ProblemSheets.html">Problem Sheets</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../ProblemSheets/ProblemSheet1.html">Problem Sheet 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ProblemSheets/ProblemSheet2.html">Problem Sheet 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ProblemSheets/ProblemSheet3.html">Problem Sheet 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ProblemSheets/ProblemSheet4.html">Problem Sheet 4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ProblemSheets/ProblemSheet5.html">Problem Sheet 5</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../coursework/CourseworkTemplate.html">Coursework Assessment and Specification</a></li>
+
+
 </ul>
 
     </div>
@@ -374,14 +387,14 @@ document.write(`
 <h1>3.2 Community Detection<a class="headerlink" href="#community-detection" title="Permalink to this heading">#</a></h1>
 <section id="modularity">
 <h2>Modularity<a class="headerlink" href="#modularity" title="Permalink to this heading">#</a></h2>
-<p>In real-world networks nodes often cluster together in such a way that groups are formed in which nodes are densely connected with each other but very sparsely connected with the rest of the network. Such groups are typically referred to as <em>communities</em> or <em>modules</em> (with module being more popular in the biological community - no pun intended!). For example, in <a class="reference internal" href="#metabolicexample"><span class="std std-numref">Fig. 13</span></a> we display the metabolic network of <em>E. coli</em>, colour coded to highlight the different modules - note that these modules are strongly related to specific metabolic pathways such as glycolysis.  In this section we shall take a brief look at just how to determine the type of modular structure present in the network in <a class="reference internal" href="#metabolicexample"><span class="std std-numref">Fig. 13</span></a>.</p>
+<p>In real-world networks nodes often cluster together in such a way that groups are formed in which nodes are densely connected with each other but very sparsely connected with the rest of the network. Such groups are typically referred to as <em>communities</em> or <em>modules</em> (with module being more popular in the biological community - no pun intended!). For example, in <a class="reference internal" href="#metabolicexample"><span class="std std-numref">Fig. 17</span></a> we display the metabolic network of <em>E. coli</em>, colour coded to highlight the different modules - note that these modules are strongly related to specific metabolic pathways such as glycolysis.  In this section we shall take a brief look at just how to determine the type of modular structure present in the network in <a class="reference internal" href="#metabolicexample"><span class="std std-numref">Fig. 17</span></a>.</p>
 <figure class="align-default" id="metabolicexample">
 <a class="reference internal image-reference" href="../../../_images/MetabolicExample.png"><img alt="../../../_images/MetabolicExample.png" src="../../../_images/MetabolicExample.png" style="height: 350px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 13 </span><span class="caption-text">Modularity structure for the metabolic networof <em>E. coli</em>.</span><a class="headerlink" href="#metabolicexample" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 17 </span><span class="caption-text">Modularity structure for the metabolic networof <em>E. coli</em>.</span><a class="headerlink" href="#metabolicexample" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-<p>Girvan and Newman (GN) proposed <em>modularity</em> as a network measure for determining community structure. The idea is to automate the detection of groups of nodes such as those highlighted in <a class="reference internal" href="#metabolicexample"><span class="std std-numref">Fig. 13</span></a>. That is, to determine a partitioning of the node set <span class="math notranslate nohighlight">\(V\)</span>, i.e. a collection of sets <span class="math notranslate nohighlight">\(V_i\subset V\)</span> such that <span class="math notranslate nohighlight">\(V_i\cap V_j = \emptyset\)</span> <span class="math notranslate nohighlight">\(\forall i\neq j\)</span> and such that <span class="math notranslate nohighlight">\(\cup_i V_i = V\)</span>, such that nodes in the same set are densely connected with each other, but sparsely connected with all other nodes. To measure the “quality” of such a partition GN forwarded the following modularity score</p>
+<p>Girvan and Newman (GN) proposed <em>modularity</em> as a network measure for determining community structure. The idea is to automate the detection of groups of nodes such as those highlighted in <a class="reference internal" href="#metabolicexample"><span class="std std-numref">Fig. 17</span></a>. That is, to determine a partitioning of the node set <span class="math notranslate nohighlight">\(V\)</span>, i.e. a collection of sets <span class="math notranslate nohighlight">\(V_i\subset V\)</span> such that <span class="math notranslate nohighlight">\(V_i\cap V_j = \emptyset\)</span> <span class="math notranslate nohighlight">\(\forall i\neq j\)</span> and such that <span class="math notranslate nohighlight">\(\cup_i V_i = V\)</span>, such that nodes in the same set are densely connected with each other, but sparsely connected with all other nodes. To measure the “quality” of such a partition GN forwarded the following modularity score</p>
 <div class="math notranslate nohighlight">
 \[
  Q = \frac{1}{4m}\sum_{r=1}^{n_p}\sum_{i,j=1}^n\left(a_{ij} - \frac{k_ik_j}{2m}\right)s_{ir}s_{jr}.
@@ -389,16 +402,16 @@ document.write(`
 <p>Here, <span class="math notranslate nohighlight">\(n_p\)</span> is the number of sets in our partition, <span class="math notranslate nohighlight">\(k_i\)</span> the degree of node <span class="math notranslate nohighlight">\(i\)</span>, and <span class="math notranslate nohighlight">\(s_{ir}\)</span> equals 1 if node <span class="math notranslate nohighlight">\(i\)</span> is in cluster <span class="math notranslate nohighlight">\(r\)</span> and 0 otherwise. The quantity <span class="math notranslate nohighlight">\(Q\)</span> is then optimised over all possible partitions - at least in theory.</p>
 <p>Modularity can be interpreted as the sum over all partitions of the difference between the fraction of links inside each partition and the expected fraction, by considering a random network with the same degree for each node, giving</p>
 <div class="math notranslate nohighlight" id="equation-modularity">
-<span class="eqno">(9)<a class="headerlink" href="#equation-modularity" title="Permalink to this equation">#</a></span>\[
+<span class="eqno">(11)<a class="headerlink" href="#equation-modularity" title="Permalink to this equation">#</a></span>\[
  Q = \sum_{k=1}^{n_p}\left[\frac{|E_k|}{m} - \frac{1}{4m^2}\left(\sum_{j\in V_k}k_j\right)^2\right],
 \]</div>
 <p>Where <span class="math notranslate nohighlight">\(|E_k|\)</span> is the number of links between nodes in the <span class="math notranslate nohighlight">\(k\)</span>th partition of the network, <span class="math notranslate nohighlight">\(V_k\)</span>.</p>
-<p>As an example consider the network in <a class="reference internal" href="#modularityexample"><span class="std std-numref">Fig. 14</span></a> along with the partition <span class="math notranslate nohighlight">\(V_1 = \{1,2,9,10,11,12\}\)</span> and <span class="math notranslate nohighlight">\(V_2 = \{3,4,5,6,7,8\}\)</span>. Here the number of edges and sum of degrees for the communities are</p>
+<p>As an example consider the network in <a class="reference internal" href="#modularityexample"><span class="std std-numref">Fig. 18</span></a> along with the partition <span class="math notranslate nohighlight">\(V_1 = \{1,2,9,10,11,12\}\)</span> and <span class="math notranslate nohighlight">\(V_2 = \{3,4,5,6,7,8\}\)</span>. Here the number of edges and sum of degrees for the communities are</p>
 <div class="math notranslate nohighlight">
 \[
  |E_{V_1}| = 7, ~\sum_{j\in V_1}k_j = 16, ~|E_{V_2}| = 9, ~\sum_{j\in V_2}k_j = 20,
 \]</div>
-<p>and the total number of edges is <span class="math notranslate nohighlight">\(m=18\)</span>. From <a class="reference internal" href="#equation-modularity">(9)</a>,</p>
+<p>and the total number of edges is <span class="math notranslate nohighlight">\(m=18\)</span>. From <a class="reference internal" href="#equation-modularity">(11)</a>,</p>
 <div class="math notranslate nohighlight">
 \[
  Q = \frac{7}{18} - \left(\frac{16}{36}\right)^2 + \frac{9}{18} - \left(\frac{20}{36}\right)^2 = 0.383.
@@ -406,10 +419,10 @@ document.write(`
 <figure class="align-default" id="modularityexample">
 <a class="reference internal image-reference" href="../../../_images/ModularityExample.png"><img alt="../../../_images/ModularityExample.png" src="../../../_images/ModularityExample.png" style="height: 350px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 14 </span><span class="caption-text">A network with 2 well-defined communities</span><a class="headerlink" href="#modularityexample" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 18 </span><span class="caption-text">A network with 2 well-defined communities</span><a class="headerlink" href="#modularityexample" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-<p><strong>Exercise</strong>: Compute the modularity score <span class="math notranslate nohighlight">\(Q\)</span> for the network in <a class="reference internal" href="#modularityexample"><span class="std std-numref">Fig. 14</span></a> for the partition</p>
+<p><strong>Exercise</strong>: Compute the modularity score <span class="math notranslate nohighlight">\(Q\)</span> for the network in <a class="reference internal" href="#modularityexample"><span class="std std-numref">Fig. 18</span></a> for the partition</p>
 <div class="math notranslate nohighlight">
 \[
  V_1 = \{1,2,3,4,5,6\}, V_2 = \{7,8,9,10,11,12\}.

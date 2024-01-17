@@ -186,8 +186,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="Chapter1Intro.html">Chapter 1 Introduction and Basic Concepts</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">1.1 What are Networks?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="BasicStats.html">1.2 Basic Statistics</a></li>
-<li class="toctree-l2"><a class="reference internal" href="SpectralProperties.html">1.3 Spectral Properties of Networks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="FurtherReading.html">1.4 Further Reading</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BSWalksAndPaths.html">1.3 Traversing a network: walks and paths</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BSNetworkClustering.html">1.4 Network clustering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SpectralProperties.html">1.5 Spectral Properties of Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="FurtherReading.html">1.6 Further Reading</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter2/Chapter2Intro.html">Chapter 2 Network Models</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -209,6 +211,17 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Chapter4/DiseaseNetworks.html">4.3 Disease Networks</a></li>
 </ul>
 </li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../ProblemSheets/ProblemSheets.html">Problem Sheets</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../ProblemSheets/ProblemSheet1.html">Problem Sheet 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ProblemSheets/ProblemSheet2.html">Problem Sheet 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ProblemSheets/ProblemSheet3.html">Problem Sheet 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ProblemSheets/ProblemSheet4.html">Problem Sheet 4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ProblemSheets/ProblemSheet5.html">Problem Sheet 5</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../coursework/CourseworkTemplate.html">Coursework Assessment and Specification</a></li>
+
+
 </ul>
 
     </div>
@@ -383,7 +396,7 @@ a_{ij} = \begin{cases}
 \[
  V_1 = \{v_1,\ldots, v_5\} \quad\text{ and }\quad E_1 = \{(1,2),(1,4),(2,4),(3,4),(3,5),(4,5)\}.
 \]</div>
-<p>The adjacency matrix of this network (see <a class="reference internal" href="#figexample111"><span class="std std-numref">Fig. 3</span></a>a) is given below:</p>
+<p>The adjacency matrix of this network (see <a class="reference internal" href="#figexample111"><span class="std std-numref">Fig. 3</span></a>(a)) is given below:</p>
 <div class="math notranslate nohighlight" id="equation-undir">
 <span class="eqno">(1)<a class="headerlink" href="#equation-undir" title="Permalink to this equation">#</a></span>\[\begin{split}
 A = \left(
@@ -396,7 +409,7 @@ A = \left(
       \end{array}
       \right).
 \end{split}\]</div>
-<p>Note that unless told otherwise it is assumed that <span class="math notranslate nohighlight">\((i,j)\in E\)</span> implies <span class="math notranslate nohighlight">\((j,i)\in E\)</span>, that is we assume the network to be undirected.  An example of a directed network is shown in <a class="reference internal" href="#figexample111"><span class="std std-numref">Fig. 3</span></a>b; its adjacency matrix is given below</p>
+<p>Note that unless told otherwise it is assumed that <span class="math notranslate nohighlight">\((i,j)\in E\)</span> implies <span class="math notranslate nohighlight">\((j,i)\in E\)</span>, that is we assume the network to be undirected.  An example of a directed network is shown in <a class="reference internal" href="#figexample111"><span class="std std-numref">Fig. 3</span></a>(b); its adjacency matrix is given below</p>
 <div class="math notranslate nohighlight" id="equation-dir">
 <span class="eqno">(2)<a class="headerlink" href="#equation-dir" title="Permalink to this equation">#</a></span>\[\begin{split}
 A &amp;= \left(
