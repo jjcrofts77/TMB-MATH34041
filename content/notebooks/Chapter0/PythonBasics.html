@@ -377,6 +377,12 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#defining-functions">Defining functions</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-loops">Using loops</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conditional-statements-using-if-elif-else">Conditional statements using if, elif, else</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#useful-data-types">Useful data types</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lists"><strong>Lists</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#tuples"><strong>Tuples</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#dictionaries"><strong>Dictionaries</strong></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -694,6 +700,225 @@ You lose! The number I was thinking of was 3
 </div>
 <p>In the above program we have imported a module in order to access functions for simulating random numbers. In order to use Python to study networks we are going to have to import other modules and libraries as will be demonstrated in the sections to follow.</p>
 </section>
+<section id="useful-data-types">
+<h3>Useful data types<a class="headerlink" href="#useful-data-types" title="Permalink to this heading">#</a></h3>
+<section id="lists">
+<h4><strong>Lists</strong><a class="headerlink" href="#lists" title="Permalink to this heading">#</a></h4>
+<p>A Python <em>list</em> is an <em>ordered</em>, <em>mutable</em> collection of non-unique items. Since a list is ordered we can call entries of the list by their index.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># list example</span>
+
+<span class="n">student_names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Ruth&#39;</span><span class="p">,</span><span class="s1">&#39;Theo&#39;</span><span class="p">,</span><span class="s1">&#39;Benjamin&#39;</span><span class="p">,</span><span class="s1">&#39;Vindula&#39;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The second student in the list is &#39;</span> <span class="o">+</span> <span class="n">student_names</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39; and the last is &#39;</span> <span class="o">+</span> <span class="n">student_names</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="c1"># slice a list</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Slice a list as follows:</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">student_names</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">4</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The second student in the list is Theo and the last is Vindula
+
+Slice a list as follows:
+
+[&#39;Benjamin&#39;, &#39;Vindula&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>By <em>mutable</em> we mean that the list can be changed by adding or removing items. For example, to add items to the end of the list we can use the .append() command. Note that items on the list do not need to be unique.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># I forgot to add Sam to the list :)</span>
+<span class="n">student_names</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;Sam&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Students enrolled on MATH34041/44041 in 2023/24 academic year:</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">student_names</span><span class="p">)</span>
+
+
+<span class="c1"># say a warm welcome to all students on the course (loop through list)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1"> A warm welcome to all students on the course this year! </span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">student_name</span> <span class="ow">in</span> <span class="n">student_names</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello &#39;</span> <span class="o">+</span> <span class="n">student_name</span> <span class="o">+</span> <span class="s1">&#39;!&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Students enrolled on MATH34041/44041 in 2023/24 academic year:
+
+[&#39;Ruth&#39;, &#39;Theo&#39;, &#39;Benjamin&#39;, &#39;Vindula&#39;, &#39;Sam&#39;]
+
+ A warm welcome to all students on the course this year! 
+
+Hello Ruth!
+Hello Theo!
+Hello Benjamin!
+Hello Vindula!
+Hello Sam!
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="tuples">
+<h4><strong>Tuples</strong><a class="headerlink" href="#tuples" title="Permalink to this heading">#</a></h4>
+<p><em>Tuples</em> are similar to lists. They are also ordered collections of non-unique items. The key difference being that they are <em>immutable</em>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># tuple example</span>
+
+<span class="n">student_grade</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;Theo&#39;</span><span class="p">,</span> <span class="s1">&#39;Topics in Mathematical Biology&#39;</span><span class="p">,</span> <span class="s1">&#39;FMarg&#39;</span><span class="p">)</span>
+<span class="n">student_grade</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;Theo&#39;, &#39;Topics in Mathematical Biology&#39;, &#39;FMarg&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Since they are immutable, calling the student_grade.append() command would return an error.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">student_grade</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;N0925938&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="nn">&lt;ipython-input-75-0126c40f3e35&gt;</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">student_grade</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;N0925938&#39;</span><span class="p">)</span>
+
+<span class="ne">AttributeError</span>: &#39;tuple&#39; object has no attribute &#39;append&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>This property of tuples means that they are useful for <em>unpacking</em> since we can be sure that index properties remain fixed (e.g. student_grade[0] will always return the student name).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">student_name</span><span class="p">,</span> <span class="n">subject</span><span class="p">,</span> <span class="n">grade</span> <span class="o">=</span> <span class="n">student_grade</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Name: &#39;</span> <span class="o">+</span> <span class="n">student_name</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Course: &#39;</span> <span class="o">+</span> <span class="n">subject</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Grade: &#39;</span> <span class="o">+</span> <span class="n">grade</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Name: Theo
+Course: Topics in Mathematical Biology
+Grade: FMarg
+</pre></div>
+</div>
+</div>
+</div>
+<p>This approach can be useful when using loops.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># THIS IS A TRUE TUPLE. The events depicted in this tuple took place in Nottingham in 2024. At the request of the students,</span>
+<span class="c1"># the marks have been changed. Out of respect for the dead, the rest has been told exactly as it occurred.</span>
+<span class="n">student_grades</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">(</span><span class="s1">&#39;Ruth&#39;</span><span class="p">,</span> <span class="s1">&#39;Topics in Mathematical Biology&#39;</span><span class="p">,</span> <span class="s1">&#39;1LOW&#39;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s1">&#39;Theo&#39;</span><span class="p">,</span> <span class="s1">&#39;Topics in Mathematical Biology&#39;</span><span class="p">,</span> <span class="s1">&#39;FMarg&#39;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s1">&#39;Benjamin&#39;</span><span class="p">,</span> <span class="s1">&#39;Topics in Mathematical Biology&#39;</span><span class="p">,</span> <span class="s1">&#39;1MID&#39;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s1">&#39;Vindula&#39;</span><span class="p">,</span> <span class="s1">&#39;Topics in Mathematical Biology&#39;</span><span class="p">,</span> <span class="s1">&#39;21HIGH&#39;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s1">&#39;Sam&#39;</span><span class="p">,</span> <span class="s1">&#39;Topics in Mathematical Biology&#39;</span><span class="p">,</span> <span class="s1">&#39;22MID&#39;</span><span class="p">),</span>
+<span class="p">]</span>
+
+<span class="k">for</span> <span class="n">student_name</span><span class="p">,</span> <span class="n">subject</span><span class="p">,</span> <span class="n">grade</span> <span class="ow">in</span> <span class="n">student_grades</span><span class="p">:</span>
+  <span class="k">if</span> <span class="n">grade</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Congratulations&#39;</span><span class="p">,</span> <span class="n">student_name</span><span class="p">,</span>
+          <span class="s1">&#39;on getting a&#39;</span><span class="p">,</span><span class="n">grade</span><span class="p">,</span>
+          <span class="s1">&#39;in&#39;</span><span class="p">,</span> <span class="n">subject</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Congratulations Ruth on getting a 1LOW in Topics in Mathematical Biology 
+
+Congratulations Benjamin on getting a 1MID in Topics in Mathematical Biology 
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="dictionaries">
+<h4><strong>Dictionaries</strong><a class="headerlink" href="#dictionaries" title="Permalink to this heading">#</a></h4>
+<p>The last type of collection we consider is the <em>dictionary</em> which is an <em>unordered</em>, <em>mutable</em> collection of <em>unique</em> items. Below we give a very simple example.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># dictionary example</span>
+<span class="n">foreign_langauges</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;Ruth&#39;</span><span class="p">:</span> <span class="s1">&#39;Spanish&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Theo&#39;</span><span class="p">:</span> <span class="s1">&#39;English&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Vindula&#39;</span><span class="p">:</span> <span class="s1">&#39;Italian&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Sam&#39;</span><span class="p">:</span> <span class="s1">&#39;French&#39;</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="n">foreign_langauges</span><span class="p">[</span><span class="s1">&#39;Sam&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;French&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can check whether a particular <em>key</em> (names in our example) is in a dictionary.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;Martin&#39;</span> <span class="ow">in</span> <span class="n">foreign_langauges</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;Theo&#39;</span> <span class="ow">in</span> <span class="n">foreign_langauges</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can add, delete and change entries in the dictionary.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">foreign_langauges</span><span class="p">[</span><span class="s1">&#39;Martin&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Klingon&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Lets add Martin and his preferred langauge: &#39;</span><span class="p">,</span> <span class="n">foreign_langauges</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="c1"># add Benjamin since he is missing from the list</span>
+<span class="n">foreign_langauges</span><span class="p">[</span><span class="s1">&#39;Benjamin&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;French&#39;</span>
+
+<span class="c1"># and lets remove Martin :)</span>
+<span class="k">del</span> <span class="n">foreign_langauges</span><span class="p">[</span><span class="s1">&#39;Martin&#39;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Updated and corrected list:&#39;</span><span class="p">,</span> <span class="n">foreign_langauges</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Lets add Martin and his preferred langauge:  {&#39;Ruth&#39;: &#39;Spanish&#39;, &#39;Theo&#39;: &#39;English&#39;, &#39;Vindula&#39;: &#39;Italian&#39;, &#39;Sam&#39;: &#39;French&#39;, &#39;Martin&#39;: &#39;Klingon&#39;} 
+
+Updated and corrected list: {&#39;Ruth&#39;: &#39;Spanish&#39;, &#39;Theo&#39;: &#39;English&#39;, &#39;Vindula&#39;: &#39;Italian&#39;, &#39;Sam&#39;: &#39;French&#39;, &#39;Benjamin&#39;: &#39;French&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
 </section>
 </section>
 
@@ -767,6 +992,12 @@ You lose! The number I was thinking of was 3
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#defining-functions">Defining functions</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-loops">Using loops</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conditional-statements-using-if-elif-else">Conditional statements using if, elif, else</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#useful-data-types">Useful data types</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lists"><strong>Lists</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#tuples"><strong>Tuples</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#dictionaries"><strong>Dictionaries</strong></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
