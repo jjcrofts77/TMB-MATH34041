@@ -928,7 +928,7 @@ $<span class="math notranslate nohighlight">\(
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Eigenvalues: </span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">eigenvalues</span><span class="p">))</span>
 
 <span class="c1"># compare against the roots of unity</span>
-<span class="n">coeffs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">coeffs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">coeffs</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">coeffs</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span>
 <span class="n">rootsunity</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">roots</span><span class="p">(</span><span class="n">coeffs</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Twice the real part of the nth roots of unity: </span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">rootsunity</span><span class="o">.</span><span class="n">real</span><span class="p">))</span>
@@ -941,7 +941,8 @@ $<span class="math notranslate nohighlight">\(
   0.61803399  1.61803399  1.61803399  2.        ]
 
 Twice the real part of the nth roots of unity: 
- [-2. -1. -1.  1.  1.  2.]
+ [-2.         -1.61803399 -1.61803399 -0.61803399 -0.61803399  0.61803399
+  0.61803399  1.61803399  1.61803399  2.        ]
 </pre></div>
 </div>
 </div>
